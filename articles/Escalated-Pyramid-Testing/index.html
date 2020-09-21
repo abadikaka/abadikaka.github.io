@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8"/>
+		<meta name="og:site_name" content="🧔🏻 Michael Abadi S. | 🍎 iOS Engineer | 🏠 Bangkok, 🇹🇭 Thailand | 🇲🇨 Indonesian"/>
+		<link rel="canonical" href="https://michaelabadi.com/articles/Escalated-Pyramid-Testing"/>
+		<meta name="twitter:url" content="https://michaelabadi.com/articles/Escalated-Pyramid-Testing"/>
+		<meta name="og:url" content="https://michaelabadi.com/articles/Escalated-Pyramid-Testing"/>
+		<title>Escalated Testing Pyramid | 🧔🏻 Michael Abadi S. | 🍎 iOS Engineer | 🏠 Bangkok, 🇹🇭 Thailand | 🇲🇨 Indonesian</title>
+		<meta name="twitter:title" content="Escalated Testing Pyramid | 🧔🏻 Michael Abadi S. | 🍎 iOS Engineer | 🏠 Bangkok, 🇹🇭 Thailand | 🇲🇨 Indonesian"/>
+		<meta name="og:title" content="Escalated Testing Pyramid | 🧔🏻 Michael Abadi S. | 🍎 iOS Engineer | 🏠 Bangkok, 🇹🇭 Thailand | 🇲🇨 Indonesian"/>
+		<meta name="description" content="Escalated Testing Pyramid."/>
+		<meta name="twitter:description" content="Escalated Testing Pyramid."/>
+		<meta name="og:description" content="Escalated Testing Pyramid."/>
+		<meta name="twitter:card" content="summary"/>
+		<link rel="stylesheet" href="/styles.css" type="text/css"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<link rel="shortcut icon" href="/images/favicon.png" type="image/png"/>
+		<link rel="alternate" href="/feed.rss" type="application/rss+xml" title="Subscribe to 🧔🏻 Michael Abadi S. | 🍎 iOS Engineer | 🏠 Bangkok, 🇹🇭 Thailand | 🇲🇨 Indonesian"/>
+	</head>
+	<body class="item-page">
+		<header>
+			<div class="wrapper">
+				<a class="site-name" href="/">🧔🏻 Michael Abadi S. | 🍎 iOS Engineer | 🏠 Bangkok, 🇹🇭 Thailand | 🇲🇨 Indonesian</a>
+				<h4>Welcome to the official web of Michael</h4>
+				<nav>
+					<ul>
+						<li>
+							<a href="/">Home</a>
+						</li>
+						<li class="selected">
+							<a href="/articles">Articles</a>
+						</li>
+						<li>
+							<a href="/projects">Projects</a>
+						</li>
+						<li>
+							<a href="/#aboutMeAnchor">About</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+		<div class="wrapper">
+			<article>
+				<div class="content"><h1>Escalated Testing Pyramid</h1><h3>Medium : <a href="https://medium.com/@michaelabadi/escalated-testing-pyramid-5c05ed249155">Escalated Testing Pyramid</a></h3><p>As a normal software engineer, we always remember the rule of thumb of testing. We always heard the word of the testing pyramid which consists of 3 things :</p><ol><li><strong>Unit Testing</strong> <br /><br /></li></ol><ol start="2"><li><strong>Integration Testing</strong> <br /><br /></li></ol><ol start="3"><li><strong>UI Testing</strong><br /><br /></li></ol><img src="/items/article/pyramid.png" alt="Normal pyramid test"/><br /><br /><br /><br /><p><strong>Unit Testing</strong> is the foundation of your test suite that will be made up of unit tests. Your unit tests make sure that a certain unit (your subject under test or SUT) of your codebase works as intended. Unit tests have the narrowest scope of all the tests in your test suite. The number of unit tests in your test suite will largely outnumber any other type of test. Normally we test every single function of each class to be able to cover 100% test coverage which is impossible. Below is an example of UT in Swift</p><pre><code><span class="keyword">func</span> testMultiplication() {
+   <span class="keyword">let</span> a = <span class="number">4</span>
+   <span class="keyword">let</span> b = <span class="number">2</span>
+   <span class="call">XCTAssert</span>(a * b, <span class="number">8</span>) 
+}
+</code></pre><p><strong>Integration Testing</strong> is another testing term for testing the integration or communication between each other component of the application such as database, networking, or another layer of an object that needs to integrate with each other. Here are a good explanation and example of Integration testing in swift by <a href=" https://www.swiftbysundell.com/articles/integration-tests-in-swift/">John Sundel</a>.</p><p><strong>UI Testing</strong> is the last layer which is the layer that facing the end-user directly, in this case, we normally call it as an end to end test. The most non-efficient way yet the most accurate is manual testing for UI Testing since it involves an interaction of human behavior which sometimes leads to the BDD testing concept. We will put our accessibility identifier for each UI Element to be able to detect the target component in automation.</p><p>Most of the time all of the basic three testings above are not enough, sometime the application is growing bigger and needs a more maintainable testing approach as well a more concise testing structure. Finally, most of the company try to embrace more testing and find more ways to make testing more precise. Escalation of Testing Pyramid consists of more structure. We can breakdown more into several structures. This is one of the enhanced testing pyramids that I found out. (Order start from the lowest point)</p><img src="/items/article/triangletest.png" alt="Enhanced testing"/><ol><li><strong>Unit Testing</strong> <br /><br /></li></ol><ol start="2"><li><strong>Snapshot Testing</strong> → Acceptance Test <br /><br /></li></ol><ol start="3"><li><strong>Integration Testing</strong><br /><br /></li></ol><ol start="4"><li><strong>UI Local Testing</strong> → System Test<br /><br /></li></ol><ol start="5"><li><strong>UI Mock Server Testing</strong> → System Test<br /><br /></li></ol><ol start="6"><li><strong>E2E Testing</strong> → Production environment<br /><br /></li></ol><p>What was the difference between the former pyramid? So this one we can see some enhancement such as <strong>Snapshot Testing</strong> and <strong>UI Testing</strong>. Besides that, some companies also put more additional tests like <strong>Contract testing and API Testing</strong> as well.</p><p><strong>Snapshot Testing</strong>: Snapshot testing is a testing method that takes the precedent state of the view and compares it with the latest state of the view, if there are some changes, it will tell us if the test is broken because of the snapshot mismatch. Normally this kind of test also considers an acceptance test. The way it works, the system will store the latest state of the view to the memory then later on when someone runs the test, it will compare the newest value with the stored value. It compare either the view hierarchy or the state of the logic within the view itself. Snapshot testing useful to remind the developer if we need to double-check on a specific page if it may break some old logic or cause some issues on it. If there is no issue and all parties accept it, we need to update the test with the newest state of that view. We can use the famous FBSnapshotTesting for snapshot tests in mobile development.</p><pre><code><span class="keyword">import</span> FBSnapshotTestCase 
+<span class="keyword">class</span> FBSnapshotTestCaseSwiftTest: <span class="type">FBSnapshotTestCase</span> {  
+    <span class="keyword">override func</span> setUp() {    
+       <span class="keyword">super</span>.<span class="call">setUp</span>()    
+       recordMode = <span class="keyword">false</span>  
+    }   
+    <span class="keyword">func</span> testExample() {    
+       <span class="keyword">let</span> view = <span class="type">UIView</span>(frame: <span class="type">CGRect</span>(x: <span class="number">0</span>, y: <span class="number">0</span>, width: <span class="number">64</span>, height: <span class="number">64</span>))    
+       view.<span class="property">backgroundColor</span> = <span class="type">UIColor</span>.<span class="property">blue</span>
+       <span class="type">FBSnapshotVerifyView</span>(view)     
+       <span class="type">FBSnapshotVerifyLayer</span>(view.<span class="property">layer</span>)
+     }
+}
+</code></pre><p><strong>UI Local Testing and UI Mock Server Testing</strong>: This testing is also driven by the concept of BDD. Somehow we need to test UI behavior that may work with the domain model or the business logic. We may mock the object which is very useful rather than uses the real object for that test. It is called as <strong>TestDouble</strong> method which taking the Mock object to test the behavior of the flow instead of comparing the state of the real object at the end of the state (Old classic test look for the end state of the class, meanwhile mock test looking for the correct behavior flow of specific test with ignoring the end state within the state, as long as the behavior working perfectly). We can divide this state by using local object testing in our machine before we are using real mock objects from the server that can configurable by the QA. We may need a Docker setup and start our own server for mocking the response from the server and also mocking our domain model object into the test.</p><p><strong>E2E Testing</strong>: This is the last testing which is UI Testing. This one is using production data and environment and normally will be tested with manual QA for better precision.</p><h3>Reference<br /></h3><ol><li><a href="https://martinfowler.com/articles/practical-test-pyramid.html">Practical Test</a></li><li><a href=" https://martinfowler.com/bliki/TestDouble.html">Test Double</a></li></ol></div>
+				<br/>
+				<br/>
+				<p>Published on 2020-09-21 14:00:00 +0000</p>
+				<span>Tagged with: </span>
+				<ul class="tag-list">
+					<li>
+						<a href="/tags/ios-dev">iOS Dev</a>
+					</li>
+					<li>
+						<a href="/tags/testing">Testing</a>
+					</li>
+					<li>
+						<a href="/tags/ui-testing">UI Testing</a>
+					</li>
+					<li>
+						<a href="/tags/unit-testing">Unit Testing</a>
+					</li>
+				</ul>
+			</article>
+		</div>
+		<footer>
+			<p>Written in Swift. Made with 
+				<a href="https://github.com/johnsundell/ink">Ink</a>, 
+				<a href="https://github.com/johnsundell/plot">Plot</a>, 
+				<a href="https://github.com/johnsundell/splash">Splash</a> &amp; 
+				<a href="https://github.com/johnsundell/publish">Publish</a> Inspired by theme from
+				<a href="https://github.com/leontedev/Publish-leonte.dev">leontedev</a>.
+			</p>
+			<p>©2020 Michael Abadi Santoso</p>
+			<p>
+				<a class="rss" href="/feed.rss">RSS</a>
+			</p>
+		</footer>
+	</body>
+</html>
