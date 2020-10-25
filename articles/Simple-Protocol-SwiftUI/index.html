@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8"/>
+		<meta name="og:site_name" content="🧔🏻 Michael Abadi S. | 🍎 iOS Engineer | 🏠 Bangkok, 🇹🇭 Thailand | 🇲🇨 Indonesian"/>
+		<link rel="canonical" href="https://michaelabadi.com/articles/Simple-Protocol-SwiftUI"/>
+		<meta name="twitter:url" content="https://michaelabadi.com/articles/Simple-Protocol-SwiftUI"/>
+		<meta name="og:url" content="https://michaelabadi.com/articles/Simple-Protocol-SwiftUI"/>
+		<title>Simple Protocol Oriented in SwiftUI in 5 minutes | 🧔🏻 Michael Abadi S. | 🍎 iOS Engineer | 🏠 Bangkok, 🇹🇭 Thailand | 🇲🇨 Indonesian</title>
+		<meta name="twitter:title" content="Simple Protocol Oriented in SwiftUI in 5 minutes | 🧔🏻 Michael Abadi S. | 🍎 iOS Engineer | 🏠 Bangkok, 🇹🇭 Thailand | 🇲🇨 Indonesian"/>
+		<meta name="og:title" content="Simple Protocol Oriented in SwiftUI in 5 minutes | 🧔🏻 Michael Abadi S. | 🍎 iOS Engineer | 🏠 Bangkok, 🇹🇭 Thailand | 🇲🇨 Indonesian"/>
+		<meta name="description" content="Simple Protocol Oriented in SwiftUI in 5 minutes"/>
+		<meta name="twitter:description" content="Simple Protocol Oriented in SwiftUI in 5 minutes"/>
+		<meta name="og:description" content="Simple Protocol Oriented in SwiftUI in 5 minutes"/>
+		<meta name="twitter:card" content="summary"/>
+		<link rel="stylesheet" href="/styles.css" type="text/css"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<link rel="shortcut icon" href="/images/favicon.png" type="image/png"/>
+		<link rel="alternate" href="/feed.rss" type="application/rss+xml" title="Subscribe to 🧔🏻 Michael Abadi S. | 🍎 iOS Engineer | 🏠 Bangkok, 🇹🇭 Thailand | 🇲🇨 Indonesian"/>
+	</head>
+	<body class="item-page">
+		<header>
+			<div class="wrapper">
+				<a class="site-name" href="/">🧔🏻 Michael Abadi S. | 🍎 iOS Engineer | 🏠 Bangkok, 🇹🇭 Thailand | 🇲🇨 Indonesian</a>
+				<h4>Welcome to the official web of Michael</h4>
+				<nav>
+					<ul>
+						<li>
+							<a href="/">Home</a>
+						</li>
+						<li class="selected">
+							<a href="/articles">Articles</a>
+						</li>
+						<li>
+							<a href="/projects">Projects</a>
+						</li>
+						<li>
+							<a href="/#aboutMeAnchor">About</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+		<div class="wrapper">
+			<article>
+				<div class="content"><h1>Simple Protocol Oriented in SwiftUI in 5 minutes</h1><h3>Medium : <a href="https://medium.com/macoclock/simple-protocol-oriented-in-swiftui-in-5-minutes-dadbca1017fa">Simple Protocol Oriented in SwiftUI in 5 minutes</a></h3><p>SwiftUI is a really powerful language since it was born in 2019. In 2020 (WWDC) Apple did announce a lot of improvement on SwiftUI. However, there is rarely a topic discussed good practices on how to do we able to implement protocol-oriented programming in SwiftUI. There are a lot of articles out there however I guarantee to cover that in 5 minutes of your time. This article is suitable for those who are just starting to learn about iOS Programming !.</p><p>Our end goal is to be able to fetch the data (mock data) and map it into our List view in SwiftUI. The application is about showing a list of the football player names. Normally we able to put everything under one Struct view object. Now let us take a look 3 main layer we will discuss :</p><ol><li><strong>View Layer</strong> <br /><br /></li></ol><ol start="2"><li><strong>Business Logic Layer</strong> <br /><br /></li></ol><ol start="3"><li><strong>Entity Layer</strong></li></ol><p>We will start with the Entity Layer. In order to show the data to the view through the view model, we need a dummy model, that must conform to Identifiable protocol (mandatory from SwiftUI) in order to the view to be able to identify the difference for each row.</p><pre><code><span class="comment">// The dummy model</span>
+<span class="keyword">struct</span> Player: <span class="type">Identifiable</span> {
+    <span class="keyword">let</span> id: <span class="type">Int</span>
+    <span class="keyword">let</span> name: <span class="type">String</span>
+    <span class="keyword">let</span> number: <span class="type">Int</span>
+}
+</code></pre><p>Now let’s move to BL Layer. Basic knowledge, normally we will just have a single View Model handle everything however how about if we want to limit the caller to only able to know the datasource and action that available from the View Model ?. We can use protocol-oriented programming in this case.</p><pre><code><span class="comment">// The datasource</span>
+<span class="keyword">protocol</span> ItemViewModelDatasource {
+    <span class="keyword">var</span> data: [<span class="type">Player</span>] { <span class="keyword">get set</span> }
+}
+
+<span class="comment">// The action capabilities</span>
+<span class="keyword">protocol</span> ItemViewModelAction {
+    <span class="keyword">func</span> fetchItem()
+    <span class="keyword">func</span> addPlayer(<span class="keyword">_</span> player: <span class="type">Player</span>)
+}
+</code></pre><p>Both protocols above are the interface of datasource and action for our view model later. Now after this, since we are building with SwiftUI, we do need a class that conforms to ObservableObject and have a @Publish property wrapper to the corresponding datasource.</p><pre><code><span class="comment">// Base model protocol</span>
+<span class="keyword">protocol</span> ListViewModel: <span class="type">ObservableObject</span> {
+    <span class="keyword">var</span> action: <span class="type">ItemViewModelAction</span> { <span class="keyword">get</span> }
+    <span class="keyword">var</span> datasource: <span class="type">ItemViewModelDatasource</span> { <span class="keyword">get set</span> }
+}
+</code></pre><p>Above protocol is the interface of ListViewModel (which is a protocol) and we encapsulate and restrict it only to able to get the action and datasource (also give a setter capabilities for setting the bind-ed object). Now let make a full implementation on the view model class.</p><pre><code><span class="comment">// Real class implementation</span>
+<span class="keyword">class</span> PlayerListViewModel: <span class="type">ListViewModel</span>, <span class="type">ItemViewModelAction</span>, <span class="type">ItemViewModelDatasource</span> {
+    
+    <span class="comment">// MARK: - Datasource</span>
+    <span class="keyword">@Published var</span> data: [<span class="type">Player</span>] = []
+    
+    <span class="keyword">private lazy var</span> _datasource: <span class="type">ItemViewModelDatasource</span> = {
+        <span class="keyword">return self</span>
+    }()
+    
+    <span class="keyword">var</span> datasource: <span class="type">ItemViewModelDatasource</span> {
+        <span class="keyword">get</span> {
+            <span class="keyword">return</span> _datasource
+        }
+        <span class="keyword">set</span> {
+            _datasource = newValue
+        }
+    }
+    
+    <span class="comment">// MARK: - Action</span>
+    <span class="keyword">var</span> action: <span class="type">ItemViewModelAction</span> {
+        <span class="keyword">return self</span>
+    }
+    
+    <span class="keyword">func</span> fetchItem() {
+        data = [
+            <span class="type">Player</span>(id: <span class="number">1</span>, name: <span class="string">"G. Donnaruma"</span>, number: <span class="number">1</span>),
+            <span class="type">Player</span>(id: <span class="number">2</span>, name: <span class="string">"Andrea Conti"</span>, number: <span class="number">12</span>),
+            <span class="type">Player</span>(id: <span class="number">3</span>, name: <span class="string">"G. Bonaventura"</span>, number:<span class="number">5</span>),
+            <span class="type">Player</span>(id: <span class="number">1</span>, name: <span class="string">"Zlatan Ibrahimovic"</span>, number: <span class="number">21</span>)
+        ]
+    }
+    
+    <span class="keyword">func</span> addPlayer(<span class="keyword">_</span> player: <span class="type">Player</span>) {
+        data.<span class="call">append</span>(player)
+    }
+}
+</code></pre><p>As you can see, the view model needs to conform to our ObservedObject protocol interface as well as the datasource and action interface. Don’t forget to put property wrapper @Published in front of the data property. This is a mandatory step since this wrapper functionality is to inform our view that this one is the data from the observable object wants to notify the listener.</p><pre><code><span class="keyword">struct</span> ContentView&lt;Model&gt;: <span class="type">View</span> <span class="keyword">where</span> <span class="type">Model</span>: <span class="type">ListViewModel</span> {
+    
+    <span class="keyword">@ObservedObject var</span> viewModel: <span class="type">Model</span>
+    
+    <span class="keyword">@State var</span> items: [<span class="type">String</span>] = [
+        <span class="string">"G. Donnarumma"</span>,
+        <span class="string">"Andrea Conti"</span>,
+        <span class="string">"Jack Bonaventura"</span>,
+        <span class="string">"Zlatan Ibrahimovic"</span>
+    ]
+    
+    <span class="keyword">var</span> body: <span class="keyword">some</span> <span class="type">View</span> {
+        <span class="type">NavigationView</span> {
+            <span class="type">List</span> {
+                <span class="type">ForEach</span>(items, id: \.<span class="keyword">self</span>) { item <span class="keyword">in</span>
+                    <span class="type">Text</span>(<span class="string">"Item -</span> \(item)<span class="string">"</span>)
+                }
+            }
+            .<span class="call">navigationBarTitle</span>(<span class="string">"AC Milan Player"</span>)
+        }
+    }
+}
+</code></pre><p>In the last step, we can create our simple view as above. When we declare the struct we need to put the generic Model type after the struct name, along with the supported type which is ListViewModel . This way we always guarantee that the model that is passed by the caller would always be a ListViewModel abstraction. In above code, we are still using local @State data which is items. Now we want to change it with the one from the view model through our abstraction. Here are the changes below :</p><pre><code><span class="keyword">struct</span> ContentView&lt;Model&gt;: <span class="type">View</span> <span class="keyword">where</span> <span class="type">Model</span>: <span class="type">ListViewModel</span> {
+    
+    <span class="keyword">@ObservedObject var</span> viewModel: <span class="type">Model</span>
+    
+    <span class="keyword">var</span> body: <span class="keyword">some</span> <span class="type">View</span> {
+        <span class="type">NavigationView</span> {
+            <span class="type">List</span> {
+                <span class="type">ForEach</span>(viewModel.<span class="property">datasource</span>.<span class="property">data</span>.<span class="property">indices</span>, id:           \.<span class="keyword">self</span>) { index <span class="keyword">in</span>
+                    <span class="type">Text</span>(<span class="string">"Item -</span> \(<span class="keyword">self</span>.<span class="property">viewModel</span>.<span class="property">datasource</span>.<span class="property">data</span>[index].name)<span class="string">"</span>)
+                }
+            }
+            .<span class="call">onAppear</span> {
+                <span class="keyword">self</span>.<span class="property">viewModel</span>.<span class="property">action</span>.<span class="call">fetchItem</span>()
+            }
+            .<span class="call">navigationBarTitle</span>(<span class="string">"AC Milan Player"</span>)
+        }
+    }
+}
+</code></pre><p>As you can see above, we are binding the List with data from the view model instead local state. Also we are triggering the query data from .onAppear method of the list to get the data. That’s all you need to make a good separation of view and bussiness logic in SwiftUI.</p></div>
+				<br/>
+				<br/>
+				<p>Published on 2020-10-24 14:00:00 +0000</p>
+				<span>Tagged with: </span>
+				<ul class="tag-list">
+					<li>
+						<a href="/tags/ios-dev">iOS Dev</a>
+					</li>
+					<li>
+						<a href="/tags/swiftui">SwiftUI</a>
+					</li>
+					<li>
+						<a href="/tags/mvvm">MVVM</a>
+					</li>
+				</ul>
+			</article>
+		</div>
+		<footer>
+			<p>Written in Swift. Made with 
+				<a href="https://github.com/johnsundell/ink">Ink</a>, 
+				<a href="https://github.com/johnsundell/plot">Plot</a>, 
+				<a href="https://github.com/johnsundell/splash">Splash</a> &amp; 
+				<a href="https://github.com/johnsundell/publish">Publish</a> Inspired by theme from
+				<a href="https://github.com/leontedev/Publish-leonte.dev">leontedev</a>.
+			</p>
+			<p>©2020 Michael Abadi Santoso</p>
+			<p>
+				<a class="rss" href="/feed.rss">RSS</a>
+			</p>
+		</footer>
+	</body>
+</html>

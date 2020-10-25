@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8"/>
+		<meta name="og:site_name" content="🧔🏻 Michael Abadi S. | 🍎 iOS Engineer | 🏠 Bangkok, 🇹🇭 Thailand | 🇲🇨 Indonesian"/>
+		<link rel="canonical" href="https://michaelabadi.com/articles/MapView-Annotation-SwiftUI"/>
+		<meta name="twitter:url" content="https://michaelabadi.com/articles/MapView-Annotation-SwiftUI"/>
+		<meta name="og:url" content="https://michaelabadi.com/articles/MapView-Annotation-SwiftUI"/>
+		<title>MapView Annotation SwiftUI | 🧔🏻 Michael Abadi S. | 🍎 iOS Engineer | 🏠 Bangkok, 🇹🇭 Thailand | 🇲🇨 Indonesian</title>
+		<meta name="twitter:title" content="MapView Annotation SwiftUI | 🧔🏻 Michael Abadi S. | 🍎 iOS Engineer | 🏠 Bangkok, 🇹🇭 Thailand | 🇲🇨 Indonesian"/>
+		<meta name="og:title" content="MapView Annotation SwiftUI | 🧔🏻 Michael Abadi S. | 🍎 iOS Engineer | 🏠 Bangkok, 🇹🇭 Thailand | 🇲🇨 Indonesian"/>
+		<meta name="description" content="MapView Annotation SwiftUI."/>
+		<meta name="twitter:description" content="MapView Annotation SwiftUI."/>
+		<meta name="og:description" content="MapView Annotation SwiftUI."/>
+		<meta name="twitter:card" content="summary"/>
+		<link rel="stylesheet" href="/styles.css" type="text/css"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<link rel="shortcut icon" href="/images/favicon.png" type="image/png"/>
+		<link rel="alternate" href="/feed.rss" type="application/rss+xml" title="Subscribe to 🧔🏻 Michael Abadi S. | 🍎 iOS Engineer | 🏠 Bangkok, 🇹🇭 Thailand | 🇲🇨 Indonesian"/>
+	</head>
+	<body class="item-page">
+		<header>
+			<div class="wrapper">
+				<a class="site-name" href="/">🧔🏻 Michael Abadi S. | 🍎 iOS Engineer | 🏠 Bangkok, 🇹🇭 Thailand | 🇲🇨 Indonesian</a>
+				<h4>Welcome to the official web of Michael</h4>
+				<nav>
+					<ul>
+						<li>
+							<a href="/">Home</a>
+						</li>
+						<li class="selected">
+							<a href="/articles">Articles</a>
+						</li>
+						<li>
+							<a href="/projects">Projects</a>
+						</li>
+						<li>
+							<a href="/#aboutMeAnchor">About</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+		<div class="wrapper">
+			<article>
+				<div class="content"><h1>MapView Annotation SwiftUI</h1><h3>Medium : <a href="https://medium.com/macoclock/mapview-swiftui-with-annotationview-and-coordinator-70a305cf657">Map View SwiftUI + Annotation</a></h3><p>SwiftUI is very powerful for building an interactive UI at a fast pace. However, there are a couple of limitations still there such as some native API from UIKit like MKMapView from MapKit or search bar and other UIKit API. I will provide a tutorial for making a MapView in SwiftUI by using UIViewRepresentable as well as putting callback to the SwiftUI if we have clicked the annotation.</p><p>Some quick knowledge about several items below:</p><ol><li>UIViewRepresentable : A wrapper for a UIKit view that you use to integrate that view into your SwiftUI view hierarchy</li><li>Coordinator : A SwiftUI view that represents a UIKit view controller can define a Coordinator type that SwiftUI manages and provides as part of the representable view’s context</li><li>MapKit : UIKit API for Map behavior such as MKMapView and Annotation View and other native Map behavior</li></ol><p>First of all, we need to make our Model for displaying the item inside the map. The model we can put title and it’s coordinate (latitude and longitude).</p><h2><strong>CODE</strong></h2><pre><code><span class="keyword">final class</span> Checkpoint: <span class="type">NSObject</span>, <span class="type">MKAnnotation</span> {
+    <span class="keyword">let</span> title: <span class="type">String</span>?
+    <span class="keyword">let</span> countryCode: <span class="type">String</span>?
+    <span class="keyword">let</span> coordinate: <span class="type">CLLocationCoordinate2D</span>
+
+    <span class="keyword">init</span>(title: <span class="type">String</span>?, countryCode: <span class="type">String</span>?, coordinate: <span class="type">CLLocationCoordinate2D</span>) {
+        <span class="keyword">self</span>.<span class="property">title</span> = title
+        <span class="keyword">self</span>.<span class="property">countryCode</span> = countryCode
+        <span class="keyword">self</span>.<span class="property">coordinate</span> = coordinate
+    }
+}
+</code></pre><p>In the code above, the Checkpoint class is a class that represent our map point in the view. Once this model has been created let’s move to the creation of MapView</p><p>Create a new struct of MapView and make it conform to UIViewRepresentable.</p><pre><code><span class="keyword">import</span> UIKit
+<span class="keyword">import</span> MapKit
+<span class="keyword">import</span> SwiftUI
+
+<span class="keyword">struct</span> MapView: <span class="type">UIViewRepresentable</span> {
+ 
+    <span class="comment">// 1.</span>
+    <span class="keyword">var</span> annotationOnTap: (<span class="keyword">_</span> title: <span class="type">String</span>) -&gt; <span class="type">Void</span>
+ 
+    <span class="comment">// 2.</span>   
+    <span class="keyword">@Binding var</span> checkpoints: [<span class="type">Checkpoint</span>]
+    
+    <span class="comment">/// 3. Used internally to maintain a reference to a MKMapView
+    /// instance when the view is recreated.</span>
+    <span class="keyword">let</span> key: <span class="type">String</span>
+
+    <span class="keyword">private static var</span> mapViewStore = [<span class="type">String</span> : <span class="type">MKMapView</span>]()
+    
+    <span class="comment">// 4.</span>
+    <span class="keyword">func</span> makeUIView(context: <span class="type">Context</span>) -&gt; <span class="type">MKMapView</span> {
+        <span class="keyword">if let</span> mapView = <span class="type">MapView</span>.<span class="property">mapViewStore</span>[key] {
+            mapView.<span class="property">delegate</span> = context.<span class="property">coordinator</span>
+            <span class="keyword">return</span> mapView
+        }
+        <span class="keyword">let</span> mapView = <span class="type">MKMapView</span>(frame: .<span class="dotAccess">zero</span>)
+        mapView.<span class="property">delegate</span> = context.<span class="property">coordinator</span>
+        <span class="type">MapView</span>.<span class="property">mapViewStore</span>[key] = mapView
+        <span class="keyword">return</span> mapView
+    }
+
+    <span class="comment">// 5.</span>
+    <span class="keyword">func</span> updateUIView(<span class="keyword">_</span> uiView: <span class="type">MKMapView</span>, context: <span class="type">Context</span>) {
+        uiView.<span class="call">addAnnotations</span>(checkpoints)
+    }
+    
+    <span class="comment">// 6.</span>
+    <span class="keyword">func</span> makeCoordinator() -&gt; <span class="type">MapCoordinator</span> {
+        <span class="type">MapCoordinator</span>(<span class="keyword">self</span>)
+    }
+}
+</code></pre><ol><li>AnnotationOnTap is a completion to notify SwiftUI if we have clicked an annotation from MKMapView</li><li>@Binding is a property wrapper for checkpoints model that we need for this MapView for displaying each dot of the location</li><li>This key is for storing a single MKMapView instance in the memory. Using mapViewStore for handling if there is an existing instance of MKMapView on this particular screen. Why do we need this? There is a bug on MKMapView (UIKit) if we move to another screen and SwiftUI rerendering the struct of the SwiftUI View that contains this MapView it will create new MapView instead of reusing it while the old one still on the memory. It causes some bottleneck on rendering UI part for both SwiftUI and UIKit on the same point and it can cause a crash after several times.</li><li>This one overriding function from UIViewRepresentable to return the expected view</li><li>This one overriding function from UIViewRepresentable to attach a new view or do some additional layouting. In this case, we add the checkpoint to each annotation</li><li>This one also overriding function form UIViewRepresentable for coordinator which for mapping the delegation logic on MKMapViewDelegate</li></ol><p>Okay once that view has been set up, now we can make the logic for notifying back to SwiftUI. We can not apply delegate in SwiftUI, so there is a Coordinator to put the business logic layer of pure Swift logic. Let make the MapCoordinator class.</p><pre><code><span class="keyword">final class</span> MapCoordinator: <span class="type">NSObject</span>, <span class="type">MKMapViewDelegate</span> {    <span class="comment">// 1.</span>
+    <span class="keyword">var</span> parent: <span class="type">MapView</span>
+
+    <span class="keyword">init</span>(<span class="keyword">_</span> parent: <span class="type">MapView</span>) {
+        <span class="keyword">self</span>.<span class="property">parent</span> = parent
+    }
+    
+    <span class="keyword">deinit</span> {
+        <span class="call">print</span>(<span class="string">"deinit: MapCoordinator"</span>)
+    }    <span class="comment">// 2.</span>    
+    <span class="keyword">func</span> mapView(<span class="keyword">_</span> mapView: <span class="type">MKMapView</span>, didSelect view: <span class="type">MKAnnotationView</span>) {
+        view.<span class="property">canShowCallout</span> = <span class="keyword">true
+
+        let</span> btn = <span class="type">UIButton</span>(type: .<span class="dotAccess">detailDisclosure</span>)
+        view.<span class="property">rightCalloutAccessoryView</span> = btn
+    }
+    
+    <span class="comment">// 3.</span>    
+    <span class="keyword">func</span> mapView(<span class="keyword">_</span> mapView: <span class="type">MKMapView</span>, annotationView view: <span class="type">MKAnnotationView</span>, calloutAccessoryControlTapped control: <span class="type">UIControl</span>) {
+        <span class="keyword">guard let</span> capital = view.<span class="property">annotation</span> <span class="keyword">as</span>? <span class="type">Checkpoint</span>, <span class="keyword">let</span> placeName = capital.<span class="property">title</span> <span class="keyword">else</span> { <span class="keyword">return</span> }
+        parent.<span class="call">annotationOnTap</span>(placeName)
+    }
+    
+}
+</code></pre><ol><li>We need a reference to the MKMapView here for the coordinator able to return back the handler/logic we attach on it</li><li>This one is the delegate function from MKMapView (Put MKMapViewDelegate on this class as well) for displaying the rightCalloutAccesoryView</li><li>This one is for telling if we click on the accessory control and we will return back the placeName through the handler on the MapView</li></ol><p>Once this has been set up now we can easily use the MapView on our SwiftUI.</p><pre><code><span class="keyword">struct</span> SearchView: <span class="type">View</span> {
+
+    <span class="keyword">@ObservedObject var</span> viewModel: <span class="type">SearchViewModel</span> = <span class="type">SearchViewModel</span>()    
+    
+    <span class="keyword">var</span> body: <span class="keyword">some</span> <span class="type">View</span> {
+        <span class="type">VStack</span> {
+                <span class="type">MapView</span>(annotationOnTap: { title <span class="keyword">in</span>
+                    <span class="call">print</span>(<span class="string">"Title clicked"</span>, title)
+                }, checkpoints: $viewModel.<span class="property">checkpoints</span>, key: <span class="string">"SearchView"</span>)
+                    .<span class="call">frame</span>(height: <span class="type">UIScreen</span>.<span class="property">main</span>.<span class="property">bounds</span>.<span class="property">height</span>)
+                    .<span class="call">offset</span>(x: <span class="number">0</span>, y: <span class="number">350</span>)
+            }
+    }}
+</code></pre><p>As you can see above we just need to pass the checkpoints model and key (can be anything) and viola, we can get the MapView working.</p></div>
+				<br/>
+				<br/>
+				<p>Published on 2020-09-11 14:00:00 +0000</p>
+				<span>Tagged with: </span>
+				<ul class="tag-list">
+					<li>
+						<a href="/tags/ios-dev">iOS Dev</a>
+					</li>
+					<li>
+						<a href="/tags/swiftui">SwiftUI</a>
+					</li>
+				</ul>
+			</article>
+		</div>
+		<footer>
+			<p>Written in Swift. Made with 
+				<a href="https://github.com/johnsundell/ink">Ink</a>, 
+				<a href="https://github.com/johnsundell/plot">Plot</a>, 
+				<a href="https://github.com/johnsundell/splash">Splash</a> &amp; 
+				<a href="https://github.com/johnsundell/publish">Publish</a> Inspired by theme from
+				<a href="https://github.com/leontedev/Publish-leonte.dev">leontedev</a>.
+			</p>
+			<p>©2020 Michael Abadi Santoso</p>
+			<p>
+				<a class="rss" href="/feed.rss">RSS</a>
+			</p>
+		</footer>
+	</body>
+</html>
