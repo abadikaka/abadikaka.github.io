@@ -96,6 +96,15 @@ Tech Stack  Combine Core Data SwiftUI  Demo </description>
     </item>
     
     <item>
+      <title>Bake a Builder Pattern in iOS</title>
+      <link>/articles/bake-builder-pattern/</link>
+      <pubDate>Wed, 13 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/articles/bake-builder-pattern/</guid>
+      <description>Have you ever have a problem when designing a system that has a similar foundation and capabilities however the ingredients to form the object would vary? We may end up with an easy solution by providing different parameters for each subclass. However, multiple subclasses that need to override the constructor might also have to own those unnecessary properties into its interface. There is one design pattern that also considered as Creational Design Pattern which Android Design pattern by default having this pattern.</description>
+    </item>
+    
+    <item>
       <title>About Me</title>
       <link>/about/michael-abadi/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
