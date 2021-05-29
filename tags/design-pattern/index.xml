@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Design Pattern on Michael Abadi&#39;s Blog</title>
+    <link>/tags/design-pattern/</link>
+    <description>Recent content in Design Pattern on Michael Abadi&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 11 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="/tags/design-pattern/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Wrapper Pattern Swift in 5 minutes</title>
+      <link>/articles/wrapper-pattern-swift/</link>
+      <pubDate>Fri, 11 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/articles/wrapper-pattern-swift/</guid>
+      <description>Have you ever heard about the problem that you need to separate two modules working independently without knowing each other implementation, but requires to be able to communicate easily by only sending necessary data? Most of the advanced use cases will face this real-world use case and we require a more advanced design pattern to be able to solve this pattern to give more scalability to the project. There is a general concept about “Wrapping” an object through an intermediary class that can adapt to each other.</description>
+    </item>
+    
+  </channel>
+</rss>

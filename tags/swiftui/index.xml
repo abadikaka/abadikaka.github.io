@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SwiftUI on Michael Abadi&#39;s Blog</title>
+    <link>/tags/swiftui/</link>
+    <description>Recent content in SwiftUI on Michael Abadi&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 11 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="/tags/swiftui/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MapView Annotation in SwiftUI</title>
+      <link>/articles/mapview-annotation/</link>
+      <pubDate>Fri, 11 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/articles/mapview-annotation/</guid>
+      <description>SwiftUI is very powerful for building an interactive UI at a fast pace. However, there are a couple of limitations still there such as some native API from UIKit like MKMapView from MapKit or search bar and other UIKit API. I will provide a tutorial for making a MapView in SwiftUI by using UIViewRepresentable as well as putting callback to the SwiftUI if we have clicked the annotation.
+Some quick knowledge about several items below:</description>
+    </item>
+    
+  </channel>
+</rss>

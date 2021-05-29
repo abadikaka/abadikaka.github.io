@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projects on Michael Abadi&#39;s Blog</title>
+    <link>/projects/</link>
+    <description>Recent content in Projects on Michael Abadi&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 28 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="/projects/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Smart Trip</title>
+      <link>/projects/smarttrip/</link>
+      <pubDate>Fri, 28 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/projects/smarttrip/</guid>
+      <description>Explore tourism nearby, buy e-ticket and enjoy your trip. This project as part of DevPost hackathon about APEC 2021 App Challenge
+Tech Stack  Combine Core Data Firebase SwiftUI  Demo   </description>
+    </item>
+    
+    <item>
+      <title>Tripzy</title>
+      <link>/projects/tripzy/</link>
+      <pubDate>Sat, 01 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/projects/tripzy/</guid>
+      <description>Personalised your travel budgets, easily directly from pocket without any hassle.
+Tech Stack  Combine Core Data SwiftUI  Download https://apps.apple.com/th/app/tripzy/id1564625604</description>
+    </item>
+    
+    <item>
+      <title>Englizh</title>
+      <link>/projects/englizh/</link>
+      <pubDate>Fri, 05 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/projects/englizh/</guid>
+      <description>Test your IELTS or English skills in general with this application.
+Tech Stack  Combine Core Data SwiftUI  Download </description>
+    </item>
+    
+    <item>
+      <title>Stockpedia</title>
+      <link>/projects/stockpedia/</link>
+      <pubDate>Wed, 20 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/projects/stockpedia/</guid>
+      <description>See latest stock news and current company stock detail around the world.
+Tech Stack  Combine Finnhub API SwiftUI  Download https://apps.apple.com/th/app/stockpedia/id1550579452</description>
+    </item>
+    
+    <item>
+      <title>Tripzy (Draft)</title>
+      <link>/projects/tripzy-draft/</link>
+      <pubDate>Sat, 01 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/projects/tripzy-draft/</guid>
+      <description>Personalised your travel itinerary, search another inspiration from people around the world, and easily import or bookmark trips.
+Tech Stack  Combine Core Data SwiftUI  Demo </description>
+    </item>
+    
+  </channel>
+</rss>
