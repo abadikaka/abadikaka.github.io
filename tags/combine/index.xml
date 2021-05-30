@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Combine on Michael Abadi&#39;s Blog</title>
+    <link>/tags/combine/</link>
+    <description>Recent content in Combine on Michael Abadi&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 24 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/combine/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Utilize Combine for Search Engine in Swift</title>
+      <link>/articles/utilize-combine/</link>
+      <pubDate>Sun, 24 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/articles/utilize-combine/</guid>
+      <description>Combine, is a new framework introduced by Apple since SwiftUI 1.0 back then in 2019. The architecture behind the scene itself is adopting the system of FRP (Functional Reactive Programming) which takes computation as their main computation of process combine with the propagation of data through the stream of the function. In this tutorial, I would like to explain how Combine can make your job done quicker than ever compare with the conventional way of code.</description>
+    </item>
+    
+  </channel>
+</rss>

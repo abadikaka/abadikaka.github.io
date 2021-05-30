@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CI/CD on Michael Abadi&#39;s Blog</title>
+    <link>/tags/ci/cd/</link>
+    <description>Recent content in CI/CD on Michael Abadi&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="/tags/ci/cd/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Trigger iOS Unit Test Check-In Github with Jenkins (Automation)</title>
+      <link>/articles/trigger-ios-jenkin-automation/</link>
+      <pubDate>Fri, 31 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/articles/trigger-ios-jenkin-automation/</guid>
+      <description>Wonder how to make automation for triggering the build and unit test in git with Jenkins? So this one could be the easiest tutorial you can follow. First let open our Jenkins web page, login, and create a new Free project. Once you create it, go to configure tab and you will go to this page below
+Fill up the textbox above on the description and tick the GitHub project row and fill in the project URL.</description>
+    </item>
+    
+  </channel>
+</rss>

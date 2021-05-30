@@ -6,7 +6,84 @@
     <description>Recent content in Swift on Michael Abadi&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 11 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="/tags/swift/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 17 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/swift/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Testing In-App Purchases Locally in Simulator</title>
+      <link>/articles/storekit-testing/</link>
+      <pubDate>Mon, 17 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/articles/storekit-testing/</guid>
+      <description>During development, we will come into a phase where we would like to test out our In-App Purchases. However, most likely we ever heard a myth that IAP only works with devices to test it out with an internal tester account. Turns out during the process of the creation of Tripzy, I found a way to test our IAP in a simulator without any hassle. Keep in mind there will be some limitations of course if we are testing against the simulator.</description>
+    </item>
+    
+    <item>
+      <title>Enhance Factory Pattern capabilities for DI in Swift within 3 minutes</title>
+      <link>/articles/enhance-factory-pattern/</link>
+      <pubDate>Thu, 11 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/articles/enhance-factory-pattern/</guid>
+      <description>Factory pattern is one of the common patterns in a programming language. It is one of the creational design patterns that provide a high level of flexibility for your code. One of the interesting use cases that could make Factory pattern become a handy tool to use is Dependency Injection. Normally whenever we want to inject an interface as a dependency on an object, we could easily pass it through the initializer or set it from the property.</description>
+    </item>
+    
+    <item>
+      <title>Understanding Proxy Pattern in Swift within 5 minutes</title>
+      <link>/articles/proxy-pattern-swift/</link>
+      <pubDate>Tue, 26 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/articles/proxy-pattern-swift/</guid>
+      <description>The proxy pattern is one of the few underrated patterns that nobody really talks about in iOS. A proxy pattern is one of the structural design patterns that lets you provide a substitute or placeholder for another object. A proxy has total control and access to the original object, and let the proxy object do some magical stuff with the original object and restrict the access to it, however, the one who uses a proxy object, won’t have any knowledge behind the scene.</description>
+    </item>
+    
+    <item>
+      <title>Fun Debugging in iOS — Understanding the GUI in 3 minutes</title>
+      <link>/articles/fun-debugging-5-minutes/</link>
+      <pubDate>Sat, 09 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/articles/fun-debugging-5-minutes/</guid>
+      <description>After we have understood the basic concept of LLDB commands now it is taking time to understand the full GUI of Xcode debugging.
+Let see the picture above. Once you have put a breakpoint on any lines of code in your applications, you will see a similar screen as above.
+  The top one is our code panel, which indicates where is our breakpoint located
+  The bottom left panel is our quick look panel, we can see our current state of the object in either class or function level at the moment the code is being halted</description>
+    </item>
+    
+    <item>
+      <title>Fun Debugging iOS — Basic Part (LLDB) in 3 minutes</title>
+      <link>/articles/lldb-basic-concept/</link>
+      <pubDate>Mon, 04 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/articles/lldb-basic-concept/</guid>
+      <description>Have you ever wonder how to debug your entire code in the proper way? But sometimes we don’t know in-depth detail about how does it work behind the scene? In this multiple series of articles, I am trying to spread multiple articles into specific chunks of debugging part, start with the basic / foundation part of debugging in iOS. Normally we will have multiple topics covering all areas, start with LLDB debugging and end with Logging.</description>
+    </item>
+    
+    <item>
+      <title>Xcode handy “Move and Share” breakpoint in 2 minutes</title>
+      <link>/articles/handy-breakpoint/</link>
+      <pubDate>Sun, 27 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/articles/handy-breakpoint/</guid>
+      <description>Do you know that we can actually simply share our breakpoints with our colleagues at work? Xcode provides us with the capability to share it. This share function is very handy if we want all colleagues to have a similar breakpoint. Some breakpoints that worth sharing are Exception breakpoint, Runtime breakpoint, and some Symbolic breakpoints. Let see how it works
+  Go to your debug navigator panel on the left panel</description>
+    </item>
+    
+    <item>
+      <title>Symbolic Breakpoint Xcode in 2 Minutes</title>
+      <link>/articles/symbolic-breakpoint/</link>
+      <pubDate>Mon, 09 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/articles/symbolic-breakpoint/</guid>
+      <description>Once upon a time, while I was debugging my code, I found out an annoying warning comes up like below
+[TableView] Warning once only: UITableView was told to layout its visible cells and other contents without being in the view hierarchy (the table view or one of its superviews has not been added to a window). This may cause bugs by forcing views inside the table view to load and perform layout without accurate information (e.</description>
+    </item>
+    
+    <item>
+      <title>Fun usage of Generic implementation in Swift</title>
+      <link>/articles/fun-usage-generic/</link>
+      <pubDate>Sat, 31 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/articles/fun-usage-generic/</guid>
+      <description>Most of us know that generic in programming means we able to do something not limited to one specific type but has more wide selection on the same basis. The most common examples are Queue or Stack use cases. Let say we would like to implement an implementation of both problems not limited to one type of data type, we would like to use a Generic way to solve this problem like the code below</description>
+    </item>
+    
     <item>
       <title>Wrapper Pattern Swift in 5 minutes</title>
       <link>/articles/wrapper-pattern-swift/</link>
@@ -17,12 +94,58 @@
     </item>
     
     <item>
+      <title>Understanding WidgetKit in 5 minutes</title>
+      <link>/articles/understanding-widget-kit/</link>
+      <pubDate>Tue, 30 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/articles/understanding-widget-kit/</guid>
+      <description>One of the most interesting topics in WWDC 2020 was about WidgetKit. Yeah, this small icon on the home screen of our phone will represent some of the contents within the app itself!. Recently, I try to implement WidgetKit into my own project. Let’s talk about some key points of WidgetKit itself before we go ahead. There are 4 key points what makes your WidgetKit great :
+  Glanceable: a great widget displays the right amount of content</description>
+    </item>
+    
+    <item>
+      <title>Reason to choose Static and Dynamic frameworks in &lt; 5 minutes</title>
+      <link>/articles/reason-to-choose-static-dynamic/</link>
+      <pubDate>Fri, 19 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/articles/reason-to-choose-static-dynamic/</guid>
+      <description>One day after we have successfully grown our app bigger, we face multiple problems. One problem we found out that our code is super messy and confusing!. Another, why the hell it took a very long time for compiling!. So what is the solution that comes up to our mind? As a beginner, we will think that Class separation would be enough for solving the messy code since we know that it is easier to build, less time consuming, and easier to code.</description>
+    </item>
+    
+    <item>
+      <title>Fun Scripting in Swift — for beginner (PART II)</title>
+      <link>/articles/fun-scripting-part-2/</link>
+      <pubDate>Thu, 18 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/articles/fun-scripting-part-2/</guid>
+      <description>Now time for the next step after the previous part of my articles. After we know some basic knowledge of swift scripting lets moves to the next one! Now we will talk about ArgumentParser. It is a new library that provides multiple commands and parses the arguments in the command line. Let us first set up the dependencies and the product name on our Package.swift and run swift build to make sure we fetch the latest dependencies in the project.</description>
+    </item>
+    
+    <item>
+      <title>Fun Scripting in Swift — for beginner (PART I)</title>
+      <link>/articles/fun-scripting-part-1/</link>
+      <pubDate>Wed, 17 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/articles/fun-scripting-part-1/</guid>
+      <description>Have you ever used fastlane? swiftlint? xcodegen?. Yeah as an iOS developer we must be familiar with all of those tools for doing automation stuff. How about we need something that no one provides for us? Well, we can make one of those scripts by using Swift!. First of all, if you haven’t watched a wonderful UIKonf conference featuring Federico Zanetello, you need to put it on your watchlist !. In this article, I would like to explain how does swift scripting is working also by demonstrating the usage of it.</description>
+    </item>
+    
+    <item>
       <title>Bake a Builder Pattern in iOS</title>
       <link>/articles/bake-builder-pattern/</link>
       <pubDate>Wed, 13 May 2020 00:00:00 +0000</pubDate>
       
       <guid>/articles/bake-builder-pattern/</guid>
       <description>Have you ever have a problem when designing a system that has a similar foundation and capabilities however the ingredients to form the object would vary? We may end up with an easy solution by providing different parameters for each subclass. However, multiple subclasses that need to override the constructor might also have to own those unnecessary properties into its interface. There is one design pattern that also considered as Creational Design Pattern which Android Design pattern by default having this pattern.</description>
+    </item>
+    
+    <item>
+      <title>Easy way to do Share Extension in iOS</title>
+      <link>/articles/share-extension/</link>
+      <pubDate>Fri, 24 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/articles/share-extension/</guid>
+      <description>Wonder how to make your application can share any picture or file or text even URL into our own application? Well everyone knows we can use App Extension and create our extension for doing it. But imagine if we have multiple clients and need to use a specific token for each client, or we do have many configurations for the UI that can be displayed differently according to the clients, how we can achieve that?</description>
     </item>
     
   </channel>

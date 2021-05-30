@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Testing on Michael Abadi&#39;s Blog</title>
+    <link>/tags/testing/</link>
+    <description>Recent content in Testing on Michael Abadi&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 17 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/testing/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Testing In-App Purchases Locally in Simulator</title>
+      <link>/articles/storekit-testing/</link>
+      <pubDate>Mon, 17 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/articles/storekit-testing/</guid>
+      <description>During development, we will come into a phase where we would like to test out our In-App Purchases. However, most likely we ever heard a myth that IAP only works with devices to test it out with an internal tester account. Turns out during the process of the creation of Tripzy, I found a way to test our IAP in a simulator without any hassle. Keep in mind there will be some limitations of course if we are testing against the simulator.</description>
+    </item>
+    
+    <item>
+      <title>Symbolic Breakpoint Xcode in 2 Minutes</title>
+      <link>/articles/symbolic-breakpoint/</link>
+      <pubDate>Mon, 09 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/articles/symbolic-breakpoint/</guid>
+      <description>Once upon a time, while I was debugging my code, I found out an annoying warning comes up like below
+[TableView] Warning once only: UITableView was told to layout its visible cells and other contents without being in the view hierarchy (the table view or one of its superviews has not been added to a window). This may cause bugs by forcing views inside the table view to load and perform layout without accurate information (e.</description>
+    </item>
+    
+    <item>
+      <title>Escalated Testing Pyramid</title>
+      <link>/articles/escalated-testing-pyramid/</link>
+      <pubDate>Mon, 21 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/articles/escalated-testing-pyramid/</guid>
+      <description>As a normal software engineer, we always remember the rule of thumb of testing. We always heard the word of the testing pyramid which consists of 3 things :
+ Unit Testing Integration Testing UI Testing  Unit Testing is the foundation of your test suite that will be made up of unit tests. Your unit tests make sure that a certain unit (your subject under test or SUT) of your codebase works as intended.</description>
+    </item>
+    
+  </channel>
+</rss>

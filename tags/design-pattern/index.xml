@@ -6,7 +6,25 @@
     <description>Recent content in Design Pattern on Michael Abadi&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 11 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="/tags/design-pattern/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 11 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/design-pattern/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Enhance Factory Pattern capabilities for DI in Swift within 3 minutes</title>
+      <link>/articles/enhance-factory-pattern/</link>
+      <pubDate>Thu, 11 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/articles/enhance-factory-pattern/</guid>
+      <description>Factory pattern is one of the common patterns in a programming language. It is one of the creational design patterns that provide a high level of flexibility for your code. One of the interesting use cases that could make Factory pattern become a handy tool to use is Dependency Injection. Normally whenever we want to inject an interface as a dependency on an object, we could easily pass it through the initializer or set it from the property.</description>
+    </item>
+    
+    <item>
+      <title>Understanding Proxy Pattern in Swift within 5 minutes</title>
+      <link>/articles/proxy-pattern-swift/</link>
+      <pubDate>Tue, 26 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/articles/proxy-pattern-swift/</guid>
+      <description>The proxy pattern is one of the few underrated patterns that nobody really talks about in iOS. A proxy pattern is one of the structural design patterns that lets you provide a substitute or placeholder for another object. A proxy has total control and access to the original object, and let the proxy object do some magical stuff with the original object and restrict the access to it, however, the one who uses a proxy object, won’t have any knowledge behind the scene.</description>
+    </item>
+    
     <item>
       <title>Wrapper Pattern Swift in 5 minutes</title>
       <link>/articles/wrapper-pattern-swift/</link>

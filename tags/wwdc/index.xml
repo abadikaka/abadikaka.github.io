@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>WWDC on Michael Abadi&#39;s Blog</title>
+    <link>/tags/wwdc/</link>
+    <description>Recent content in WWDC on Michael Abadi&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 23 Jun 2020 00:00:00 +0000</lastBuildDate><atom:link href="/tags/wwdc/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>All of Apple WWDC2020 Keynote!</title>
+      <link>/articles/apple-wwdc-keynote/</link>
+      <pubDate>Tue, 23 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/articles/apple-wwdc-keynote/</guid>
+      <description>Here is the list of features that Apple introduced on their WWDC 2020 Event keynote:
+iOS 14  App Library: A new space for organizing all of your apps into a grouped library and easy to navigate Widgets: Freely search widget and choose widget and put it in the Smart Stack into the home screen. The smart stack can do it for us automatically, you can see the news in the morning, meeting on noon and activities on the evening Picture in picture: You can open a video, audio, or other media while you are on another application.</description>
+    </item>
+    
+  </channel>
+</rss>

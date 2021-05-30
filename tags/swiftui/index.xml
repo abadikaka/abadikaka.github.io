@@ -6,7 +6,27 @@
     <description>Recent content in SwiftUI on Michael Abadi&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 11 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="/tags/swiftui/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 08 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/swiftui/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Simple Slick SwiftUI Onboarding View</title>
+      <link>/articles/simple-slick-onboarding/</link>
+      <pubDate>Thu, 08 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/articles/simple-slick-onboarding/</guid>
+      <description>Apparently, even if SwiftUI 2.0 has powerful enough for production code, but sometimes they are still lacking documentation for a simple component like PagingView. As your information, there is now a native equivalent of UIPageViewController in SwiftUI 2.0 which is adding the .tabViewStyle modifier to TabView and pass PageTabViewStyle
+Let me go through step by step.
+  We will need to wrap our view with the GeometryReader in order to get the parent relative size position for configuring the onboarding view frame.</description>
+    </item>
+    
+    <item>
+      <title>Utilize Combine for Search Engine in Swift</title>
+      <link>/articles/utilize-combine/</link>
+      <pubDate>Sun, 24 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/articles/utilize-combine/</guid>
+      <description>Combine, is a new framework introduced by Apple since SwiftUI 1.0 back then in 2019. The architecture behind the scene itself is adopting the system of FRP (Functional Reactive Programming) which takes computation as their main computation of process combine with the propagation of data through the stream of the function. In this tutorial, I would like to explain how Combine can make your job done quicker than ever compare with the conventional way of code.</description>
+    </item>
+    
     <item>
       <title>MapView Annotation in SwiftUI</title>
       <link>/articles/mapview-annotation/</link>
@@ -15,6 +35,15 @@
       <guid>/articles/mapview-annotation/</guid>
       <description>SwiftUI is very powerful for building an interactive UI at a fast pace. However, there are a couple of limitations still there such as some native API from UIKit like MKMapView from MapKit or search bar and other UIKit API. I will provide a tutorial for making a MapView in SwiftUI by using UIViewRepresentable as well as putting callback to the SwiftUI if we have clicked the annotation.
 Some quick knowledge about several items below:</description>
+    </item>
+    
+    <item>
+      <title>Simple Protocol Oriented in SwiftUI in 5 minutes</title>
+      <link>/articles/simple-protocol-swiftui/</link>
+      <pubDate>Fri, 24 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/articles/simple-protocol-swiftui/</guid>
+      <description>SwiftUI is a really powerful language since it was born in 2019. In 2020 (WWDC) Apple did announce a lot of improvement on SwiftUI. However, there is rarely a topic discussed good practices on how to do we able to implement protocol-oriented programming in SwiftUI. There are a lot of articles out there however I guarantee to cover that in 5 minutes of your time. This article is suitable for those who are just starting to learn about iOS Programming !</description>
     </item>
     
   </channel>
