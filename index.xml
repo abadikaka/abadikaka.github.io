@@ -6,7 +6,17 @@
     <description>Recent content on Michael Abadi&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 01 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 19 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Analyze HTTP Traffic with new HTTP Instrument</title>
+      <link>/articles/analyse-http-instruments/</link>
+      <pubDate>Sat, 19 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/articles/analyse-http-instruments/</guid>
+      <description>WWDC21 has been finished last week with over 200 sessions. Most of the time we heard about SwiftUI session or about Async Await. However there are also interesting session about debugging that has been described by Keith Harrison here. In this article I would like to focus on one of the underrated session which is Analyze HTTP Traffic in Instruments. I also write this article in WWDC Notes.
+ All content copyright © 2012 – 2021 Apple Inc.</description>
+    </item>
+    
     <item>
       <title>Complete List of Must-Watch Conferences Before WWDC 2021</title>
       <link>/articles/complete-conference-list-to-watch/</link>
