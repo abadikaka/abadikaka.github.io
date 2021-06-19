@@ -16,7 +16,7 @@ widgets: # Enable sidebar widgets in given order per page
   - "recent"
   - "taglist"
   - "social"
-draft: true
+draft: false
 ---
 
 See latest stock news and current company stock detail around the world.
@@ -29,4 +29,4 @@ See latest stock news and current company stock detail around the world.
 
 ## Download
 
-https://apps.apple.com/th/app/stockpedia/id1550579452
+[App Store](https://apps.apple.com/th/app/stockpedia/id1550579452)

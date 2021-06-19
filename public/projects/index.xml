@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projects on Michael Abadi&#39;s Blog</title>
+    <link>/projects/</link>
+    <description>Recent content in Projects on Michael Abadi&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 28 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="/projects/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Smart Trip</title>
+      <link>/projects/smarttrip/</link>
+      <pubDate>Fri, 28 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/projects/smarttrip/</guid>
+      <description>Explore tourism nearby, buy e-ticket and enjoy your trip. This project as part of DevPost hackathon about APEC 2021 App Challenge
+Tech Stack  Combine Core Data Firebase SwiftUI  Demo   </description>
+    </item>
+    
+    <item>
+      <title>Tripzy</title>
+      <link>/projects/tripzy/</link>
+      <pubDate>Sat, 01 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/projects/tripzy/</guid>
+      <description>Personalised your travel budgets, easily directly from pocket without any hassle.
+Tech Stack  Combine Core Data SwiftUI  Download App Store</description>
+    </item>
+    
+    <item>
+      <title>Englizh</title>
+      <link>/projects/englizh/</link>
+      <pubDate>Fri, 05 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/projects/englizh/</guid>
+      <description>Test your IELTS or English skills in general with this application.
+Tech Stack  Combine Core Data SwiftUI  Download Coming Soon</description>
+    </item>
+    
+    <item>
+      <title>Stockpedia</title>
+      <link>/projects/stockpedia/</link>
+      <pubDate>Wed, 20 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/projects/stockpedia/</guid>
+      <description>See latest stock news and current company stock detail around the world.
+Tech Stack  Combine Finnhub API SwiftUI  Download App Store</description>
+    </item>
+    
+    <item>
+      <title>Agoda (Full-Time Work @Agoda)</title>
+      <link>/projects/agoda/</link>
+      <pubDate>Mon, 14 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/projects/agoda/</guid>
+      <description>Agoda is one of biggest company in hospitality industry. One of the leading OTA platform in Asia as part of Booking Holding Group. I have been working full time in Agoda since 2020 and take part for enhancing and help to make Agoda iOS App as the best iOS App in the industry.
+Tech Stack  UIKit Core Data DSL Language Swift Objective-C VIPER  Download App Store</description>
+    </item>
+    
+    <item>
+      <title>Tripzy (Draft)</title>
+      <link>/projects/tripzy-draft/</link>
+      <pubDate>Sat, 01 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/projects/tripzy-draft/</guid>
+      <description>Personalised your travel itinerary, search another inspiration from people around the world, and easily import or bookmark trips.
+Tech Stack  Combine Core Data SwiftUI  Demo Coming Soon</description>
+    </item>
+    
+    <item>
+      <title>Eko Communication (Full-Time Work @Amity)</title>
+      <link>/projects/amity/</link>
+      <pubDate>Thu, 05 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/projects/amity/</guid>
+      <description>Eko is the virtual workspace helping teams stay engaged, productive and connected while working remotely. Our features enable you and your team to :
+ Maintain a sense of community: Our knowledge-sharing features, discussion hubs, and group chats enable teams to gather dynamically, maintaining the social elements and ‘water cooler chats’ of work even while dispersed. Stay connected: Replace meetings, daily briefings and All-Hands meetings with virtual conference calls or instant, company-wide announcement broadcasts.</description>
+    </item>
+    
+    <item>
+      <title>Okkami (Full Time @OKKAMI)</title>
+      <link>/projects/okkami/</link>
+      <pubDate>Sat, 05 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/projects/okkami/</guid>
+      <description>Bring hospitality to the next level. OKKAMI lets you get better service during all parts of your travel journey. Personally connect with hotels before, during and after you make travel plans. While staying with our partner hotels you can pair your mobile phone to access hotel promotions, mobile channel guide, hotel information, local chat and much more.
+Tech Stack  React Native Objective-C Swift Raspberry Pi Pusher Realm Deep Linking  Download App Store</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -16,7 +16,7 @@ widgets: # Enable sidebar widgets in given order per page
   - "recent"
   - "taglist"
   - "social"
-draft: true
+draft: false
 ---
 
 Test your IELTS or English skills in general with this application.
@@ -28,3 +28,5 @@ Test your IELTS or English skills in general with this application.
 - [x] SwiftUI
 
 ## Download
+
+Coming Soon

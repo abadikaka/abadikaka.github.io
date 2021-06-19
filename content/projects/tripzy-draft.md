@@ -16,7 +16,7 @@ widgets: # Enable sidebar widgets in given order per page
   - "recent"
   - "taglist"
   - "social"
-draft: true
+draft: false
 ---
 
 Personalised your travel itinerary, search another inspiration from people around the world, and easily import or bookmark trips.
@@ -28,3 +28,5 @@ Personalised your travel itinerary, search another inspiration from people aroun
 - [x] SwiftUI
 
 ## Demo
+
+Coming Soon

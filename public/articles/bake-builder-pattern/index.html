@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Bake a Builder Pattern in iOS - Michael Abadi&#39;s Blog</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="Implementing Builder Pattern in Swift">
+		<meta property="og:title" content="Bake a Builder Pattern in iOS" />
+<meta property="og:description" content="Implementing Builder Pattern in Swift" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/articles/bake-builder-pattern/" /><meta property="article:section" content="articles" />
+<meta property="article:published_time" content="2020-05-13T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2020-05-13T00:00:00&#43;00:00" />
+
+
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3ZSP3V2ZXX"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-3ZSP3V2ZXX', { 'anonymize_ip': false });
+}
+</script>
+
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo logo--mixed">
+		<a class="logo__link" href="/" title="Michael Abadi&#39;s Blog" rel="home">
+			<div class="logo__item logo__imagebox">
+					<img class="logo__img" src="/img/avatar.jpg">
+				</div><div class="logo__item logo__text">
+					<div class="logo__title">Michael Abadi&#39;s Blog</div>
+					<div class="logo__tagline">Official website of Michael Abadi Santoso</div>
+				</div>
+		</a>
+	</div>
+
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/about/michael-abadi/">
+				
+				<span class="menu__text">About Me</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/articles/">
+				
+				<span class="menu__text">Articles</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/projects/">
+				
+				<span class="menu__text">Projects</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/talks/">
+				
+				<span class="menu__text">Talks</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+  	
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3ZSP3V2ZXX"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-3ZSP3V2ZXX', { 'anonymize_ip': false });
+}
+</script>
+
+  	
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-3ZSP3V2ZXX', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+		<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Bake a Builder Pattern in iOS"/>
+<meta name="twitter:description" content="Implementing Builder Pattern in Swift"/>
+
+	</div>
+</header>
+
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Bake a Builder Pattern in iOS</h1>
+			<p class="post__lead">Implementing Builder Pattern in Swift</p>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-05-13T00:00:00Z">May 13, 2020</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/ios-development/" rel="category">iOS Development</a>
+	</span>
+</div></div>
+		</header>
+<div class="post__toc toc">
+	<div class="toc__title">Page content</div>
+	<div class="toc__menu">
+		<nav id="TableOfContents">
+  <ul>
+    <li><a href="#solution-builder-pattern-the-car-concept">SOLUTION: BUILDER PATTERN (THE CAR CONCEPT)</a>
+      <ul>
+        <li><a href="#declarative--by-function">Declarative / by Function</a></li>
+        <li><a href="#block">Block</a></li>
+        <li><a href="#constructor-injection">Constructor Injection</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+	</div>
+</div><div class="content post__content clearfix">
+			<p>Have you ever have a problem when designing a system that has a similar foundation and capabilities however the ingredients to form the object would vary? We may end up with an easy solution by providing different parameters for each subclass. However, multiple subclasses that need to override the constructor might also have to own those unnecessary properties into its interface. There is one design pattern that also considered as Creational Design Pattern which Android Design pattern by default having this pattern. It called as Builder Pattern.</p>
+<blockquote>
+<p>Q: How do Builder work in iOS?</p>
+</blockquote>
+<p>Of course, there are many ways to make it work on iOS. Let understanding the basic with what is <strong>Builder Pattern</strong>. <strong>Builder</strong> is a creational design pattern that lets you construct objects step by step per user requirement. The pattern allows you to produce different types and representations of an object using the same construction code. It refers to a declarative way to construct an object. Builder pattern can be included as Reactive Programming as well!</p>
+<hr>
+<p>Let start with the common problem, “A Car Company”. Company “A” is a big brand company and it has multiple products to be made. This company will make a “CarA” until “CarE”. They do have 5 types of cars, start from a car with a single door, sports car, family car, SUV, and a truck. We can achieve this easily by extend a “Car” base class and has the subclasses to override the necessary function, but we will end up with tons of subclasses and, and new parameters and more and more. We can simplify it by having one Base Class that owns a huge constructor, however, those subclasses need to override the constructor with all of the parameters from possible combinations. The constructor with lots of parameters has its downside, not all the parameters are needed at all times.</p>
+<p><img src="/img/builder-pattern.png" alt="Builder"></p>
+<h2 id="solution-builder-pattern-the-car-concept">SOLUTION: BUILDER PATTERN (THE CAR CONCEPT)</h2>
+<p>Yep, by using a builder pattern we eliminate that construction logic. The pattern will extract and define the behavior of construction into steps. We may have buildDoors, buildWheels, buildEngine, buildColor, buildExhaust. We don’t need to call every step if we don’t need it. If we do need to have another builder for another type of car with a different implementation of each step, we can make different builders and implement it in a different way!. For example, imagine a builder that builds a car from 4 sports wheel and 2 doors, a second one that builds everything with 4 normal wheel and 4 doors and a third one that uses 2 doors and a big wheel. By calling the same set of steps, you get a sports car from the first builder, a normal family car from the second, and a Sport SUV from the third. However, this would only work if the client code that calls the building steps is able to interact with builders using a common interface. We also able to escalate this by having another Manager class to manage the specific builder of the process of creating the car in the company</p>
+<p>How do we achieve it in iOS? There are multiple ways, we can construct in the form of a block, or we can achieve it by setting it within the builder constructor, or even calling it in a declarative way. Let see how it differs from each other?</p>
+<blockquote>
+<p>NOTE: All of the code below is not in full code and not executable because I cut some of the unnecessary object. I try to show the core of the definition base on the use case. You can generate, modify or enhance this code to be more powerful as long as it is still conform to Builder Pattern definition.</p>
+</blockquote>
+<h3 id="declarative--by-function">Declarative / by Function</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#75715e">// This one is a SportCarBuilder for building a sport car</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#75715e">// We just need two properties of wheel and color that can be added and modified</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#75715e">// However for engine and door has been defined by SportCar class</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span style="color:#66d9ef">final</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SportCarBuilder</span> {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">var</span> wheel: Wheel = Wheel(type: .racing(tyre20))
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">var</span> color: Color = Color(.red)
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">withColor</span>(color: UIColor) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>      <span style="color:#66d9ef">self</span>.color = Color(color)
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>    }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">withWheel</span>(type: WheelType) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>      <span style="color:#66d9ef">self</span>.wheel = Wheel(type: type)
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>    }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">build</span>() -&gt; SportCar {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>        <span style="color:#66d9ef">return</span> SportCar(wheel: wheel, color: color)
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>    }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span style="color:#75715e">// This one is a SportCar class that subclass of the Car base class</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span style="color:#75715e">// Car base class has 4 properties, this class will initialize through the base class with designated parameters that we define for SportCar</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span><span style="color:#66d9ef">final</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SportCar</span>: Car {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span>  <span style="color:#66d9ef">init</span>(wheel: Wheel, color: Color) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span>    <span style="color:#66d9ef">super</span>.<span style="color:#66d9ef">init</span>(doors: Door(<span style="color:#ae81ff">2</span>), engine: Engine(V85000), wheel: wheel, color: color)
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span>  }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span>}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span><span style="color:#75715e">// How to call :</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span><span style="color:#66d9ef">let</span> sportCar = SportCarBuilder()
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span>                .withColor(color: .red)
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33</span>                .withWheel(type: .normal)
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34</span>                .build()
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36</span><span style="color:#75715e">// sportCar.wheel === .normal --&gt; Defined by user</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37</span><span style="color:#75715e">// sportCar.engine === Engine(V85000) --&gt; Defined by SportCar implementation</span></code></pre></div>
+<p>In the above code, it is pretty clear that when we want to get the sportCar Object, we can easily call the builder and add the necessary requirement/modifier into the builder. This way we are defining the behavior of what we want to the builder (declarative) without intervening with the implementation. SportCar also hides the Engine and Door properties from the Car base class because it will automatically be adjusted in the SportCar class instead.</p>
+<h3 id="block">Block</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#75715e">// We reuse the above SportCarBuilder, we just change some interface</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#75715e">// Notice we instead are using the block for update the necessary properties</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SportCar</span> {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>  <span style="color:#66d9ef">typealias</span> Builder = (builder: SportCarBuilder) -&gt; Void
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>  <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">init</span>(builder: SportCarBuilder) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>    <span style="color:#66d9ef">super</span>.<span style="color:#66d9ef">init</span>(doors: Door(<span style="color:#ae81ff">2</span>), engine: Engine(V85000), wheel: builder.wheel, color: builder.color)
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>  }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>  <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">make</span>(with builderBlock: Builder) -&gt; SportCar {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>    <span style="color:#66d9ef">let</span> builder = SportCarBuilder()
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>    builderBlock(builder)
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>    <span style="color:#66d9ef">return</span> SportCar(builder: builder)
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>  }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span style="color:#75715e">// This is the way we will use by defining the properties inside the block</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span style="color:#66d9ef">let</span> sportCar = SportCar.make { builder <span style="color:#66d9ef">in</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>  builder.color = .red
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>  builder.wheel = .racing
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span>}</code></pre></div>
+<p>In the above code it is pretty straight forward, we will define the behavior we want through the completion block when we call the make function inside SportCar class. In most cases, the second way is used by Objective-C developer.</p>
+<h3 id="constructor-injection">Constructor Injection</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#75715e">// This is the base Car class that has all of the foundation materials to make a Car</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Car</span> {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>  <span style="color:#66d9ef">let</span> doors: Door
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>  <span style="color:#66d9ef">let</span> wheel: Wheel
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>  <span style="color:#66d9ef">let</span> engine: Engine
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>  <span style="color:#66d9ef">let</span> color: Color
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>  <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">buildCar</span>() -&gt; Car
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span style="color:#75715e">// This is the subclass of Car which is a SportCar that has a private initializer</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span style="color:#75715e">// Only bake the Car with the builder using a static function, however you can omit the static one and immediate using the constructor as well (your preference)</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span style="color:#66d9ef">final</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SportCar</span>: Car {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>  <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">init</span>(builder: SportCarBuilder) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>    <span style="color:#66d9ef">let</span> door = Door(<span style="color:#ae81ff">2</span>)
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>    <span style="color:#66d9ef">let</span> engine = Engine(V85000)
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>    <span style="color:#66d9ef">let</span> wheel = builder.wheel
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>    <span style="color:#66d9ef">let</span> color = builder.color
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>    <span style="color:#66d9ef">super</span>.<span style="color:#66d9ef">init</span>(doors: door, engine: engine, wheel: wheel, color: color)
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>  }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span>  <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">make</span>(with builder: SportCarBuilder) -&gt; SportCar {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span>    <span style="color:#66d9ef">return</span> SportCar(builder: builder)
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span>  }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span>}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span><span style="color:#75715e">// This is the SportCarBuilder that just need color and wheel because the engine and the door will be automatically adjusted on the class who will use this by default</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">SportCarBuilder</span> {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span>  <span style="color:#66d9ef">let</span> color: Color
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span>  <span style="color:#66d9ef">let</span> wheel: Wheel
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span>}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33</span><span style="color:#75715e">// This is the factory class for creating the necessary car on the company</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34</span><span style="color:#75715e">// User will just need this class to retrieve the final product they need</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35</span><span style="color:#66d9ef">final</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">CarFactory</span> {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37</span>  <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">sportCar</span>(with builder: SportCarBuilder) -&gt; SportCar {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38</span>    <span style="color:#66d9ef">return</span> SportCar.make(builder: builder)
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39</span>  }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41</span>  <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">truckCar</span>(with builder: TruckCarBuilder) -&gt; TruckCar {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42</span>    <span style="color:#66d9ef">return</span> TruckCar.make(builder: builder)
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43</span>  }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45</span>  <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">SUVCar</span>(with builder: SUVCarBuilder) -&gt; SUVCar {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46</span>    <span style="color:#66d9ef">return</span> SUVCar.make(builder: builder)
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47</span>  }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49</span>  <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">familyCar</span>(with builder: FamilyCarBuilder) -&gt; FamilyCar {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50</span>    <span style="color:#66d9ef">return</span> FamilyCar.make(builder: builder)
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51</span>  }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52</span>}</code></pre></div>
+<p>In the code above we can see that we do have CarFactory as a factory object that generates each car base on the Builder that the user wants to inject into the parameters. The user creates the necessary builder through their required constructor on the specific builder. SportCarBuilder doesn’t have engine properties because in the SportCar object that consumes the builder will automatically adjust the engine with the required engine only for a sport car. This way the specific requirement has been handled properly by the SportCar class.</p>
+<hr>
+<p>Finally the conclusion, the goal of the builder pattern is to reduce the need to keep mutable state — resulting in objects that are simpler and generally more predictable. By enabling objects to become stateless, they are usually much easier to test and debug — since their logic consists only of “pure” input &amp; output. There are other multiple pros to use the builder pattern, even though this is not iOS Common design pattern but we can achieve it. Remember, there is also some stuff to be considered before we go with the builder pattern. I will let you guys decide whether it is worth it or not for using this pattern on your project.</p>
+
+		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/design-pattern/" rel="tag">Design Pattern</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/swift/" rel="tag">Swift</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+<div class="authorbox clearfix">
+	<figure class="authorbox__avatar">
+		<img alt="Michael Abadi Santoso avatar" src="/img/avatar.jpg" class="avatar" height="90" width="90">
+	</figure>
+	<div class="authorbox__header">
+		<span class="authorbox__name">About Michael Abadi Santoso</span>
+	</div>
+	<div class="authorbox__description">
+		Michael Abadi is an iOS Engineer at Agoda 🇹🇭 who loves play FIFA badly. He likes to travel and photography. In his free time he likes to share everything about iOS Development
+	</div>
+</div>
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/articles/share-extension/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">Easy way to do Share Extension in iOS</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/articles/fun-scripting-part-1/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">Fun Scripting in Swift — for beginner (PART I)</p>
+		</a>
+	</div>
+</nav>
+
+
+			</div>
+			<aside class="sidebar"><div class="widget-search widget">
+	<form class="widget-search__form" role="search" method="get" action="https://google.com/search">
+		<label>
+			<input class="widget-search__field" type="search" placeholder="SEARCH…" value="" name="q" aria-label="SEARCH…">
+		</label>
+		<input class="widget-search__submit" type="submit" value="Search">
+		<input type="hidden" name="sitesearch" value="/" />
+	</form>
+</div>
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/articles/analyse-http-instruments/">Analyze HTTP Traffic with new HTTP Instrument</a></li>
+			<li class="widget__item"><a class="widget__link" href="/articles/complete-conference-list-to-watch/">Complete List of Must-Watch Conferences Before WWDC 2021</a></li>
+			<li class="widget__item"><a class="widget__link" href="/articles/storekit-testing/">Testing In-App Purchases Locally in Simulator</a></li>
+			<li class="widget__item"><a class="widget__link" href="/articles/simple-slick-onboarding/">Simple Slick SwiftUI Onboarding View</a></li>
+			<li class="widget__item"><a class="widget__link" href="/articles/enhance-factory-pattern/">Enhance Factory Pattern capabilities for DI in Swift within 3 minutes</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/career/" title="Career">Career</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ci/cd/" title="CI/CD">CI/CD</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/combine/" title="Combine">Combine</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/debugging/" title="Debugging">Debugging</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/dependencies-manager/" title="Dependencies Manager">Dependencies Manager</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/design-pattern/" title="Design Pattern">Design Pattern</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/library/" title="Library">Library</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/modularization/" title="Modularization">Modularization</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/optimization/" title="Optimization">Optimization</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/swift/" title="Swift">Swift</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/swiftui/" title="SwiftUI">SwiftUI</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/testing/" title="Testing">Testing</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/wwdc/" title="WWDC">WWDC</a>
+	</div>
+</div>
+<div class="widget-social widget">
+	<h4 class="widget-social__title widget__title">Social</h4>
+	<div class="widget-social__content widget__content">
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Facebook" rel="noopener noreferrer" href="https://facebook.com/michael.abady2" target="_blank">
+				<svg class="widget-social__link-icon icon icon-facebook" width="24" height="24" viewBox="0 0 352 352"><path d="m0 32v288c0 17.5 14.5 32 32 32h288c17.5 0 32-14.5 32-32v-288c0-17.5-14.5-32-32-32h-288c-17.5 0-32 14.5-32 32zm320 0v288h-83v-108h41.5l6-48h-47.5v-31c0-14 3.5-23.5 23.5-23.5h26v-43.5c-4.4-.6-19.8-1.5-37.5-1.5-36.9 0-62 22.2-62 63.5v36h-42v48h42v108h-155v-288z"/></svg>
+				<span>Facebook</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Twitter" rel="noopener noreferrer" href="https://twitter.com/michaelabadiii" target="_blank">
+				<svg class="widget-social__link-icon icon icon-twitter" width="24" height="24" viewBox="0 0 384 312"><path d="m384 36.9c-14.1 6.3-29.3 10.5-45.2 12.4 16.3-9.7 28.8-25.2 34.6-43.6-15.2 9-32.1 15.6-50 19.1-14.4-15.2-34.9-24.8-57.5-24.8-43.5 0-78.8 35.3-78.8 78.8 0 6.2.7 12.2 2 17.9-65.5-3.3-123.5-34.6-162.4-82.3-6.7 11.6-10.6 25.2-10.6 39.6 0 27.3 13.9 51.4 35 65.6-12.9-.4-25.1-4-35.7-9.9v1c0 38.2 27.2 70 63.2 77.2-6.6 1.8-13.6 2.8-20.8 2.8-5.1 0-10-.5-14.8-1.4 10 31.3 39.1 54.1 73.6 54.7-27 21.1-60.9 33.7-97.8 33.7-6.4 0-12.6-.4-18.8-1.1 34.9 22.4 76.3 35.4 120.8 35.4 144.9 0 224.1-120 224.1-224.1 0-3.4-.1-6.8-.2-10.2 15.4-11.1 28.7-25 39.3-40.8z"/></svg>
+				<span>Twitter</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Instagram" rel="noopener noreferrer" href="https://www.instagram.com/michael.abadii" target="_blank">
+				<svg class="widget-social__link-icon icon icon-instagram" width="24" height="24" viewBox="0 0 256 256"><circle cx="193" cy="59" r="15"/><path fill-rule="evenodd" d="M101 0h54c41 0 58.4 3.9 74.5 17C256.2 37.5 256 74.8 256 97.7v60c0 26.7 0 60.4-26.5 81.4-16 13.4-33.5 16.9-74.5 16.9h-54c-41 0-57.5-3.5-74.5-16.9C1 218.9.5 186.3.1 160.5L0 155V97.7c0-23-.2-60.2 26.5-80.7C45 2 60 0 101 0zm4.9 23h44.3c45.8 0 58.3 3.5 70.3 17.5 11.8 13.2 12 30.1 12.5 62.9V156c.2 20.8.3 45.8-12.5 59.5-12 14-24.5 17.5-70.3 17.5h-44.3c-45.9 0-57.3-3.5-70.4-17.5-12.2-13-12.3-36.5-12.4-56.7v-55.6c.4-32.6.7-49.6 12.4-62.7C48 26.5 60 23 105.9 23zm19.6 144.5a42 42 0 1 0 0-84 42 42 0 0 0 0 84zm0 22.5a64.5 64.5 0 1 0 0-129 64.5 64.5 0 0 0 0 129z"/></svg>
+				<span>Instagram</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="LinkedIn" rel="noopener noreferrer" href="https://linkedin.com/in/abadi31" target="_blank">
+				<svg class="widget-social__link-icon icon icon-linkedin" width="24" height="24" viewBox="0 0 352 352"><path d="M0,40v272c0,21.9,18.1,40,40,40h272c21.9,0,40-18.1,40-40V40c0-21.9-18.1-40-40-40H40C18.1,0,0,18.1,0,40z M312,32 c4.6,0,8,3.4,8,8v272c0,4.6-3.4,8-8,8H40c-4.6,0-8-3.4-8-8V40c0-4.6,3.4-8,8-8H312z M59.5,87c0,15.2,12.3,27.5,27.5,27.5 c15.2,0,27.5-12.3,27.5-27.5c0-15.2-12.3-27.5-27.5-27.5C71.8,59.5,59.5,71.8,59.5,87z M187,157h-1v-21h-45v152h47v-75 c0-19.8,3.9-39,28.5-39c24.2,0,24.5,22.4,24.5,40v74h47v-83.5c0-40.9-8.7-72-56.5-72C208.5,132.5,193.3,145.1,187,157z M64,288h47.5 V136H64V288z"/></svg>
+				<span>LinkedIn</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="GitHub" rel="noopener noreferrer" href="https://github.com/abadikaka" target="_blank">
+				<svg class="widget-social__link-icon icon icon-github" width="24" height="24" viewBox="0 0 384 374"><path d="m192 0c-106.1 0-192 85.8-192 191.7 0 84.7 55 156.6 131.3 181.9 9.6 1.8 13.1-4.2 13.1-9.2 0-4.6-.2-16.6-.3-32.6-53.4 11.6-64.7-25.7-64.7-25.7-8.7-22.1-21.3-28-21.3-28-17.4-11.9 1.3-11.6 1.3-11.6 19.3 1.4 29.4 19.8 29.4 19.8 17.1 29.3 44.9 20.8 55.9 15.9 1.7-12.4 6.7-20.8 12.2-25.6-42.6-4.8-87.5-21.3-87.5-94.8 0-20.9 7.5-38 19.8-51.4-2-4.9-8.6-24.3 1.9-50.7 0 0 16.1-5.2 52.8 19.7 15.3-4.2 31.7-6.4 48.1-6.5 16.3.1 32.7 2.2 48.1 6.5 36.7-24.8 52.8-19.7 52.8-19.7 10.5 26.4 3.9 45.9 1.9 50.7 12.3 13.4 19.7 30.5 19.7 51.4 0 73.7-44.9 89.9-87.7 94.6 6.9 5.9 13 17.6 13 35.5 0 25.6-.2 46.3-.2 52.6 0 5.1 3.5 11.1 13.2 9.2 76.2-25.5 131.2-97.3 131.2-182 0-105.9-86-191.7-192-191.7z"/></svg>
+				<span>GitHub</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Email" href="mailto:abadi0067@gmail.com">
+				<svg class="widget-social__link-icon icon icon-mail" width="24" height="24" viewBox="0 0 416 288"><path d="m0 16v256 16h16 384 16v-16-256-16h-16-384-16zm347 16-139 92.5-139-92.5zm-148 125.5 9 5.5 9-5.5 167-111.5v210h-352v-210z"/></svg>
+				<span>abadi0067@gmail.com</span>
+			</a>
+		</div>
+
+		
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Medium" rel="noopener noreferrer" href="https://michaelabadi.medium.com/" target="_blank">
+				<span>Medium</span>
+			</a>
+		</div>
+		
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Support Me" rel="noopener noreferrer" href="https://www.patreon.com/michaelabadi" target="_blank">
+				<span>Support Me</span>
+			</a>
+		</div>
+		
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Download my CV" rel="noopener noreferrer" href="/CV.pdf" target="_blank">
+				<span>Download my CV</span>
+			</a>
+		</div>
+		
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2021 Michael Abadi&#39;s Blog.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
+</body>
+</html>

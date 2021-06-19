@@ -5,6 +5,52 @@
     <link>/categories/</link>
     <description>Recent content in Categories on Michael Abadi&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <lastBuildDate>Sat, 19 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>iOS Development</title>
+      <link>/categories/ios-development/</link>
+      <pubDate>Sat, 19 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/ios-development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Open Source</title>
+      <link>/categories/open-source/</link>
+      <pubDate>Thu, 31 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/open-source/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Automation</title>
+      <link>/categories/automation/</link>
+      <pubDate>Fri, 31 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/automation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Backend Development</title>
+      <link>/categories/backend-development/</link>
+      <pubDate>Thu, 18 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/backend-development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Business/Career</title>
+      <link>/categories/business/career/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/business/career/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

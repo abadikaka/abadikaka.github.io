@@ -23,7 +23,7 @@ widgets: # Enable sidebar widgets in given order per page
   - "recent"
   - "taglist"
   - "social"
-draft: true
+draft: false
 ---
 
 SwiftUI is very powerful for building an interactive UI at a fast pace. However, there are a couple of limitations still there such as some native API from UIKit like MKMapView from MapKit or search bar and other UIKit API. I will provide a tutorial for making a MapView in SwiftUI by using UIViewRepresentable as well as putting callback to the SwiftUI if we have clicked the annotation.

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Debugging on Michael Abadi&#39;s Blog</title>
+    <link>/tags/debugging/</link>
+    <description>Recent content in Debugging on Michael Abadi&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 19 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/debugging/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Analyze HTTP Traffic with new HTTP Instrument</title>
+      <link>/articles/analyse-http-instruments/</link>
+      <pubDate>Sat, 19 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/articles/analyse-http-instruments/</guid>
+      <description>WWDC21 has been finished last week with over 200 sessions. Most of the time we heard about SwiftUI session or about Async Await. However there are also interesting session about debugging that has been described by Keith Harrison here. In this article I would like to focus on one of the underrated session which is Analyze HTTP Traffic in Instruments. I also write this article in WWDC Notes.
+ All content copyright © 2012 – 2021 Apple Inc.</description>
+    </item>
+    
+    <item>
+      <title>Fun Debugging in iOS — Understanding the GUI in 3 minutes</title>
+      <link>/articles/fun-debugging-5-minutes/</link>
+      <pubDate>Sat, 09 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/articles/fun-debugging-5-minutes/</guid>
+      <description>After we have understood the basic concept of LLDB commands now it is taking time to understand the full GUI of Xcode debugging.
+Let see the picture above. Once you have put a breakpoint on any lines of code in your applications, you will see a similar screen as above.
+  The top one is our code panel, which indicates where is our breakpoint located
+  The bottom left panel is our quick look panel, we can see our current state of the object in either class or function level at the moment the code is being halted</description>
+    </item>
+    
+    <item>
+      <title>Fun Debugging iOS — Basic Part (LLDB) in 3 minutes</title>
+      <link>/articles/lldb-basic-concept/</link>
+      <pubDate>Mon, 04 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/articles/lldb-basic-concept/</guid>
+      <description>Have you ever wonder how to debug your entire code in the proper way? But sometimes we don’t know in-depth detail about how does it work behind the scene? In this multiple series of articles, I am trying to spread multiple articles into specific chunks of debugging part, start with the basic / foundation part of debugging in iOS. Normally we will have multiple topics covering all areas, start with LLDB debugging and end with Logging.</description>
+    </item>
+    
+    <item>
+      <title>Xcode handy “Move and Share” breakpoint in 2 minutes</title>
+      <link>/articles/handy-breakpoint/</link>
+      <pubDate>Sun, 27 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/articles/handy-breakpoint/</guid>
+      <description>Do you know that we can actually simply share our breakpoints with our colleagues at work? Xcode provides us with the capability to share it. This share function is very handy if we want all colleagues to have a similar breakpoint. Some breakpoints that worth sharing are Exception breakpoint, Runtime breakpoint, and some Symbolic breakpoints. Let see how it works
+  Go to your debug navigator panel on the left panel</description>
+    </item>
+    
+  </channel>
+</rss>

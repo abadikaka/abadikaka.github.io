@@ -1,9 +1,9 @@
 ---
 # Common-Defined params
-title: "iOS Dev Conference 2020"
+title: "iOS Dev Thailand Conference 2020"
 date: "2020-12-22"
 # Theme-Defined params
-thumbnail: "img/thai-conference-2020.jpg" # Thumbnail image
+thumbnail: "img/thai-conf-2020-1.jpeg" # Thumbnail image
 # lead: "Understanding type of wrapper pattern in Swift" # Lead text
 comments: false # Enable Disqus comments for specific page
 authorbox: false # Enable authorbox for specific page
@@ -16,7 +16,7 @@ widgets: # Enable sidebar widgets in given order per page
   - "recent"
   - "taglist"
   - "social"
-draft: true
+draft: false
 ---
 
 ## Session 1 : Unboxing the debugger: Broke the myth of debugging in iOS in an easy way by Michael Abadi, Agoda.

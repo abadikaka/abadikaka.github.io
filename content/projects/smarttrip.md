@@ -16,7 +16,7 @@ widgets: # Enable sidebar widgets in given order per page
   - "recent"
   - "taglist"
   - "social"
-draft: true
+draft: false
 ---
 
 Explore tourism nearby, buy e-ticket and enjoy your trip.

@@ -16,7 +16,7 @@ widgets: # Enable sidebar widgets in given order per page
   - "recent"
   - "taglist"
   - "social"
-draft: true
+draft: false
 ---
 
 Personalised your travel budgets, easily directly from pocket without any hassle.
@@ -29,4 +29,4 @@ Personalised your travel budgets, easily directly from pocket without any hassle
 
 ## Download
 
-https://apps.apple.com/th/app/tripzy/id1564625604
+[App Store](https://apps.apple.com/th/app/tripzy/id1564625604)

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Open Source on Michael Abadi&#39;s Blog</title>
+    <link>/categories/open-source/</link>
+    <description>Recent content in Open Source on Michael Abadi&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 31 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="/categories/open-source/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Introducing SFSymbolsFinder</title>
+      <link>/articles/introducing-sf-symbols-finder/</link>
+      <pubDate>Thu, 31 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/articles/introducing-sf-symbols-finder/</guid>
+      <description>Recently I got stumbled with a boring way to create an icon from SF Symbols. As you know that Apple introduces SF Symbols for a developer to reuse in their own application if needed. SF Symbols is a set of over 1,500 symbols that you can use in your app. Why SFSymbols are great for indie developers?
+ It is free Optical alignment with text for all weights and sizes Support multicolor Support localization for RTL languages such as Arabic, Devanagari, and Hebrew  Normally we will do something like this for using the SFSymbols</description>
+    </item>
+    
+  </channel>
+</rss>

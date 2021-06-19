@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Backend Development on Michael Abadi&#39;s Blog</title>
+    <link>/categories/backend-development/</link>
+    <description>Recent content in Backend Development on Michael Abadi&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 18 Jun 2020 00:00:00 +0000</lastBuildDate><atom:link href="/categories/backend-development/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Fun Scripting in Swift — for beginner (PART II)</title>
+      <link>/articles/fun-scripting-part-2/</link>
+      <pubDate>Thu, 18 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/articles/fun-scripting-part-2/</guid>
+      <description>Now time for the next step after the previous part of my articles. After we know some basic knowledge of swift scripting lets moves to the next one! Now we will talk about ArgumentParser. It is a new library that provides multiple commands and parses the arguments in the command line. Let us first set up the dependencies and the product name on our Package.swift and run swift build to make sure we fetch the latest dependencies in the project.</description>
+    </item>
+    
+    <item>
+      <title>Fun Scripting in Swift — for beginner (PART I)</title>
+      <link>/articles/fun-scripting-part-1/</link>
+      <pubDate>Wed, 17 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/articles/fun-scripting-part-1/</guid>
+      <description>Have you ever used fastlane? swiftlint? xcodegen?. Yeah as an iOS developer we must be familiar with all of those tools for doing automation stuff. How about we need something that no one provides for us? Well, we can make one of those scripts by using Swift!. First of all, if you haven’t watched a wonderful UIKonf conference featuring Federico Zanetello, you need to put it on your watchlist !. In this article, I would like to explain how does swift scripting is working also by demonstrating the usage of it.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Optimization on Michael Abadi&#39;s Blog</title>
+    <link>/tags/optimization/</link>
+    <description>Recent content in Optimization on Michael Abadi&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 19 Jun 2020 00:00:00 +0000</lastBuildDate><atom:link href="/tags/optimization/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Reason to choose Static and Dynamic frameworks in &lt; 5 minutes</title>
+      <link>/articles/reason-to-choose-static-dynamic/</link>
+      <pubDate>Fri, 19 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/articles/reason-to-choose-static-dynamic/</guid>
+      <description>One day after we have successfully grown our app bigger, we face multiple problems. One problem we found out that our code is super messy and confusing!. Another, why the hell it took a very long time for compiling!. So what is the solution that comes up to our mind? As a beginner, we will think that Class separation would be enough for solving the messy code since we know that it is easier to build, less time consuming, and easier to code.</description>
+    </item>
+    
+  </channel>
+</rss>

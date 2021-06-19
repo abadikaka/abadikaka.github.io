@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dependencies Manager on Michael Abadi&#39;s Blog</title>
+    <link>/tags/dependencies-manager/</link>
+    <description>Recent content in Dependencies Manager on Michael Abadi&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 20 Aug 2020 00:00:00 +0000</lastBuildDate><atom:link href="/tags/dependencies-manager/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Distributing private project with Cocoapod and Carthage in 5 minutes</title>
+      <link>/articles/distributing-private-cocoapod/</link>
+      <pubDate>Thu, 20 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/articles/distributing-private-cocoapod/</guid>
+      <description>Last week I have a problem while making a pod for my SDK team. I ever made my own pod long time ago and it was very easy in the process. But this one was a different story. I need to make support of Cocoapod and Carthage and SPM for the project that is built within private repo but we want to distribute it globally. So what is the option? Pod and Carthage and SPM offer capabilities to share the project repo to being used widely by many people and they can easily integrate or even contribute to it.</description>
+    </item>
+    
+  </channel>
+</rss>

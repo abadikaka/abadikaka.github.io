@@ -4,7 +4,7 @@ languageCode = "en-us"
 paginate = "10" # Number of posts per page
 theme = "mainroad"
 disqusShortname = "" # Enable comments by entering your Disqus shortname
-googleAnalytics = "" # Enable Google Analytics by entering your tracking id
+googleAnalytics = "G-3ZSP3V2ZXX" # Enable Google Analytics by entering your tracking id
 
 [Author]
   name = "Michael Abadi Santoso"
@@ -19,6 +19,7 @@ googleAnalytics = "" # Enable Google Analytics by entering your tracking id
   authorbox = true
   pager = true
   post_meta = ["date", "categories"] # Order of post meta information
+  mainSections = ["articles"]
 
 [Params.logo]
   image = "img/avatar.jpg" # Logo image. Path relative to "static"
@@ -48,9 +49,17 @@ googleAnalytics = "" # Enable Google Analytics by entering your tracking id
   email = "abadi0067@gmail.com"
 
 [[Params.widgets.social.custom]]
+  title = "Medium"
+  url = "https://michaelabadi.medium.com/"
+
+[[Params.widgets.social.custom]]
+  title = "Support Me"
+  url = "https://www.patreon.com/michaelabadi"
+
+[[Params.widgets.social.custom]]
   title = "Download my CV"
   url = "/CV.pdf"
-
+    
 [menu]
 
   [[menu.main]]
