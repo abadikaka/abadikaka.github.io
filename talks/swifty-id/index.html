@@ -4,20 +4,22 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Xcode handy “Move and Share” breakpoint in 2 minutes - Michael Abadi&#39;s Blog</title>
+	<title>Discover Swift Package Manager - Michael Abadi&#39;s Blog</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
-	<meta name="description" content="Learn how to use handy debugger in Xcode">
-		<meta property="og:title" content="Xcode handy “Move and Share” breakpoint in 2 minutes" />
-<meta property="og:description" content="Learn how to use handy debugger in Xcode" />
+	<meta name="description" content="">
+		<meta property="og:title" content="Discover Swift Package Manager" />
+<meta property="og:description" content="Swift ID Dev is an Indonesian study group community that is being organized by Nico. In this session, I mentored iOS developers about how to create a simple package manager for personal project as well basic foundation of a modularization.
+  Slides: https://github.com/abadikaka/conference-and-talks/blob/main/SPM.key" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/articles/handy-breakpoint/" /><meta property="article:section" content="articles" />
-<meta property="article:published_time" content="2020-12-27T00:00:00&#43;00:00" />
-<meta property="article:modified_time" content="2020-12-27T00:00:00&#43;00:00" />
+<meta property="og:url" content="/talks/swifty-id/" /><meta property="article:section" content="talks" />
+<meta property="article:published_time" content="2021-07-03T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2021-07-03T00:00:00&#43;00:00" />
 
 
 		<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Xcode handy “Move and Share” breakpoint in 2 minutes"/>
-<meta name="twitter:description" content="Learn how to use handy debugger in Xcode"/>
+<meta name="twitter:title" content="Discover Swift Package Manager"/>
+<meta name="twitter:description" content="Swift ID Dev is an Indonesian study group community that is being organized by Nico. In this session, I mentored iOS developers about how to create a simple package manager for personal project as well basic foundation of a modularization.
+  Slides: https://github.com/abadikaka/conference-and-talks/blob/main/SPM.key"/>
 
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -123,8 +125,9 @@ if (!doNotTrack) {
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
 		<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Xcode handy “Move and Share” breakpoint in 2 minutes"/>
-<meta name="twitter:description" content="Learn how to use handy debugger in Xcode"/>
+<meta name="twitter:title" content="Discover Swift Package Manager"/>
+<meta name="twitter:description" content="Swift ID Dev is an Indonesian study group community that is being organized by Nico. In this session, I mentored iOS developers about how to create a simple package manager for personal project as well basic foundation of a modularization.
+  Slides: https://github.com/abadikaka/conference-and-talks/blob/main/SPM.key"/>
 
 	</div>
 </header>
@@ -135,76 +138,32 @@ if (!doNotTrack) {
 <main class="main" role="main">
 	<article class="post">
 		<header class="post__header">
-			<h1 class="post__title">Xcode handy “Move and Share” breakpoint in 2 minutes</h1>
-			<p class="post__lead">Learn how to easily debug in Xcode</p>
+			<h1 class="post__title">Discover Swift Package Manager</h1>
 			<div class="post__meta meta">
 <div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-12-27T00:00:00Z">December 27, 2020</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/ios-development/" rel="category">iOS Development</a>
-	</span>
-</div></div>
-		</header><div class="content post__content clearfix">
-			<p>Do you know that we can actually simply share our breakpoints with our colleagues at work? Xcode provides us with the capability to share it. This share function is very handy if we want all colleagues to have a similar breakpoint. Some breakpoints that worth sharing are Exception breakpoint, Runtime breakpoint, and some Symbolic breakpoints. Let see how it works</p>
-<ol>
-<li>
-<p>Go to your debug navigator panel on the left panel</p>
-</li>
-<li>
-<p>Add your breakpoint and choose any of it</p>
-</li>
-<li>
-<p>Right-click on it and choose to “Share” breakpoint</p>
-</li>
-</ol>
-<p><img src="/img/handy-debug-1.png" alt="fun-debugging-example"></p>
-<p>We also have another handy feature, the same as above but we choose another option which is a move to “User” options. What are the advantages of this one? This one will help us to open any Xcode project with a preselected breakpoint of our configurations, so no need to do duplications of work to add a breakpoint. This one is very helpful if we want to consistently have a similar breakpoint for all future projects.</p>
-<p><img src="/img/handy-debug-2.png" alt="fun-debugging-example"></p>
-<p>Another interesting thing is we can do exactly to add more interesting action on our individual breakpoint. Simply click on the breakpoint and add multiple conditions such as name, condition, ignorance counter, action, and ability to tick the option to ignore the breakpoint to halt the execution.</p>
-<p><img src="/img/handy-debug-3.png" alt="fun-debugging-example"></p>
-<p>There are multiple interesting actions that we can apply such as adding a sound or even a script, this one very handy for game development or identify memory leak on deinit with a sound and we can ignore the breakpoint execution to be stopped.</p>
-<p><img src="/img/handy-debug-4.png" alt="fun-debugging-example"></p>
-<p>We can utilize our breakpoint to be more precise and useful for our application debugging process. Even we can add more handy features such as share or move our several breakpoints. Stay tuned for the next articles!</p>
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2021-07-03T00:00:00Z">July 03, 2021</time></div></div>
+		</header>
+		<figure class="post__thumbnail">
+			<img src="/img/swift-package.jpeg" alt="Discover Swift Package Manager">
+		</figure><div class="content post__content clearfix">
+			<p><a href="https://swiftid.dev/">Swift ID Dev</a> is an Indonesian study group community that is being organized by <a href="https://twitter.com/2co_p">Nico</a>. In this session, I mentored iOS developers about how to create a simple package manager for personal project as well basic foundation of a modularization.</p>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/wP_JMIU3q3o" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<p>Slides: <a href="https://github.com/abadikaka/conference-and-talks/blob/main/SPM.key">https://github.com/abadikaka/conference-and-talks/blob/main/SPM.key</a></p>
 
 		</div>
-		<footer class="post__footer">
-			
-<div class="post__tags tags clearfix">
-	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
-	<ul class="tags__list">
-		<li class="tags__item">
-			<a class="tags__link btn" href="/tags/swift/" rel="tag">Swift</a>
-		</li>
-		<li class="tags__item">
-			<a class="tags__link btn" href="/tags/debugging/" rel="tag">Debugging</a>
-		</li>
-	</ul>
-</div>
-		</footer>
 	</article>
 </main>
 
-<div class="authorbox clearfix">
-	<figure class="authorbox__avatar">
-		<img alt="Michael Abadi Santoso avatar" src="/img/avatar.jpg" class="avatar" height="90" width="90">
-	</figure>
-	<div class="authorbox__header">
-		<span class="authorbox__name">About Michael Abadi Santoso</span>
-	</div>
-	<div class="authorbox__description">
-		Michael Abadi is an iOS Engineer at Agoda 🇹🇭 who loves play FIFA badly. He likes to travel and photography. In his free time he likes to share everything about iOS Development
-	</div>
-</div>
 
 <nav class="pager flex">
 	<div class="pager__item pager__item--prev">
-		<a class="pager__link" href="/articles/symbolic-breakpoint/" rel="prev">
+		<a class="pager__link" href="/talks/thai-conf-2020/" rel="prev">
 			<span class="pager__subtitle">«&thinsp;Previous</span>
-			<p class="pager__title">Symbolic Breakpoint Xcode in 2 Minutes</p>
-		</a>
-	</div>
-	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="/articles/introducing-sf-symbols-finder/" rel="next">
-			<span class="pager__subtitle">Next&thinsp;»</span>
-			<p class="pager__title">Introducing SFSymbolsFinder</p>
+			<p class="pager__title">iOS Dev Thailand Conference 2020</p>
 		</a>
 	</div>
 </nav>

@@ -6,7 +6,17 @@
     <description>Recent content in Talks on Michael Abadi&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 22 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="/talks/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 03 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="/talks/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Discover Swift Package Manager</title>
+      <link>/talks/swifty-id/</link>
+      <pubDate>Sat, 03 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/talks/swifty-id/</guid>
+      <description>Swift ID Dev is an Indonesian study group community that is being organized by Nico. In this session, I mentored iOS developers about how to create a simple package manager for personal project as well basic foundation of a modularization.
+  Slides: https://github.com/abadikaka/conference-and-talks/blob/main/SPM.key</description>
+    </item>
+    
     <item>
       <title>iOS Dev Thailand Conference 2020</title>
       <link>/talks/thai-conf-2020/</link>
