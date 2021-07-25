@@ -192,5 +192,9 @@
     <loc>/categories/business/career/</loc>
   </url><url>
     <loc>/tags/ci/cd/</loc>
+  </url><url>
+    <loc>/subscribe/subscribtion/</loc>
+  </url><url>
+    <loc>/subscribe/</loc>
   </url>
 </urlset>

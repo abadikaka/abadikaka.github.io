@@ -394,5 +394,14 @@ Tech Stack  React Native Objective-C Swift Raspberry Pi Pusher Realm Deep Linkin
 The purpose of creating this blog is because I want to give back to the community as I have been taught by other great iOS Developer, and I would like to continue the chains. Besides, one of great way to learn something is by teaching it.</description>
     </item>
     
+    <item>
+      <title>Subscribe</title>
+      <link>/subscribe/subscribtion/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/subscribe/subscribtion/</guid>
+      <description>Thank you for reading my blog! Sign up for my email newsletter or use this RSS feed to get notified of new blog posts.</description>
+    </item>
+    
   </channel>
 </rss>
