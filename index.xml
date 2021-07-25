@@ -6,11 +6,11 @@
     <description>Recent content on Michael Abadi&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 24 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 25 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Command Pattern in real-life</title>
       <link>/articles/command-pattern-swift/</link>
-      <pubDate>Sat, 24 Jul 2021 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 25 Jul 2021 00:00:00 +0000</pubDate>
       
       <guid>/articles/command-pattern-swift/</guid>
       <description>Recently I have a problem in my team whereas the analytics function become scattered. Some other team create their own function and handling their own caching for tracking the events, and some even create multiple similar function across the modules only for analytics, until then a problem arises. Recently I have had a problem in my team whereas the analytics function becomes scattered. Some other team create their function and handling their own caching for tracking the events, and some even create multiple similar functions across the modules only for analytics, until then a problem arises.</description>
