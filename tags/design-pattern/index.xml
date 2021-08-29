@@ -6,14 +6,24 @@
     <description>Recent content in Design Pattern on Michael Abadi&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 25 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/design-pattern/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 29 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/design-pattern/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>VIPER adoption to SwiftUI</title>
+      <link>/articles/swiftui-viper-adaption/</link>
+      <pubDate>Sun, 29 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/articles/swiftui-viper-adaption/</guid>
+      <description>VIPER is one of the hottest architectures back then because of its separation of layers that isolated between each other which is also debatable. Some argue that VIPER is over-engineer and an overkill architecture, some argue that VIPER causes too many boilerplates of code and some argue that VIPER is one of the best architecture for iOS Development. All of these opinions are valid, we definitely can use VIPER depends on how complex is our project and other undefined constraints.</description>
+    </item>
+    
     <item>
       <title>Command Pattern in real-life</title>
       <link>/articles/command-pattern-swift/</link>
       <pubDate>Sun, 25 Jul 2021 00:00:00 +0000</pubDate>
       
       <guid>/articles/command-pattern-swift/</guid>
-      <description>Recently I have a problem in my team whereas the analytics function become scattered. Some other team create their own function and handling their own caching for tracking the events, and some even create multiple similar function across the modules only for analytics, until then a problem arises. Recently I have had a problem in my team whereas the analytics function becomes scattered. Some other team create their function and handling their own caching for tracking the events, and some even create multiple similar functions across the modules only for analytics, until then a problem arises.</description>
+      <description>Recently I have a problem in my team whereas the analytics function become scattered. Some other team create their own function and handling their own caching for tracking the events, and some even create multiple similar function across the modules only for analytics, until then a problem arises.
+Since my company heavily depends on A/B Testing and data-driven culture, at some point we have found a lot of biased data as well missing parameters, then I start to investigate the issues.</description>
     </item>
     
     <item>

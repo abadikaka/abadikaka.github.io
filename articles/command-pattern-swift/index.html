@@ -154,8 +154,7 @@ if (!doNotTrack) {
 		<figure class="post__thumbnail">
 			<img src="/img/command-pattern/command-pattern.001.jpeg" alt="Command Pattern in real-life">
 		</figure><div class="content post__content clearfix">
-			<p>Recently I have a problem in my team whereas the analytics function become scattered. Some other team create their own function and handling their own caching for tracking the events, and some even create multiple similar function across the modules only for analytics, until then a problem arises.
-Recently I have had a problem in my team whereas the analytics function becomes scattered. Some other team create their function and handling their own caching for tracking the events, and some even create multiple similar functions across the modules only for analytics, until then a problem arises.</p>
+			<p>Recently I have a problem in my team whereas the analytics function become scattered. Some other team create their own function and handling their own caching for tracking the events, and some even create multiple similar function across the modules only for analytics, until then a problem arises.</p>
 <p>Since my company heavily depends on <strong>A/B Testing</strong> and data-driven culture, at some point we have found a lot of biased data as well missing parameters, then I start to investigate the issues. Turns out, having scattered places around the codebase that doing a similar thing but ended up having custom logic could break the result calculation. I ended up found a clever and clean way to tidy up this problem, which is <strong>Command Pattern</strong></p>
 <h1 id="definition">Definition</h1>
 <p>What is Command Pattern? Command is part of <a href="https://refactoring.guru/design-patterns/behavioral-patterns">Behavioral</a> design pattern. Behavioral design pattern is design pattern that separating the responsibility between objects to make a more concise and on-target function for each object. Command pattern itself goals are for converting most of the similar or repetitive request functions into a stand-alone object that will become the new place for that converted requests. This conversion will simplify and unified the place of the multiple requests, hence the caller object will not know about its underlying mechanism about how to process those command into the target request. What&rsquo;s the client need is only sending out a simple command request with its parameters. Some enhancement allows you to also add advanced operation such as delay or queue or undo operations.</p>
@@ -286,6 +285,12 @@ Recently I have had a problem in my team whereas the analytics function becomes 
 			<p class="pager__title">Analyze HTTP Traffic with new HTTP Instrument</p>
 		</a>
 	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/articles/swiftui-viper-adaption/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">VIPER adoption to SwiftUI</p>
+		</a>
+	</div>
 </nav>
 
 
@@ -303,11 +308,11 @@ Recently I have had a problem in my team whereas the analytics function becomes 
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/articles/swiftui-viper-adaption/">VIPER adoption to SwiftUI</a></li>
 			<li class="widget__item"><a class="widget__link" href="/articles/command-pattern-swift/">Command Pattern in real-life</a></li>
 			<li class="widget__item"><a class="widget__link" href="/articles/analyse-http-instruments/">Analyze HTTP Traffic with new HTTP Instrument</a></li>
 			<li class="widget__item"><a class="widget__link" href="/articles/complete-conference-list-to-watch/">Complete List of Must-Watch Conferences Before WWDC 2021</a></li>
 			<li class="widget__item"><a class="widget__link" href="/articles/storekit-testing/">Testing In-App Purchases Locally in Simulator</a></li>
-			<li class="widget__item"><a class="widget__link" href="/articles/simple-slick-onboarding/">Simple Slick SwiftUI Onboarding View</a></li>
 		</ul>
 	</div>
 </div>
