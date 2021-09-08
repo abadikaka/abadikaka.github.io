@@ -89,6 +89,13 @@ if (!doNotTrack) {
 			</a>
 		</li>
 		<li class="menu__item">
+			<a class="menu__link" href="/sponsor/sponsor/">
+				
+				<span class="menu__text">Sponsor</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
 			<a class="menu__link" href="/subscribe/subscribtion/">
 				
 				<span class="menu__text">Subscribe</span>
@@ -167,6 +174,51 @@ if (!doNotTrack) {
 	</div>
 </div><div class="content post__content clearfix">
 			<p><strong>VIPER</strong> is one of the hottest architectures back then because of its separation of layers that isolated between each other which is also debatable. Some argue that VIPER is over-engineer and an overkill architecture, some argue that VIPER causes too many boilerplates of code and some argue that VIPER is one of the best architecture for iOS Development. All of these opinions are valid, we definitely can use VIPER depends on how complex is our project and other undefined constraints. In this article, I would like to share my experience to migrate <code>SwiftUI</code> gradually to our VIPER codebase without breaking any major concept of VIPER.</p>
+<div class="sponsor-container" style="margin: 1em 0;">
+<a href="https://apps.apple.com/us/app/gym-diary-track-your-workout/id1328908841" target="_blank" rel="nofollow" class="support" style="margin: 0; border: 2px solid #f24949">
+<picture>
+<img src="https://is4-ssl.mzstatic.com/image/thumb/Purple115/v4/c2/6d/02/c26d024c-3530-d00b-3bd3-db6995b1c32a/AppIcon-0-1x_U007emarketing-0-7-0-85-220.png/434x0w.webp" style="max-height: 50em">
+</picture>
+<div style="padding-right: 20px"></div>
+<p><b><u>Gym Diary - Track Your Workout</u></b> - The only app that you will ever need to log your gym workouts! Gym Diary is a simple & beautiful app for keeping track of all your workout & fitness related activities. Keep log of all your workouts whether at home or gym with ease.</p>
+</a>
+<div class="fineprint fineprint-container">
+<span>Support MY BLOG by checking out this sponsor. Find more details <a href="/sponsor/">here</a>.</span>
+</div>
+</div>
+
+<style>
+  .sponsor-container img{max-height:2.75em;float:left;margin-top:0!important;margin-right:1em!important}
+  .sponsors-hof{display:flex;flex-wrap:wrap;justify-content:center;margin:.75em 0}
+  .sponsors-hof img{height:5em;padding:0 .75em}
+  .fineprint-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: .4em 0 0;
+    font-size: .8em;
+  }
+  .fineprint {
+    margin-bottom: 0;
+    color: #A9A9A9;
+  }
+  .support {
+    border-radius: 8px;
+    border: 2px solid var(--tint-color);
+    padding: 1em;
+    margin: 1em 0;
+    display: block;
+    text-decoration: none;
+  }
+  a.support {
+    display: flex;
+    align-items: center;
+  }
+  b {
+    font-weight: bold;
+  }}
+</style>
+
 <h1 id="definition">Definition</h1>
 <p>What is VIPER? VIPER is a robust and scalable architectural design pattern which consists of 5 vital elements; <strong>View</strong>, <strong>Interactor</strong>, <strong>Presenter</strong>, <strong>Entity</strong> and <strong>Router</strong>. The intention of such separation is for conforming to all of the SOLID principle paradigms, hence every single element of our application needs to be separated to solely focus on its main intention.</p>
 <ul>
@@ -258,6 +310,51 @@ if (!doNotTrack) {
 <blockquote>
 <p>NOTE: If you notice, I made a weak ref of the view on Presenter instead of the opposite, the reason because, by default, UIViewController has a strong reference to the UINavigationController then if the view disappears and is deallocated, ARC will erase everything starting with Presenter, hence presenter reference in the view must be strong.</p>
 </blockquote>
+<div class="sponsor-container" style="margin: 1em 0;">
+<a href="https://apps.apple.com/us/app/gym-diary-track-your-workout/id1328908841" target="_blank" rel="nofollow" class="support" style="margin: 0; border: 2px solid #f24949">
+<picture>
+<img src="https://is4-ssl.mzstatic.com/image/thumb/Purple115/v4/c2/6d/02/c26d024c-3530-d00b-3bd3-db6995b1c32a/AppIcon-0-1x_U007emarketing-0-7-0-85-220.png/434x0w.webp" style="max-height: 50em">
+</picture>
+<div style="padding-right: 20px"></div>
+<p><b><u>Gym Diary - Track Your Workout</u></b> - The only app that you will ever need to log your gym workouts! Gym Diary is a simple & beautiful app for keeping track of all your workout & fitness related activities. Keep log of all your workouts whether at home or gym with ease.</p>
+</a>
+<div class="fineprint fineprint-container">
+<span>Support MY BLOG by checking out this sponsor. Find more details <a href="/sponsor/">here</a>.</span>
+</div>
+</div>
+
+<style>
+  .sponsor-container img{max-height:2.75em;float:left;margin-top:0!important;margin-right:1em!important}
+  .sponsors-hof{display:flex;flex-wrap:wrap;justify-content:center;margin:.75em 0}
+  .sponsors-hof img{height:5em;padding:0 .75em}
+  .fineprint-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: .4em 0 0;
+    font-size: .8em;
+  }
+  .fineprint {
+    margin-bottom: 0;
+    color: #A9A9A9;
+  }
+  .support {
+    border-radius: 8px;
+    border: 2px solid var(--tint-color);
+    padding: 1em;
+    margin: 1em 0;
+    display: block;
+    text-decoration: none;
+  }
+  a.support {
+    display: flex;
+    align-items: center;
+  }
+  b {
+    font-weight: bold;
+  }}
+</style>
+
 <h1 id="problem-with-swiftui">Problem with SwiftUI</h1>
 <p>In <strong>UIKit</strong> world, every single module or domain we can easily attach VIPER template to it and communicate each layer easily since UIView / UIViewController is a class and it can have an inheritance just in case we want to subclass the view from another super view. The View Input (abstraction to communicate between presenter and the view), that we declare is an AnyObject protocol, so class is obviously the better choice here. Besides, <code>UIKit</code> has a complete view controller lifecycle which makes the job easier to act accordingly with the data layer. How about <code>SwiftUI</code> ? SwiftUI has a different concept with the UIKit lifecycle, especially how it renders the UI. In SwiftUI normally we will act according to a reactive changes base on the latest data changes, in this case we can use <code>@Environment(\.scenePhase)</code> for a window change, or <code>.onAppear / .onDisappear</code> for view lifecycle. Since the View is a struct type, it also can not has an inheritance of another view. Another factor is our ViewInput abstraction for receiving a view input from the Presenter is bounded to class type protocol, so non-class type of our View is not suitable to has a ViewInput conformance.</p>
 <p>Another thing is since <code>View</code> is not <code>UIView</code> or <code>UIViewController</code> but an opaque type of <code>some View</code>, the router is not able to easily navigate like it uses to do with <code>UIKit</code>.</p>
@@ -352,6 +449,58 @@ Take a look at the <code>UIHostingController</code> documentation below
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>}</code></pre></div>
 <h1 id="conclusion">Conclusion</h1>
 <p><strong>VIPER</strong> is definitely a no-brainer <strong>SOLID</strong> and one of the cleanest architecture, however keep in mind the usage of VIPER is also depends on your project scale. In my opinion for a small project or medium-scale project sometimes VIPER can be overkill, but you can consider VIPER if you are planning to make a long-term scalable project. Another takeaway from this article is even if it is possible to use VIPER into our <strong>SwiftUI</strong> application, but somewhat it needs couple of tricks and additional object (<strong>Adapter</strong>) to do so without breaking the VIPER concept. As a result, I wouldn&rsquo;t recommend use VIPER with SwiftUI, since SwiftUI has a concept of Binding with the reactive concept programming like Combine, I would recommend using <a href="https://github.com/pointfreeco/swift-composable-architecture"><strong>TCA</strong></a>, <strong>Redux</strong> or even only <strong>MVVM</strong>. What do you think about VIPER in SwiftUI? Let me know on <a href="https://twitter.com/michaelabadiii">twitter</a>!</p>
+<div class="sponsor-container" style="margin: 1em 0;">
+<a href="https://apps.apple.com/th/app/tripzy/id1564625604" target="_blank" rel="nofollow" class="support" style="margin: 0; border: 2px solid #531CAD">
+<picture>
+<img src="https://is1-ssl.mzstatic.com/image/thumb/Purple125/v4/76/e0/f4/76e0f426-a6fb-810b-a102-80ef4ea52c4f/AppIcon-0-1x_U007emarketing-0-10-0-85-220.png/460x0w.webp" style="max-height: 50em">
+</picture>
+<div style="padding-right: 20px"></div>
+<p class="tripzy"><b><u>Tripzy - Track Your Trip Expenses</u></b> - Enjoy one of compact travel's budget trackers, directly through your pocket.
+No hassle, to the point, and without no login required along with the intuitive dashboard
+Tripzy gives you access to create your travel expenses and track them easily from your device without any hassle.
+
+</p>
+</a>
+<div class="fineprint fineprint-container">
+<span>Support MY BLOG by checking out this sponsor. Find more details <a href="/sponsor/">here</a>.</span>
+</div>
+</div>
+
+<style>
+  .sponsor-container img{max-height:2.75em;float:left;margin-top:0!important;margin-right:1em!important}
+  .sponsors-hof{display:flex;flex-wrap:wrap;justify-content:center;margin:.75em 0}
+  .sponsors-hof img{height:5em;padding:0 .75em}
+  .fineprint-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: .4em 0 0;
+    font-size: .8em;
+  }
+  .fineprint {
+    margin-bottom: 0;
+    color: #A9A9A9;
+  }
+  .support {
+    border-radius: 8px;
+    border: 2px solid var(--tint-color);
+    padding: 1em;
+    margin: 1em 0;
+    display: block;
+    text-decoration: none;
+  }
+  .tripzy {
+    color: #531CAD;
+  }
+  a.support {
+    display: flex;
+    align-items: center;
+  }
+  b {
+    font-weight: bold;
+  }}
+</style>
+
 
 		</div>
 		<footer class="post__footer">

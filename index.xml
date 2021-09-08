@@ -405,12 +405,23 @@ The purpose of creating this blog is because I want to give back to the communit
     </item>
     
     <item>
+      <title>Sponsor</title>
+      <link>/sponsor/sponsor/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/sponsor/sponsor/</guid>
+      <description>How to Support My Blog! Since mid 2020, I try to publish at least one blog every month throughout my Medium channel. After that, I started to develop this website and start to gradually put my technical content to my own website without any hassle. At the moment, my blog is still growing with over 2000 visitors and I would like to keep this momentum.
+I have decided to open up a sponsorship program in case you want to support my work.</description>
+    </item>
+    
+    <item>
       <title>Subscribe</title>
       <link>/subscribe/subscribtion/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/subscribe/subscribtion/</guid>
-      <description>Thank you for reading my blog! Sign up for my email newsletter or use this RSS feed to get notified of new blog posts.</description>
+      <description>Thank you for reading my blog! Sign up for my email newsletter or use this RSS feed to get notified of new blog posts.
+   Tripzy - Track Your Trip Expenses - Enjoy one of compact travel&#39;s budget trackers, directly through your pocket. No hassle, to the point, and without no login required along with the intuitive dashboard Tripzy gives you access to create your travel expenses and track them easily from your device without any hassle.</description>
     </item>
     
   </channel>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sponsors on Michael Abadi&#39;s Blog</title>
+    <link>/sponsor/</link>
+    <description>Recent content in Sponsors on Michael Abadi&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="/sponsor/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Sponsor</title>
+      <link>/sponsor/sponsor/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/sponsor/sponsor/</guid>
+      <description>How to Support My Blog! Since mid 2020, I try to publish at least one blog every month throughout my Medium channel. After that, I started to develop this website and start to gradually put my technical content to my own website without any hassle. At the moment, my blog is still growing with over 2000 visitors and I would like to keep this momentum.
+I have decided to open up a sponsorship program in case you want to support my work.</description>
+    </item>
+    
+  </channel>
+</rss>
