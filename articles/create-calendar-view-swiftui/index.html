@@ -176,7 +176,7 @@ if (!doNotTrack) {
 </nav>
 	</div>
 </div><div class="content post__content clearfix">
-			<p>While I was looking at my twitter for inspiration, a tweet from <a href="https://twitter.com/seanallen_dev">Sean Allen</a> caught my <a href="https://twitter.com/seanallen_dev/status/1431299626137759749?s=20">eyes</a>. He made an amazing calendar component with a drag and drop capabilities of its item. I look up the possibilities of using the native SwiftUI approach without any UIKit hack or workaround to do so. In this article, I will explain step by step as well a brief explanation of the API I used to make the calendar view in SwiftUI.</p>
+			<p>While I was looking at my twitter for inspiration, a tweet from <a href="https://twitter.com/seanallen_dev">Sean Allen</a> caught my <a href="https://twitter.com/seanallen_dev/status/1431299626137759749?s=20">eyes</a>. He made an amazing calendar component with a drag and drop capabilities of its item. I look up the possibilities of using the native SwiftUI approach without any UIKit hack or workaround to do so. In this article, I will explain step by step as well a brief explanation of the API I used to make the calendar view in SwiftUI. There is a good <a href="https://stackoverflow.com/questions/62606907/swiftui-using-ondrag-and-ondrop-to-reorder-items-within-one-single-lazygrid">stackoverflow</a> answer to implement drag and drop on 1 level item, but it could not work in case we need to drag and drop the item of the parent item to another parent item, hence I created a workable solution to solve that problem.</p>
 <div class="sponsor-container" style="margin: 1em 0;">
 <a href="https://apps.apple.com/th/app/tripzy/id1564625604" target="_blank" rel="nofollow" class="support" style="margin: 0; border: 2px solid #531CAD">
 <picture>
@@ -317,9 +317,9 @@ Tripzy gives you access to create your travel expenses and track them easily fro
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>                <span style="color:#66d9ef">return</span> NSItemProvider(object: item.id <span style="color:#66d9ef">as</span> NSString)
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>            }
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>            .onDrop(of: [UTType.text],
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>                    delegate: DragRelocateDelegate(item: item,
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span>                                                   listData: <span style="color:#960050;background-color:#1e0010">$</span>models,
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span>                                                   current: <span style="color:#960050;background-color:#1e0010">$</span>dragging))
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>                    delegate: DropDelegateImpl(item: item,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span>                                               listData: <span style="color:#960050;background-color:#1e0010">$</span>models,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span>                                               current: <span style="color:#960050;background-color:#1e0010">$</span>dragging))
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span>        } <span style="color:#66d9ef">else</span> {
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span>            VStack {
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span>                Spacer()
@@ -329,9 +329,9 @@ Tripzy gives you access to create your travel expenses and track them easily fro
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span>            }
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span>            .background(Color.white)
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span>            .onDrop(of: [UTType.text],
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span>                    delegate: DragRelocateDelegate(item: item,
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33</span>                                                   listData: <span style="color:#960050;background-color:#1e0010">$</span>models,
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34</span>                                                   current: <span style="color:#960050;background-color:#1e0010">$</span>dragging))
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span>                    delegate: DropDelegateImpl(item: item,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33</span>                                               listData: <span style="color:#960050;background-color:#1e0010">$</span>models,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34</span>                                               current: <span style="color:#960050;background-color:#1e0010">$</span>dragging))
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35</span>        }
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36</span>    }
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37</span>    <span style="color:#66d9ef">if</span> model.items.isEmpty {
@@ -386,7 +386,7 @@ Tripzy gives you access to create your travel expenses and track them easily fro
 
 <h2 id="understanding-dropdelegate">Understanding DropDelegate</h2>
 <p>For both <code>onDrag</code> and <code>onDrop</code> are working as expected, they require us to implement <a href="https://developer.apple.com/documentation/swiftui/dropdelegate"><code>DropDelegate</code></a> on the <code>onDrop</code> behavior. The purpose of <code>DropDelegate</code> is to give us the ability to interact with a drop operation in a view modified to accept drops. If we don&rsquo;t need to do complex behavior or interaction then you can proceed with another <code>onDrop</code> modifier which has a <code>perform</code> closure for doing the drop interaction. In this case, since we do need to detect where the item is coming from and to whom the item is expected to be dropped, as well as performing a swap operation we need a custom <code>DropDelegate</code>. This <code>DropDelegate</code> will be applied to all of the calendar items as part of a parameter of view modifier of <code>onDrop</code> modifier.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">DragRelocateDelegate</span>: DropDelegate {
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">DropDelegateImpl</span>: DropDelegate {
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>    <span style="color:#66d9ef">let</span> item: ScheduleItem <span style="color:#75715e">// 0.</span>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>    @Binding <span style="color:#66d9ef">var</span> listData: [CalendarViewModel] <span style="color:#75715e">// 1.</span>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>    @Binding <span style="color:#66d9ef">var</span> current: ScheduleItem? <span style="color:#75715e">// 2.</span>
