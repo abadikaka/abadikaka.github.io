@@ -152,6 +152,26 @@ if (!doNotTrack) {
 	<article class="list__item post">
 	<header class="list__header">
 		<h2 class="list__title post__title">
+			<a href="/articles/utilize-combine/" rel="bookmark">
+			Utilize Combine for Search Engine in Swift
+			</a>
+		</h2>
+		<p class="list__lead post__lead">Implementing Combine for Search Case in Swift</p>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2021-01-24T00:00:00Z">January 24, 2021</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/ios-development/" rel="category">iOS Development</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		Combine, is a new framework introduced by Apple since SwiftUI 1.0 back then in 2019. The architecture behind the scene itself is adopting the system of FRP (Functional Reactive Programming) which takes computation as their main computation of process combine with the propagation of data through the stream of the function. In this tutorial, I would like to explain how Combine can make your job done quicker than ever compare with the conventional way of code.
+	</div>
+	<div class="list__footer clearfix">
+		<a class="list__footer-readmore btn" href="/articles/utilize-combine/">Read more…</a>
+	</div>
+</article><article class="list__item post">
+	<header class="list__header">
+		<h2 class="list__title post__title">
 			<a href="/articles/fun-debugging-5-minutes/" rel="bookmark">
 			Fun Debugging in iOS — Understanding the GUI in 3 minutes
 			</a>
@@ -342,32 +362,12 @@ Some quick knowledge about several items below:
 	<div class="list__footer clearfix">
 		<a class="list__footer-readmore btn" href="/articles/mapview-annotation/">Read more…</a>
 	</div>
-</article><article class="list__item post">
-	<header class="list__header">
-		<h2 class="list__title post__title">
-			<a href="/articles/wrapper-pattern-swift/" rel="bookmark">
-			Wrapper Pattern Swift in 5 minutes
-			</a>
-		</h2>
-		<p class="list__lead post__lead">Understanding type of wrapper pattern in Swift</p>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-09-11T00:00:00Z">September 11, 2020</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/ios-development/" rel="category">iOS Development</a>
-	</span>
-</div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		Have you ever heard about the problem that you need to separate two modules working independently without knowing each other implementation, but requires to be able to communicate easily by only sending necessary data? Most of the advanced use cases will face this real-world use case and we require a more advanced design pattern to be able to solve this pattern to give more scalability to the project. There is a general concept about “Wrapping” an object through an intermediary class that can adapt to each other.
-	</div>
-	<div class="list__footer clearfix">
-		<a class="list__footer-readmore btn" href="/articles/wrapper-pattern-swift/">Read more…</a>
-	</div>
 </article>
 </main>
 
 <div class="pagination">
 	<a class="pagination__item pagination__item--prev btn" href="/">«</a>
-	<span class="pagination__item pagination__item--current">2/3</span>
+	<span class="pagination__item pagination__item--current">2/4</span>
 	<a class="pagination__item pagination__item--next btn" href="/page/3/">»</a>
 </div>
 
@@ -385,11 +385,11 @@ Some quick knowledge about several items below:
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/articles/debugging-with-accessibility-swiftui/">Leverage Accessibility Identifier For View Debugging</a></li>
 			<li class="widget__item"><a class="widget__link" href="/articles/create-calendar-view-swiftui/">Create Draggable Calendar View in SwiftUI</a></li>
 			<li class="widget__item"><a class="widget__link" href="/articles/swiftui-viper-adaption/">VIPER adoption to SwiftUI</a></li>
 			<li class="widget__item"><a class="widget__link" href="/articles/command-pattern-swift/">Command Pattern in real-life</a></li>
 			<li class="widget__item"><a class="widget__link" href="/articles/analyse-http-instruments/">Analyze HTTP Traffic with new HTTP Instrument</a></li>
-			<li class="widget__item"><a class="widget__link" href="/articles/complete-conference-list-to-watch/">Complete List of Must-Watch Conferences Before WWDC 2021</a></li>
 		</ul>
 	</div>
 </div>
@@ -413,6 +413,7 @@ Some quick knowledge about several items below:
 <div class="widget-taglist widget">
 	<h4 class="widget__title">Tags</h4>
 	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/accessibility/" title="Accessibility">Accessibility</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/career/" title="Career">Career</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/ci/cd/" title="CI/CD">CI/CD</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/combine/" title="Combine">Combine</a>
@@ -425,6 +426,7 @@ Some quick knowledge about several items below:
 		<a class="widget-taglist__link widget__link btn" href="/tags/swift/" title="Swift">Swift</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/swiftui/" title="SwiftUI">SwiftUI</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/testing/" title="Testing">Testing</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/uikit/" title="UIKit">UIKit</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/wwdc/" title="WWDC">WWDC</a>
 	</div>
 </div>

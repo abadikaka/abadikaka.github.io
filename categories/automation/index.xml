@@ -6,7 +6,16 @@
     <description>Recent content in Automation on Michael Abadi&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 31 Jul 2020 00:00:00 +0000</lastBuildDate><atom:link href="/categories/automation/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 02 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="/categories/automation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leverage Accessibility Identifier For View Debugging</title>
+      <link>/articles/debugging-with-accessibility-swiftui/</link>
+      <pubDate>Sat, 02 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/articles/debugging-with-accessibility-swiftui/</guid>
+      <description>Recently I have been fascinated with the fact many people, especially indie dev have started to think about accessibility for their application. However, there are still fewer resources on how do we kick off our journey in Accessibility with a more real-world use case that we can adapt. In this article, I would like to explain how do we utilize and incorporate the most basic Accessibility topics into our codebase, which is accessibilityId.</description>
+    </item>
+    
     <item>
       <title>Trigger iOS Unit Test Check-In Github with Jenkins (Automation)</title>
       <link>/articles/trigger-ios-jenkin-automation/</link>

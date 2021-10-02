@@ -153,6 +153,26 @@ if (!doNotTrack) {
 	</header><article class="list__item post">
 	<header class="list__header">
 		<h2 class="list__title post__title">
+			<a href="/articles/wrapper-pattern-swift/" rel="bookmark">
+			Wrapper Pattern Swift in 5 minutes
+			</a>
+		</h2>
+		<p class="list__lead post__lead">Understanding type of wrapper pattern in Swift</p>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-09-11T00:00:00Z">September 11, 2020</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/ios-development/" rel="category">iOS Development</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		Have you ever heard about the problem that you need to separate two modules working independently without knowing each other implementation, but requires to be able to communicate easily by only sending necessary data? Most of the advanced use cases will face this real-world use case and we require a more advanced design pattern to be able to solve this pattern to give more scalability to the project. There is a general concept about “Wrapping” an object through an intermediary class that can adapt to each other.
+	</div>
+	<div class="list__footer clearfix">
+		<a class="list__footer-readmore btn" href="/articles/wrapper-pattern-swift/">Read more…</a>
+	</div>
+</article><article class="list__item post">
+	<header class="list__header">
+		<h2 class="list__title post__title">
 			<a href="/articles/distributing-private-cocoapod/" rel="bookmark">
 			Distributing private project with Cocoapod and Carthage in 5 minutes
 			</a>
@@ -333,32 +353,13 @@ iOS 14  App Library: A new space for organizing all of your apps into a grouped 
 	<div class="list__footer clearfix">
 		<a class="list__footer-readmore btn" href="/articles/bake-builder-pattern/">Read more…</a>
 	</div>
-</article><article class="list__item post">
-	<header class="list__header">
-		<h2 class="list__title post__title">
-			<a href="/articles/share-extension/" rel="bookmark">
-			Easy way to do Share Extension in iOS
-			</a>
-		</h2>
-		<p class="list__lead post__lead">Implementing Share Extension in Swift</p>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-04-24T00:00:00Z">April 24, 2020</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/ios-development/" rel="category">iOS Development</a>
-	</span>
-</div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		Wonder how to make your application can share any picture or file or text even URL into our own application? Well everyone knows we can use App Extension and create our extension for doing it. But imagine if we have multiple clients and need to use a specific token for each client, or we do have many configurations for the UI that can be displayed differently according to the clients, how we can achieve that?
-	</div>
-	<div class="list__footer clearfix">
-		<a class="list__footer-readmore btn" href="/articles/share-extension/">Read more…</a>
-	</div>
 </article>
 </main>
 
 <div class="pagination">
 	<a class="pagination__item pagination__item--prev btn" href="/articles/page/2/">«</a>
-	<span class="pagination__item pagination__item--current">3/3</span>
+	<span class="pagination__item pagination__item--current">3/4</span>
+	<a class="pagination__item pagination__item--next btn" href="/articles/page/4/">»</a>
 </div>
 
 			</div>
@@ -376,11 +377,11 @@ iOS 14  App Library: A new space for organizing all of your apps into a grouped 
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/articles/debugging-with-accessibility-swiftui/">Leverage Accessibility Identifier For View Debugging</a></li>
 			<li class="widget__item"><a class="widget__link" href="/articles/create-calendar-view-swiftui/">Create Draggable Calendar View in SwiftUI</a></li>
 			<li class="widget__item"><a class="widget__link" href="/articles/swiftui-viper-adaption/">VIPER adoption to SwiftUI</a></li>
 			<li class="widget__item"><a class="widget__link" href="/articles/command-pattern-swift/">Command Pattern in real-life</a></li>
 			<li class="widget__item"><a class="widget__link" href="/articles/analyse-http-instruments/">Analyze HTTP Traffic with new HTTP Instrument</a></li>
-			<li class="widget__item"><a class="widget__link" href="/articles/complete-conference-list-to-watch/">Complete List of Must-Watch Conferences Before WWDC 2021</a></li>
 		</ul>
 	</div>
 </div>
@@ -404,6 +405,7 @@ iOS 14  App Library: A new space for organizing all of your apps into a grouped 
 <div class="widget-taglist widget">
 	<h4 class="widget__title">Tags</h4>
 	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/accessibility/" title="Accessibility">Accessibility</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/career/" title="Career">Career</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/ci/cd/" title="CI/CD">CI/CD</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/combine/" title="Combine">Combine</a>
@@ -416,6 +418,7 @@ iOS 14  App Library: A new space for organizing all of your apps into a grouped 
 		<a class="widget-taglist__link widget__link btn" href="/tags/swift/" title="Swift">Swift</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/swiftui/" title="SwiftUI">SwiftUI</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/testing/" title="Testing">Testing</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/uikit/" title="UIKit">UIKit</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/wwdc/" title="WWDC">WWDC</a>
 	</div>
 </div>
