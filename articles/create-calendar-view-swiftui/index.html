@@ -51,11 +51,9 @@ if (!doNotTrack) {
 		<header class="header">
 	<div class="container header__container">
 		
-	<div class="logo logo--mixed">
+	<div class="logo">
 		<a class="logo__link" href="/" title="Michael Abadi&#39;s Blog" rel="home">
-			<div class="logo__item logo__imagebox">
-					<img class="logo__img" src="/web-logo.png">
-				</div><div class="logo__item logo__text">
+			<div class="logo__item logo__text">
 					<div class="logo__title">Michael Abadi&#39;s Blog</div>
 					<div class="logo__tagline">Your daily dose of iOS development blogs</div>
 				</div>
@@ -179,16 +177,9 @@ if (!doNotTrack) {
 </div><div class="content post__content clearfix">
 			<p>While I was looking at my twitter for inspiration, a tweet from <a href="https://twitter.com/seanallen_dev">Sean Allen</a> caught my <a href="https://twitter.com/seanallen_dev/status/1431299626137759749?s=20">eyes</a>. He made an amazing calendar component with a drag and drop capabilities of its item. I look up the possibilities of using the native SwiftUI approach without any UIKit hack or workaround to do so. In this article, I will explain step by step as well a brief explanation of the API I used to make the calendar view in SwiftUI. There is a good <a href="https://stackoverflow.com/questions/62606907/swiftui-using-ondrag-and-ondrop-to-reorder-items-within-one-single-lazygrid">stackoverflow</a> answer to implement drag and drop on 1 level item, but it could not work in case we need to drag and drop the item of the parent item to another parent item, hence I created a workable solution to solve that problem.</p>
 <div class="sponsor-container" style="margin: 1em 0;">
-<a href="https://apps.apple.com/th/app/tripzy/id1564625604" target="_blank" rel="nofollow" class="support" style="margin: 0; border: 2px solid #531CAD">
-<picture>
-<img src="https://is1-ssl.mzstatic.com/image/thumb/Purple125/v4/76/e0/f4/76e0f426-a6fb-810b-a102-80ef4ea52c4f/AppIcon-0-1x_U007emarketing-0-10-0-85-220.png/460x0w.webp" style="max-height: 50em">
-</picture>
+<a href="https://gumroad.com/a/1061786739" target="_blank" rel="nofollow" class="support" style="margin: 0; border: 2px solid #f24949">
 <div style="padding-right: 20px"></div>
-<p class="tripzy"><b><u>Tripzy - Track Your Trip Expenses</u></b> - Enjoy one of compact travel's budget trackers, directly through your pocket.
-No hassle, to the point, and without no login required along with the intuitive dashboard
-Tripzy gives you access to create your travel expenses and track them easily from your device without any hassle.
-
-</p>
+<p class="sponsor-text"><b><u>AppCoda - Mastering SwiftUI</u></b> - One of the best book out there for accelerating your understanding of SwiftUI. Use discount code "launch2021" while you are purchasing this book throughout this link.</p>
 </a>
 <div class="fineprint fineprint-container">
 <span>Support MY BLOG by checking out this sponsor. Find more details <a href="/sponsor/">here</a>.</span>
@@ -211,6 +202,8 @@ Tripzy gives you access to create your travel expenses and track them easily fro
     color: #A9A9A9;
   }
   .support {
+    background-image: url("/img/appcoda/mastering-swiftui-starter-gumroad.jpeg");
+    background-size: cover;
     border-radius: 8px;
     border: 2px solid var(--tint-color);
     padding: 1em;
@@ -218,12 +211,13 @@ Tripzy gives you access to create your travel expenses and track them easily fro
     display: block;
     text-decoration: none;
   }
-  .tripzy {
-    color: #531CAD;
-  }
   a.support {
     display: flex;
     align-items: center;
+  }
+  .sponsor-text {
+    color: #f24949;
+    text-shadow: 2px 2px black;
   }
   b {
     font-weight: bold;
@@ -340,7 +334,15 @@ Tripzy gives you access to create your travel expenses and track them easily fro
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39</span>    }
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40</span>}
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41</span>.frame(minWidth: <span style="color:#ae81ff">0</span>, maxWidth: .infinity, minHeight: <span style="color:#ae81ff">100</span>, alignment: .center)</code></pre></div>
-
+<div class="sponsor-container" style="margin: 1em 0;">
+<a href="https://gumroad.com/a/1061786739" target="_blank" rel="nofollow" class="support" style="margin: 0; border: 2px solid #f24949">
+<div style="padding-right: 20px"></div>
+<p class="sponsor-text"><b><u>AppCoda - Mastering SwiftUI</u></b> - One of the best book out there for accelerating your understanding of SwiftUI. Use discount code "launch2021" while you are purchasing this book throughout this link.</p>
+</a>
+<div class="fineprint fineprint-container">
+<span>Support MY BLOG by checking out this sponsor. Find more details <a href="/sponsor/">here</a>.</span>
+</div>
+</div>
 
 <style>
   .sponsor-container img{max-height:2.75em;float:left;margin-top:0!important;margin-right:1em!important}
@@ -358,6 +360,8 @@ Tripzy gives you access to create your travel expenses and track them easily fro
     color: #A9A9A9;
   }
   .support {
+    background-image: url("/img/appcoda/mastering-swiftui-starter-gumroad.jpeg");
+    background-size: cover;
     border-radius: 8px;
     border: 2px solid var(--tint-color);
     padding: 1em;
@@ -368,6 +372,10 @@ Tripzy gives you access to create your travel expenses and track them easily fro
   a.support {
     display: flex;
     align-items: center;
+  }
+  .sponsor-text {
+    color: #f24949;
+    text-shadow: 2px 2px black;
   }
   b {
     font-weight: bold;
@@ -450,8 +458,8 @@ Tripzy gives you access to create your travel expenses and track them easily fro
 <p>There is a single caveat here that I need to do in order we can do any drag and drop behavior within an item to another calendar that has no data/item in their calendar view. If we only drag the calendar it is possible to do so because we will apply all of the <code>onDrag</code> modifiers to all of the calendar views, then the system can tell the object that we want to compare and swap the calendar. But in this case, we want to drag the sub-item of the calendar, and the best case we should do in the UI part, that we will put an empty <code>Spacer</code> to the <code>Calendar</code> view instead of the <code>Item</code> view and we only put the <code>onDrag</code> behavior on the <code>Item</code> view. However, this is not possible, because we will make the <code>onDrag</code> and <code>onDrop</code> not recognizing the destination item view (because we only put a <code>Spacer</code> and we can not put the <code>onDrag</code> and <code>onDrop</code> in that spacer since no data can be compared within that spacer). So in order we can compare the item, we need to make a fake item object with a <code>nil</code> string name, and we place it all over the <code>Calendar</code> view that has no sub-items, then we can still put <code>onDrag</code> and <code>onDrop</code> modifier on top of that <code>Item</code> view, and the system can recognize the item to be compared. At the moment, I am still thinking this is a hacky way and not clean enough for this behavior, if anyone found out the better solution please <a href="(https://twitter.com/michaelabadiii)!">let me know!</a>.</p>
 <h2 id="conclusion">Conclusion</h2>
 <p>In my opinion, Drag and Drop behavior in SwiftUI are quite hard to implement at first and need a bit learning curve to understand how it behaves. However by the time you try it out, it is easier than I thought. Both of them indeed are quite tricky to implement, but it doesn&rsquo;t mean we need to scare of them. I suggest trying it out and you can make a lot of cool stuff with it. I hope my article could help you to understand more about the basic foundation of how to do drag and drop in SwiftUI, if you have any questions and better solutions please reach me out on <a href="https://twitter.com/michaelabadiii">twitter</a>!</p>
-<div class="sponsor-container" style="margin: 1em 0;">
-<a href="https://apps.apple.com/th/app/tripzy/id1564625604" target="_blank" rel="nofollow" class="support" style="margin: 0; border: 2px solid #531CAD">
+<div class="sponsor-container1" style="margin: 1em 0;">
+<a href="https://apps.apple.com/th/app/tripzy/id1564625604" target="_blank" rel="nofollow" class="support-5" style="margin: 0; border: 2px solid #531CAD">
 <picture>
 <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple125/v4/76/e0/f4/76e0f426-a6fb-810b-a102-80ef4ea52c4f/AppIcon-0-1x_U007emarketing-0-10-0-85-220.png/460x0w.webp" style="max-height: 50em">
 </picture>
@@ -462,38 +470,39 @@ Tripzy gives you access to create your travel expenses and track them easily fro
 
 </p>
 </a>
-<div class="fineprint fineprint-container">
+<div class="fineprint-1 fineprint-container-2">
 <span>Support MY BLOG by checking out this sponsor. Find more details <a href="/sponsor/">here</a>.</span>
 </div>
 </div>
 
 <style>
-  .sponsor-container img{max-height:2.75em;float:left;margin-top:0!important;margin-right:1em!important}
+  .sponsor-container1 img{max-height:2.75em;float:left;margin-top:0!important;margin-right:1em!important}
   .sponsors-hof{display:flex;flex-wrap:wrap;justify-content:center;margin:.75em 0}
   .sponsors-hof img{height:5em;padding:0 .75em}
-  .fineprint-container {
+  .fineprint-container-2 {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: .4em 0 0;
     font-size: .8em;
   }
-  .fineprint {
+  .fineprint-1 {
     margin-bottom: 0;
     color: #A9A9A9;
   }
-  .support {
+  .support-5 {
     border-radius: 8px;
     border: 2px solid var(--tint-color);
     padding: 1em;
     margin: 1em 0;
     display: block;
     text-decoration: none;
+    max-height: 50em;
   }
   .tripzy {
     color: #531CAD;
   }
-  a.support {
+  a.support-5 {
     display: flex;
     align-items: center;
   }
