@@ -30,3 +30,6 @@ Personalised your travel budgets, easily directly from pocket without any hassle
 ## Download
 
 [App Store](https://apps.apple.com/th/app/tripzy/id1564625604)
+---
+
+{{< sponsor2 >}}

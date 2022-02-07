@@ -15,6 +15,10 @@
 <meta property="article:modified_time" content="2020-04-24T00:00:00&#43;00:00" />
 
 
+		<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Easy way to do Share Extension in iOS"/>
+<meta name="twitter:description" content="Implementing Share Extension in Swift"/>
+
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
 	<link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -24,6 +28,10 @@
 	
 
 	<link rel="shortcut icon" href="/favicon.ico">
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
 		
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-3ZSP3V2ZXX"></script>
 <script>
@@ -36,19 +44,18 @@ if (!doNotTrack) {
 }
 </script>
 
+	<script data-ad-client="ca-pub-9314126696829523" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </head>
 <body class="body">
 	<div class="container container--outer">
 		<header class="header">
 	<div class="container header__container">
 		
-	<div class="logo logo--mixed">
+	<div class="logo">
 		<a class="logo__link" href="/" title="Michael Abadi&#39;s Blog" rel="home">
-			<div class="logo__item logo__imagebox">
-					<img class="logo__img" src="/img/avatar.jpg">
-				</div><div class="logo__item logo__text">
+			<div class="logo__item logo__text">
 					<div class="logo__title">Michael Abadi&#39;s Blog</div>
-					<div class="logo__tagline">Official website of Michael Abadi Santoso</div>
+					<div class="logo__tagline">Your daily dose of iOS development blogs</div>
 				</div>
 		</a>
 	</div>
@@ -77,6 +84,20 @@ if (!doNotTrack) {
 			<a class="menu__link" href="/projects/">
 				
 				<span class="menu__text">Projects</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/sponsor/sponsor/">
+				
+				<span class="menu__text">Sponsor</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/subscribe/subscribtion/">
+				
+				<span class="menu__text">Subscribe</span>
 				
 			</a>
 		</li>
@@ -119,6 +140,7 @@ if (!doNotTrack) {
 <meta name="twitter:description" content="Implementing Share Extension in Swift"/>
 
 	</div>
+	
 </header>
 
 		<div class="wrapper flex">
@@ -465,17 +487,18 @@ Full source code: <a href="https://github.com/abadikaka/ShareKitTutorial">Projec
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/articles/debugging-with-accessibility-swiftui/">Leverage Accessibility Identifier For View Debugging</a></li>
+			<li class="widget__item"><a class="widget__link" href="/articles/create-calendar-view-swiftui/">Create Draggable Calendar View in SwiftUI</a></li>
+			<li class="widget__item"><a class="widget__link" href="/articles/swiftui-viper-adaption/">VIPER adoption to SwiftUI</a></li>
+			<li class="widget__item"><a class="widget__link" href="/articles/command-pattern-swift/">Command Pattern in real-life</a></li>
 			<li class="widget__item"><a class="widget__link" href="/articles/analyse-http-instruments/">Analyze HTTP Traffic with new HTTP Instrument</a></li>
-			<li class="widget__item"><a class="widget__link" href="/articles/complete-conference-list-to-watch/">Complete List of Must-Watch Conferences Before WWDC 2021</a></li>
-			<li class="widget__item"><a class="widget__link" href="/articles/storekit-testing/">Testing In-App Purchases Locally in Simulator</a></li>
-			<li class="widget__item"><a class="widget__link" href="/articles/simple-slick-onboarding/">Simple Slick SwiftUI Onboarding View</a></li>
-			<li class="widget__item"><a class="widget__link" href="/articles/enhance-factory-pattern/">Enhance Factory Pattern capabilities for DI in Swift within 3 minutes</a></li>
 		</ul>
 	</div>
 </div>
 <div class="widget-taglist widget">
 	<h4 class="widget__title">Tags</h4>
 	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/accessibility/" title="Accessibility">Accessibility</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/career/" title="Career">Career</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/ci/cd/" title="CI/CD">CI/CD</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/combine/" title="Combine">Combine</a>
@@ -488,6 +511,7 @@ Full source code: <a href="https://github.com/abadikaka/ShareKitTutorial">Projec
 		<a class="widget-taglist__link widget__link btn" href="/tags/swift/" title="Swift">Swift</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/swiftui/" title="SwiftUI">SwiftUI</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/testing/" title="Testing">Testing</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/uikit/" title="UIKit">UIKit</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/wwdc/" title="WWDC">WWDC</a>
 	</div>
 </div>

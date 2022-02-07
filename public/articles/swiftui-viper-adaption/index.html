@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>VIPER adoption to SwiftUI - Michael Abadi&#39;s Blog</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="Learn How To Use VIPER in SwiftUI">
+		<meta property="og:title" content="VIPER adoption to SwiftUI" />
+<meta property="og:description" content="Learn How To Use VIPER in SwiftUI" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/articles/swiftui-viper-adaption/" /><meta property="article:section" content="articles" />
+<meta property="article:published_time" content="2021-08-29T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2021-08-29T00:00:00&#43;00:00" />
+
+
+		<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="VIPER adoption to SwiftUI"/>
+<meta name="twitter:description" content="Learn How To Use VIPER in SwiftUI"/>
+
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	
+
+	<link rel="shortcut icon" href="/favicon.ico">
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+		
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3ZSP3V2ZXX"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-3ZSP3V2ZXX', { 'anonymize_ip': false });
+}
+</script>
+
+	<script data-ad-client="ca-pub-9314126696829523" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="Michael Abadi&#39;s Blog" rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">Michael Abadi&#39;s Blog</div>
+					<div class="logo__tagline">Your daily dose of iOS development blogs</div>
+				</div>
+		</a>
+	</div>
+
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/about/michael-abadi/">
+				
+				<span class="menu__text">About Me</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/articles/">
+				
+				<span class="menu__text">Articles</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/projects/">
+				
+				<span class="menu__text">Projects</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/sponsor/sponsor/">
+				
+				<span class="menu__text">Sponsor</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/subscribe/subscribtion/">
+				
+				<span class="menu__text">Subscribe</span>
+				
+			</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/talks/">
+				
+				<span class="menu__text">Talks</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+  	
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3ZSP3V2ZXX"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-3ZSP3V2ZXX', { 'anonymize_ip': false });
+}
+</script>
+
+  	
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-3ZSP3V2ZXX', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+		<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="VIPER adoption to SwiftUI"/>
+<meta name="twitter:description" content="Learn How To Use VIPER in SwiftUI"/>
+
+	</div>
+	
+</header>
+
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">VIPER adoption to SwiftUI</h1>
+			<p class="post__lead">Learn How To Use VIPER in SwiftUI</p>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2021-08-29T00:00:00Z">August 29, 2021</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/ios-development/" rel="category">iOS Development</a>
+	</span>
+</div></div>
+		</header>
+		<figure class="post__thumbnail">
+			<img src="/img/viper-pattern/viper.001.jpeg" alt="VIPER adoption to SwiftUI">
+		</figure>
+<div class="post__toc toc">
+	<div class="toc__title">Page content</div>
+	<div class="toc__menu">
+		<nav id="TableOfContents">
+  <ul>
+    <li><a href="#view-and-data-communication">View and Data Communication</a></li>
+    <li><a href="#swiftuiview">SwiftUIView</a></li>
+    <li><a href="#router">Router</a></li>
+  </ul>
+</nav>
+	</div>
+</div><div class="content post__content clearfix">
+			<p><strong>VIPER</strong> is one of the hottest architectures back then because of its separation of layers that isolated between each other which is also debatable. Some argue that VIPER is over-engineer and an overkill architecture, some argue that VIPER causes too many boilerplates of code and some argue that VIPER is one of the best architecture for iOS Development. All of these opinions are valid, we definitely can use VIPER depends on how complex is our project and other undefined constraints. In this article, I would like to share my experience to migrate <code>SwiftUI</code> gradually to our VIPER codebase without breaking any major concept of VIPER.</p>
+<div class="sponsor-container" style="margin: 1em 0;">
+<a href="https://gumroad.com/a/122262643" target="_blank" rel="nofollow" class="support3" style="margin: 0; border: 2px solid red">
+<div style="padding-right: 20px"></div>
+<p class="sponsor-text-1"><b><u>AppCoda - Beginner Book iOS15</u></b> - Want to start as iOS Programmer but dunno where to start? Beginner book from AppCoda is the one to go. Start your journey with this book without any hesitation. Use discount code "launch2021" while you are purchasing this book throughout this link.</p>
+</a>
+<div class="fineprint fineprint-container">
+<span>Support MY BLOG by checking out this sponsor. Find more details <a href="/sponsor/">here</a>.</span>
+</div>
+</div>
+
+<style>
+  .sponsor-container img{max-height:2.75em;float:left;margin-top:0!important;margin-right:1em!important}
+  .sponsors-hof{display:flex;flex-wrap:wrap;justify-content:center;margin:.75em 0}
+  .sponsors-hof img{height:5em;padding:0 .75em}
+  .fineprint-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: .4em 0 0;
+    font-size: .8em;
+  }
+  .fineprint {
+    margin-bottom: 0;
+    color: #A9A9A9;
+  }
+  .support3 {
+    background-image: url("/img/appcoda/beginner-book-ios15-wide.jpg");
+    background-size: cover;
+    border-radius: 8px;
+    border: 2px solid var(--tint-color);
+    padding: 1em;
+    margin: 1em 0;
+    display: block;
+    text-decoration: none;
+  }
+  a.support {
+    display: flex;
+    align-items: center;
+  }
+  .sponsor-text-1 {
+    color: red;
+    text-shadow: 2px 2px black;
+  }
+  b {
+    font-weight: bold;
+  }}
+</style>
+
+<h1 id="definition">Definition</h1>
+<p>What is VIPER? VIPER is a robust and scalable architectural design pattern which consists of 5 vital elements; <strong>View</strong>, <strong>Interactor</strong>, <strong>Presenter</strong>, <strong>Entity</strong> and <strong>Router</strong>. The intention of such separation is for conforming to all of the SOLID principle paradigms, hence every single element of our application needs to be separated to solely focus on its main intention.</p>
+<ul>
+<li><strong>View</strong> : This one is the view object part that focuses on the place where the view is belong to. This object will have a reference to a Presenter to communicate the interaction to the Presenter.</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#66d9ef">final</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">View</span>: UIViewController, ViewInput {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>  <span style="color:#66d9ef">var</span> output: ViewOutput?
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>  <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">viewDidLoad</span>() {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>    <span style="color:#66d9ef">super</span>.viewDidLoad()
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>    output?.viewDidLoad()
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>  }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>  <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">handleCalendarButton</span>() {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>    output?.didClickOnCalendarView()
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>  }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>  <span style="color:#75715e">// </span><span style="color:#75715e">MARK:</span><span style="color:#75715e">- ViewInput</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>  <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">update</span>(<span style="color:#66d9ef">_</span> viewModel: ViewModel) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>    <span style="color:#75715e">// update the UI</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>  }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>}</code></pre></div>
+<ul>
+<li><strong>Interactor</strong> : Interactor is part where the business logic is living in. This object will maintain and be the only source of truth for the incoming and outcoming data. Interactor is also the place where we can map the data into the form that Presenter needs, keep in mind this mapped data is not view mapped model but more to module entity model.</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#66d9ef">final</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Interactor</span>: InteractorInput {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>  <span style="color:#66d9ef">weak</span> <span style="color:#66d9ef">var</span> output: InteractorOutput?
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>  <span style="color:#75715e">// </span><span style="color:#75715e">MARK:</span><span style="color:#75715e"> - InteractorInput</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>  <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">fetchData</span>() {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>    <span style="color:#75715e">// some api call or other business logic stuff and map the data to the ModuleEntity</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>    output?.received(<span style="color:#66d9ef">_</span> data: data) <span style="color:#75715e">// this is module entity</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>  }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>}</code></pre></div>
+<ul>
+<li><strong>Presenter</strong> : This object is the place that becomes the connector between <code>View, Router, and Interactor</code> hence <code>Presenter</code> will hold references of all of them. The Presenter&rsquo;s task is to map the data received from <code>Interactor</code> into the form that can be used in the View level, hence it can be into multiple forms of view model depend on the necessity of the view. <code>Presenter</code> is also the object that received a user interaction response from the View, so it can send back the flow to the <code>Interactor</code> to query the necessary data base on the user interaction. Meanwhile, the Presenter is also able to decide when the module needs a Router to send the flow outside of the scope of this module or even another view within the same module after retrieving specific flow from the Interactor response.</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#66d9ef">final</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Presenter</span>: InteractorOutput, ViewOutput, InteractorOutput {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>  <span style="color:#66d9ef">var</span> router: RouterInput?
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>  <span style="color:#66d9ef">weak</span> <span style="color:#66d9ef">var</span> view: ViewInput?
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>  <span style="color:#66d9ef">var</span> interactor: InteractorInput?
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>  <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">var</span> viewModel: ViewViewModel = .defaultModel
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>  <span style="color:#75715e">// </span><span style="color:#75715e">MARK:</span><span style="color:#75715e"> - ViewOutput</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>  <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">viewDidLoad</span>() {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>    interactor?.fetchData()
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>  }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>  <span style="color:#75715e">// </span><span style="color:#75715e">MARK:</span><span style="color:#75715e"> - InteractorOutput</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>  <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">received</span>(<span style="color:#66d9ef">_</span> data: ModuleEntity) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>    viewModel = data.map { ViewViewModel($0) }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>    view?.update(viewModel)
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>  }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>}</code></pre></div>
+<ul>
+<li><strong>Entity</strong> : Entity here is a dummy domain model object which do not have internal business logic. This entity should be stateless and only has constant data that cover the module entity. Some people suggest to breakdown the entity into a more specific sub-domain model, but it is a preference. An example of an entity is shown below</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">ModuleEntity</span> {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>  <span style="color:#66d9ef">let</span> title: String
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>  <span style="color:#66d9ef">let</span> description: String
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>  <span style="color:#66d9ef">let</span> groups: [String]
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>  <span style="color:#66d9ef">let</span> imageUrl: String  
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span>}</code></pre></div>
+<ul>
+<li><strong>Router</strong> : Router is pretty clear base on the name, this object will be the only place for routing the current view to another view of another module or view within the same module</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#66d9ef">final</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Router</span>: RouterInput {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>  <span style="color:#66d9ef">var</span> view: UIViewController?
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>  <span style="color:#75715e">//.. some other code here ..//</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>  <span style="color:#75715e">// </span><span style="color:#75715e">MARK:</span><span style="color:#75715e"> - RouterInput</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>  <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">showChangeDate</span>() {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>      <span style="color:#66d9ef">let</span> dateModule = dateBuilder.build() <span style="color:#75715e">// Usage of Builder pattern</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>      view?.navigationController?.pushViewController(dateModule.viewController, animated: <span style="color:#66d9ef">true</span>)
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>  }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>  <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">popBack</span>() {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>      view?.navigationController?.popViewController(animated: <span style="color:#66d9ef">true</span>)
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>  }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>}</code></pre></div>
+<blockquote>
+<p>NOTE: If you notice, I made a weak ref of the view on Presenter instead of the opposite, the reason because, by default, UIViewController has a strong reference to the UINavigationController then if the view disappears and is deallocated, ARC will erase everything starting with Presenter, hence presenter reference in the view must be strong.</p>
+</blockquote>
+<div class="sponsor-container" style="margin: 1em 0;">
+<a href="https://gumroad.com/a/1061786739" target="_blank" rel="nofollow" class="support" style="margin: 0; border: 2px solid #f24949">
+<div style="padding-right: 20px"></div>
+<p class="sponsor-text"><b><u>AppCoda - Mastering SwiftUI</u></b> - One of the best book out there for accelerating your understanding of SwiftUI. Use discount code "launch2021" while you are purchasing this book throughout this link.</p>
+</a>
+<div class="fineprint fineprint-container">
+<span>Support MY BLOG by checking out this sponsor. Find more details <a href="/sponsor/">here</a>.</span>
+</div>
+</div>
+
+<style>
+  .sponsor-container img{max-height:2.75em;float:left;margin-top:0!important;margin-right:1em!important}
+  .sponsors-hof{display:flex;flex-wrap:wrap;justify-content:center;margin:.75em 0}
+  .sponsors-hof img{height:5em;padding:0 .75em}
+  .fineprint-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: .4em 0 0;
+    font-size: .8em;
+  }
+  .fineprint {
+    margin-bottom: 0;
+    color: #A9A9A9;
+  }
+  .support {
+    background-image: url("/img/appcoda/mastering-swiftui-starter-gumroad.jpeg");
+    background-size: cover;
+    border-radius: 8px;
+    border: 2px solid var(--tint-color);
+    padding: 1em;
+    margin: 1em 0;
+    display: block;
+    text-decoration: none;
+  }
+  a.support {
+    display: flex;
+    align-items: center;
+  }
+  .sponsor-text {
+    color: #f24949;
+    text-shadow: 2px 2px black;
+  }
+  b {
+    font-weight: bold;
+  }}
+</style>
+
+<h1 id="problem-with-swiftui">Problem with SwiftUI</h1>
+<p>In <strong>UIKit</strong> world, every single module or domain we can easily attach VIPER template to it and communicate each layer easily since UIView / UIViewController is a class and it can have an inheritance just in case we want to subclass the view from another super view. The View Input (abstraction to communicate between presenter and the view), that we declare is an AnyObject protocol, so class is obviously the better choice here. Besides, <code>UIKit</code> has a complete view controller lifecycle which makes the job easier to act accordingly with the data layer. How about <code>SwiftUI</code> ? SwiftUI has a different concept with the UIKit lifecycle, especially how it renders the UI. In SwiftUI normally we will act according to a reactive changes base on the latest data changes, in this case we can use <code>@Environment(\.scenePhase)</code> for a window change, or <code>.onAppear / .onDisappear</code> for view lifecycle. Since the View is a struct type, it also can not has an inheritance of another view. Another factor is our ViewInput abstraction for receiving a view input from the Presenter is bounded to class type protocol, so non-class type of our View is not suitable to has a ViewInput conformance.</p>
+<p>Another thing is since <code>View</code> is not <code>UIView</code> or <code>UIViewController</code> but an opaque type of <code>some View</code>, the router is not able to easily navigate like it uses to do with <code>UIKit</code>.</p>
+<p>Base on this observation there are two things we need to resolve:</p>
+<ul>
+<li>Communication between Presenter and View, and</li>
+<li>Router to navigate each view/module</li>
+</ul>
+<h1 id="solution">Solution</h1>
+<h2 id="view-and-data-communication">View and Data Communication</h2>
+<p><strong>Adapter</strong> pattern is needed in this case for acting as the <code>ViewInput</code> and an ObservableObject, hence based on that two conditions, it is a class type object. To maintain <strong>SwiftUI</strong> integrity to having a reactive flow with the Binding concept to an ObservedObject / StateObject; depend on context (See this <a href="https://www.donnywals.com/whats-the-difference-between-stateobject-and-observedobject/">article</a> for the differences), and also without breaking the concept of VIPER, an adapter would be a handy intermediary object between those two. Our SwiftUI View will have a binding to the Adapter (as an ObservableObject), and our VIPER Presenter will communicate to the Adapter (as a ViewInput). Besides that, we also have presenter reference to the Adapter, and keep the flow only through this Adapter.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#66d9ef">final</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ViewAdapter</span>: ObservableObject, ViewInput {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>    <span style="color:#66d9ef">typealias</span> Presenter = ViewOutput
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>    <span style="color:#66d9ef">lazy</span> <span style="color:#66d9ef">var</span> panelView: AnyView = {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>        AnyView(SwiftUIView(observedModel: <span style="color:#66d9ef">self</span>))
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>    }()
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">let</span> presenter: Presenter
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>    @Published <span style="color:#66d9ef">var</span> viewModel: ViewViewModel = .defaultModel
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>    <span style="color:#66d9ef">init</span>(presenter: Presenter) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>        <span style="color:#66d9ef">self</span>.presenter = presenter
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>    }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>    <span style="color:#75715e">// </span><span style="color:#75715e">MARK:</span><span style="color:#75715e"> - Adapter</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>    <span style="color:#66d9ef">var</span> input: ViewInput {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">self</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>    }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span>    <span style="color:#66d9ef">var</span> output: ViewOutput {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span>        <span style="color:#66d9ef">return</span> presenter
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span>    }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span>    <span style="color:#75715e">// </span><span style="color:#75715e">MARK:</span><span style="color:#75715e"> - ViewInput</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span>    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">update</span>(with viewModel: ViewViewModel) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span>        <span style="color:#66d9ef">self</span>.viewModel = viewModel
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span>    }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span>}</code></pre></div>
+<p>One interesting thing here is the usage of type-erasure <code>AnyView</code>. We can not store a reference of optional <code>opaque</code> type, otherwise, compiler will complain <code>an 'opaque' type must specify only 'any' 'anyobject' protocols and/or a base class</code> as part of the current restriction of an <code>opaque</code> type, then the workaround for this one is storing a <strong>type-erasure</strong> of a <code>View</code> which is <code>AnyView</code>.
+Take a look at the <code>UIHostingController</code> documentation below
+<code>open class UIHostingController&lt;Content&gt; : UIViewController where Content : View</code>, which states that <code>UIHostingController</code> is a generic class that requires a View type, hence the type-erasure <code>AnyView</code> is the sole candidate for accepting any View within the <code>UIHostingController</code>.</p>
+<h2 id="swiftuiview">SwiftUIView</h2>
+<p>After we create the adapter, below is the <code>SwiftUI</code> View implementation. As you can see, we only need one <code>ObservedObject</code> object which is the Adapter that acts as both ViewInput and has reference of <code>ViewOutput</code> (Presenter).</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">SwiftUIView</span>: View {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>    @ObservedObject <span style="color:#66d9ef">var</span> observedModel: ViewAdapter
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>    <span style="color:#66d9ef">var</span> body: some View {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>        HStack {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>            VStack {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>                Text(observedModel.viewModel.startDateTitle)
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>                    .foregroundColor(.gray)
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>                Text(observedModel.viewModel.startDate)
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>                    .foregroundColor(.blue)
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>                    .onTapGesture {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>                        observedModel.output.didTapChangeDate()
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>                    }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>            }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>        }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>        .onAppear {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>            observedModel.output.viewDidAppear()
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>        }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>        .onDisappear {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span>            observedModel.output.viewDidDisappear()
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span>        }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span>    }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span>}</code></pre></div>
+<h2 id="router">Router</h2>
+<p>Since normally <code>Router</code> will hold a reference of <code>UIView</code> or <code>UIViewController</code>, we don&rsquo;t have much trouble navigating the module. However, in <code>SwiftUI</code>, it is not possible to get the <code>UIView</code> or the <code>UIViewController</code> from a View object because the underlying layout engine is different. One of the first thing to do is change the property data type to be <code>UIHostingController&lt;AnyView&gt;</code>, hence this is why we do need a type-erasure of a <code>View</code> from the <code>Adapter</code>. After assigning an <code>UIHostingController</code>, we can get the <code>navigationController</code> from the <code>UIHostingController</code> and navigate easily like below example</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#75715e">// Use case : User click calendar icon and want to change the date</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#66d9ef">final</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Router</span>: RouterInput {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>  <span style="color:#66d9ef">var</span> view: UIHostingController&lt;AnyView&gt;?
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>  <span style="color:#75715e">//.. some other code here ..//</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>  <span style="color:#75715e">// </span><span style="color:#75715e">MARK:</span><span style="color:#75715e"> - RouterInput</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>  <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">showChangeDate</span>() {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>      <span style="color:#66d9ef">let</span> dateModule = dateBuilder.build() <span style="color:#75715e">// Usage of Builder pattern</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>      view?.navigationController?.pushViewController(dateModule.viewController, animated: <span style="color:#66d9ef">true</span>)
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>  }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>  <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">popBack</span>() {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>      view?.navigationController?.popViewController(animated: <span style="color:#66d9ef">true</span>)
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>  }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>}</code></pre></div>
+<h1 id="conclusion">Conclusion</h1>
+<p><strong>VIPER</strong> is definitely a no-brainer <strong>SOLID</strong> and one of the cleanest architecture, however keep in mind the usage of VIPER is also depends on your project scale. In my opinion for a small project or medium-scale project sometimes VIPER can be overkill, but you can consider VIPER if you are planning to make a long-term scalable project. Another takeaway from this article is even if it is possible to use VIPER into our <strong>SwiftUI</strong> application, but somewhat it needs couple of tricks and additional object (<strong>Adapter</strong>) to do so without breaking the VIPER concept. As a result, I wouldn&rsquo;t recommend use VIPER with SwiftUI, since SwiftUI has a concept of Binding with the reactive concept programming like Combine, I would recommend using <a href="https://github.com/pointfreeco/swift-composable-architecture"><strong>TCA</strong></a>, <strong>Redux</strong> or even only <strong>MVVM</strong>. What do you think about VIPER in SwiftUI? Let me know on <a href="https://twitter.com/michaelabadiii">twitter</a>!</p>
+<div class="sponsor-container1" style="margin: 1em 0;">
+<a href="https://apps.apple.com/th/app/tripzy/id1564625604" target="_blank" rel="nofollow" class="support-5" style="margin: 0; border: 2px solid #531CAD">
+<picture>
+<img src="https://is1-ssl.mzstatic.com/image/thumb/Purple125/v4/76/e0/f4/76e0f426-a6fb-810b-a102-80ef4ea52c4f/AppIcon-0-1x_U007emarketing-0-10-0-85-220.png/460x0w.webp" style="max-height: 50em">
+</picture>
+<div style="padding-right: 20px"></div>
+<p class="tripzy"><b><u>Tripzy - Track Your Trip Expenses</u></b> - Enjoy one of compact travel's budget trackers, directly through your pocket.
+No hassle, to the point, and without no login required along with the intuitive dashboard
+Tripzy gives you access to create your travel expenses and track them easily from your device without any hassle.
+
+</p>
+</a>
+<div class="fineprint-1 fineprint-container-2">
+<span>Support MY BLOG by checking out this sponsor. Find more details <a href="/sponsor/">here</a>.</span>
+</div>
+</div>
+
+<style>
+  .sponsor-container1 img{max-height:2.75em;float:left;margin-top:0!important;margin-right:1em!important}
+  .sponsors-hof{display:flex;flex-wrap:wrap;justify-content:center;margin:.75em 0}
+  .sponsors-hof img{height:5em;padding:0 .75em}
+  .fineprint-container-2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: .4em 0 0;
+    font-size: .8em;
+  }
+  .fineprint-1 {
+    margin-bottom: 0;
+    color: #A9A9A9;
+  }
+  .support-5 {
+    border-radius: 8px;
+    border: 2px solid var(--tint-color);
+    padding: 1em;
+    margin: 1em 0;
+    display: block;
+    text-decoration: none;
+    max-height: 50em;
+  }
+  .tripzy {
+    color: #531CAD;
+  }
+  a.support-5 {
+    display: flex;
+    align-items: center;
+  }
+  b {
+    font-weight: bold;
+  }}
+</style>
+
+
+		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/design-pattern/" rel="tag">Design Pattern</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/swift/" rel="tag">Swift</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/swiftui/" rel="tag">SwiftUI</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+<div class="authorbox clearfix">
+	<figure class="authorbox__avatar">
+		<img alt="Michael Abadi Santoso avatar" src="/img/avatar.jpg" class="avatar" height="90" width="90">
+	</figure>
+	<div class="authorbox__header">
+		<span class="authorbox__name">About Michael Abadi Santoso</span>
+	</div>
+	<div class="authorbox__description">
+		Michael Abadi is an iOS Engineer at Agoda 🇹🇭 who loves play FIFA badly. He likes to travel and photography. In his free time he likes to share everything about iOS Development
+	</div>
+</div>
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/articles/command-pattern-swift/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">Command Pattern in real-life</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/articles/create-calendar-view-swiftui/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">Create Draggable Calendar View in SwiftUI</p>
+		</a>
+	</div>
+</nav>
+
+
+			</div>
+			<aside class="sidebar"><div class="widget-search widget">
+	<form class="widget-search__form" role="search" method="get" action="https://google.com/search">
+		<label>
+			<input class="widget-search__field" type="search" placeholder="SEARCH…" value="" name="q" aria-label="SEARCH…">
+		</label>
+		<input class="widget-search__submit" type="submit" value="Search">
+		<input type="hidden" name="sitesearch" value="/" />
+	</form>
+</div>
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/articles/debugging-with-accessibility-swiftui/">Leverage Accessibility Identifier For View Debugging</a></li>
+			<li class="widget__item"><a class="widget__link" href="/articles/create-calendar-view-swiftui/">Create Draggable Calendar View in SwiftUI</a></li>
+			<li class="widget__item"><a class="widget__link" href="/articles/swiftui-viper-adaption/">VIPER adoption to SwiftUI</a></li>
+			<li class="widget__item"><a class="widget__link" href="/articles/command-pattern-swift/">Command Pattern in real-life</a></li>
+			<li class="widget__item"><a class="widget__link" href="/articles/analyse-http-instruments/">Analyze HTTP Traffic with new HTTP Instrument</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/accessibility/" title="Accessibility">Accessibility</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/career/" title="Career">Career</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ci/cd/" title="CI/CD">CI/CD</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/combine/" title="Combine">Combine</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/debugging/" title="Debugging">Debugging</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/dependencies-manager/" title="Dependencies Manager">Dependencies Manager</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/design-pattern/" title="Design Pattern">Design Pattern</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/library/" title="Library">Library</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/modularization/" title="Modularization">Modularization</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/optimization/" title="Optimization">Optimization</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/swift/" title="Swift">Swift</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/swiftui/" title="SwiftUI">SwiftUI</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/testing/" title="Testing">Testing</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/uikit/" title="UIKit">UIKit</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/wwdc/" title="WWDC">WWDC</a>
+	</div>
+</div>
+<div class="widget-social widget">
+	<h4 class="widget-social__title widget__title">Social</h4>
+	<div class="widget-social__content widget__content">
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Facebook" rel="noopener noreferrer" href="https://facebook.com/michael.abady2" target="_blank">
+				<svg class="widget-social__link-icon icon icon-facebook" width="24" height="24" viewBox="0 0 352 352"><path d="m0 32v288c0 17.5 14.5 32 32 32h288c17.5 0 32-14.5 32-32v-288c0-17.5-14.5-32-32-32h-288c-17.5 0-32 14.5-32 32zm320 0v288h-83v-108h41.5l6-48h-47.5v-31c0-14 3.5-23.5 23.5-23.5h26v-43.5c-4.4-.6-19.8-1.5-37.5-1.5-36.9 0-62 22.2-62 63.5v36h-42v48h42v108h-155v-288z"/></svg>
+				<span>Facebook</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Twitter" rel="noopener noreferrer" href="https://twitter.com/michaelabadiii" target="_blank">
+				<svg class="widget-social__link-icon icon icon-twitter" width="24" height="24" viewBox="0 0 384 312"><path d="m384 36.9c-14.1 6.3-29.3 10.5-45.2 12.4 16.3-9.7 28.8-25.2 34.6-43.6-15.2 9-32.1 15.6-50 19.1-14.4-15.2-34.9-24.8-57.5-24.8-43.5 0-78.8 35.3-78.8 78.8 0 6.2.7 12.2 2 17.9-65.5-3.3-123.5-34.6-162.4-82.3-6.7 11.6-10.6 25.2-10.6 39.6 0 27.3 13.9 51.4 35 65.6-12.9-.4-25.1-4-35.7-9.9v1c0 38.2 27.2 70 63.2 77.2-6.6 1.8-13.6 2.8-20.8 2.8-5.1 0-10-.5-14.8-1.4 10 31.3 39.1 54.1 73.6 54.7-27 21.1-60.9 33.7-97.8 33.7-6.4 0-12.6-.4-18.8-1.1 34.9 22.4 76.3 35.4 120.8 35.4 144.9 0 224.1-120 224.1-224.1 0-3.4-.1-6.8-.2-10.2 15.4-11.1 28.7-25 39.3-40.8z"/></svg>
+				<span>Twitter</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Instagram" rel="noopener noreferrer" href="https://www.instagram.com/michael.abadii" target="_blank">
+				<svg class="widget-social__link-icon icon icon-instagram" width="24" height="24" viewBox="0 0 256 256"><circle cx="193" cy="59" r="15"/><path fill-rule="evenodd" d="M101 0h54c41 0 58.4 3.9 74.5 17C256.2 37.5 256 74.8 256 97.7v60c0 26.7 0 60.4-26.5 81.4-16 13.4-33.5 16.9-74.5 16.9h-54c-41 0-57.5-3.5-74.5-16.9C1 218.9.5 186.3.1 160.5L0 155V97.7c0-23-.2-60.2 26.5-80.7C45 2 60 0 101 0zm4.9 23h44.3c45.8 0 58.3 3.5 70.3 17.5 11.8 13.2 12 30.1 12.5 62.9V156c.2 20.8.3 45.8-12.5 59.5-12 14-24.5 17.5-70.3 17.5h-44.3c-45.9 0-57.3-3.5-70.4-17.5-12.2-13-12.3-36.5-12.4-56.7v-55.6c.4-32.6.7-49.6 12.4-62.7C48 26.5 60 23 105.9 23zm19.6 144.5a42 42 0 1 0 0-84 42 42 0 0 0 0 84zm0 22.5a64.5 64.5 0 1 0 0-129 64.5 64.5 0 0 0 0 129z"/></svg>
+				<span>Instagram</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="LinkedIn" rel="noopener noreferrer" href="https://linkedin.com/in/abadi31" target="_blank">
+				<svg class="widget-social__link-icon icon icon-linkedin" width="24" height="24" viewBox="0 0 352 352"><path d="M0,40v272c0,21.9,18.1,40,40,40h272c21.9,0,40-18.1,40-40V40c0-21.9-18.1-40-40-40H40C18.1,0,0,18.1,0,40z M312,32 c4.6,0,8,3.4,8,8v272c0,4.6-3.4,8-8,8H40c-4.6,0-8-3.4-8-8V40c0-4.6,3.4-8,8-8H312z M59.5,87c0,15.2,12.3,27.5,27.5,27.5 c15.2,0,27.5-12.3,27.5-27.5c0-15.2-12.3-27.5-27.5-27.5C71.8,59.5,59.5,71.8,59.5,87z M187,157h-1v-21h-45v152h47v-75 c0-19.8,3.9-39,28.5-39c24.2,0,24.5,22.4,24.5,40v74h47v-83.5c0-40.9-8.7-72-56.5-72C208.5,132.5,193.3,145.1,187,157z M64,288h47.5 V136H64V288z"/></svg>
+				<span>LinkedIn</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="GitHub" rel="noopener noreferrer" href="https://github.com/abadikaka" target="_blank">
+				<svg class="widget-social__link-icon icon icon-github" width="24" height="24" viewBox="0 0 384 374"><path d="m192 0c-106.1 0-192 85.8-192 191.7 0 84.7 55 156.6 131.3 181.9 9.6 1.8 13.1-4.2 13.1-9.2 0-4.6-.2-16.6-.3-32.6-53.4 11.6-64.7-25.7-64.7-25.7-8.7-22.1-21.3-28-21.3-28-17.4-11.9 1.3-11.6 1.3-11.6 19.3 1.4 29.4 19.8 29.4 19.8 17.1 29.3 44.9 20.8 55.9 15.9 1.7-12.4 6.7-20.8 12.2-25.6-42.6-4.8-87.5-21.3-87.5-94.8 0-20.9 7.5-38 19.8-51.4-2-4.9-8.6-24.3 1.9-50.7 0 0 16.1-5.2 52.8 19.7 15.3-4.2 31.7-6.4 48.1-6.5 16.3.1 32.7 2.2 48.1 6.5 36.7-24.8 52.8-19.7 52.8-19.7 10.5 26.4 3.9 45.9 1.9 50.7 12.3 13.4 19.7 30.5 19.7 51.4 0 73.7-44.9 89.9-87.7 94.6 6.9 5.9 13 17.6 13 35.5 0 25.6-.2 46.3-.2 52.6 0 5.1 3.5 11.1 13.2 9.2 76.2-25.5 131.2-97.3 131.2-182 0-105.9-86-191.7-192-191.7z"/></svg>
+				<span>GitHub</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Email" href="mailto:abadi0067@gmail.com">
+				<svg class="widget-social__link-icon icon icon-mail" width="24" height="24" viewBox="0 0 416 288"><path d="m0 16v256 16h16 384 16v-16-256-16h-16-384-16zm347 16-139 92.5-139-92.5zm-148 125.5 9 5.5 9-5.5 167-111.5v210h-352v-210z"/></svg>
+				<span>abadi0067@gmail.com</span>
+			</a>
+		</div>
+
+		
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Medium" rel="noopener noreferrer" href="https://michaelabadi.medium.com/" target="_blank">
+				<span>Medium</span>
+			</a>
+		</div>
+		
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Support Me" rel="noopener noreferrer" href="https://www.patreon.com/michaelabadi" target="_blank">
+				<span>Support Me</span>
+			</a>
+		</div>
+		
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Download my CV" rel="noopener noreferrer" href="/CV.pdf" target="_blank">
+				<span>Download my CV</span>
+			</a>
+		</div>
+		
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2021 Michael Abadi&#39;s Blog.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
+</body>
+</html>

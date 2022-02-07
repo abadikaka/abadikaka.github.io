@@ -34,3 +34,7 @@ Bring hospitality to the next level. OKKAMI lets you get better service during a
 ## Download
 
 [App Store](https://apps.apple.com/th/app/okkami/id1241655886)
+
+---
+
+{{< sponsor3 >}}

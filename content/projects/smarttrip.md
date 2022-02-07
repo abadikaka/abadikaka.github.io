@@ -32,3 +32,7 @@ This project as part of DevPost hackathon about [APEC 2021 App Challenge](https:
 ## Demo
 
 {{< youtube OD7sEoYFyuA >}}
+
+---
+
+{{< sponsor >}}

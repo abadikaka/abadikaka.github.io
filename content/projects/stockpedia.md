@@ -30,3 +30,7 @@ See latest stock news and current company stock detail around the world.
 ## Download
 
 [App Store](https://apps.apple.com/th/app/stockpedia/id1550579452)
+
+---
+
+{{< sponsor3 >}}

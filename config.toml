@@ -14,7 +14,7 @@ googleAnalytics = "G-3ZSP3V2ZXX" # Enable Google Analytics by entering your trac
 [Params]
   description = "Michael Abadi's Personal blog about everything" # Description of your site
   opengraph = true
-  twitter_cards = false
+  twitter_cards = true
   readmore = true # Show "Read more" button in list if true
   authorbox = true
   pager = true
@@ -22,8 +22,8 @@ googleAnalytics = "G-3ZSP3V2ZXX" # Enable Google Analytics by entering your trac
   mainSections = ["articles"]
 
 [Params.logo]
-  image = "img/avatar.jpg" # Logo image. Path relative to "static"
-  subtitle = "Official website of Michael Abadi Santoso" # Logo subtitle
+  #image = "web-logo.png" # Logo image. Path relative to "static"
+  subtitle = "Your daily dose of iOS development blogs" # Logo subtitle
 
 [Params.sidebar]
   home = "right"   # Configure layout for home page
@@ -59,7 +59,7 @@ googleAnalytics = "G-3ZSP3V2ZXX" # Enable Google Analytics by entering your trac
 [[Params.widgets.social.custom]]
   title = "Download my CV"
   url = "/CV.pdf"
-    
+
 [menu]
 
   [[menu.main]]

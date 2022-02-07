@@ -6,7 +6,55 @@
     <description>Recent content on Michael Abadi&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 19 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 02 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leverage Accessibility Identifier For View Debugging</title>
+      <link>/articles/debugging-with-accessibility-swiftui/</link>
+      <pubDate>Sat, 02 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/articles/debugging-with-accessibility-swiftui/</guid>
+      <description>Recently I have been fascinated with the fact many people, especially indie dev have started to think about accessibility for their application. However, there are still fewer resources on how do we kick off our journey in Accessibility with a more real-world use case that we can adapt. In this article, I would like to explain how do we utilize and incorporate the most basic Accessibility topics into our codebase, which is accessibilityId.</description>
+    </item>
+    
+    <item>
+      <title>Create Draggable Calendar View in SwiftUI</title>
+      <link>/articles/create-calendar-view-swiftui/</link>
+      <pubDate>Sun, 12 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/articles/create-calendar-view-swiftui/</guid>
+      <description>While I was looking at my twitter for inspiration, a tweet from Sean Allen caught my eyes. He made an amazing calendar component with a drag and drop capabilities of its item. I look up the possibilities of using the native SwiftUI approach without any UIKit hack or workaround to do so. In this article, I will explain step by step as well a brief explanation of the API I used to make the calendar view in SwiftUI.</description>
+    </item>
+    
+    <item>
+      <title>VIPER adoption to SwiftUI</title>
+      <link>/articles/swiftui-viper-adaption/</link>
+      <pubDate>Sun, 29 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/articles/swiftui-viper-adaption/</guid>
+      <description>VIPER is one of the hottest architectures back then because of its separation of layers that isolated between each other which is also debatable. Some argue that VIPER is over-engineer and an overkill architecture, some argue that VIPER causes too many boilerplates of code and some argue that VIPER is one of the best architecture for iOS Development. All of these opinions are valid, we definitely can use VIPER depends on how complex is our project and other undefined constraints.</description>
+    </item>
+    
+    <item>
+      <title>Command Pattern in real-life</title>
+      <link>/articles/command-pattern-swift/</link>
+      <pubDate>Sun, 25 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/articles/command-pattern-swift/</guid>
+      <description>Recently I have a problem in my team whereas the analytics function become scattered. Some other team create their own function and handling their own caching for tracking the events, and some even create multiple similar function across the modules only for analytics, until then a problem arises.
+Since my company heavily depends on A/B Testing and data-driven culture, at some point we have found a lot of biased data as well missing parameters, then I start to investigate the issues.</description>
+    </item>
+    
+    <item>
+      <title>Discover Swift Package Manager</title>
+      <link>/talks/swifty-id/</link>
+      <pubDate>Sat, 03 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/talks/swifty-id/</guid>
+      <description>Swift ID Dev is an Indonesian study group community that is being organized by Nico. In this session, I mentored iOS developers about how to create a simple package manager for personal project as well basic foundation of a modularization.
+  Slides: https://github.com/abadikaka/conference-and-talks/blob/main/SPM.key
+ AppCoda - Mastering SwiftUI - One of the best book out there for accelerating your understanding of SwiftUI. Use discount code &#34;launch2021&#34; while you are purchasing this book throughout this link.</description>
+    </item>
+    
     <item>
       <title>Analyze HTTP Traffic with new HTTP Instrument</title>
       <link>/articles/analyse-http-instruments/</link>
@@ -15,6 +63,16 @@
       <guid>/articles/analyse-http-instruments/</guid>
       <description>WWDC21 has been finished last week with over 200 sessions. Most of the time we heard about SwiftUI session or about Async Await. However there are also interesting session about debugging that has been described by Keith Harrison here. In this article I would like to focus on one of the underrated session which is Analyze HTTP Traffic in Instruments. I also write this article in WWDC Notes.
  All content copyright © 2012 – 2021 Apple Inc.</description>
+    </item>
+    
+    <item>
+      <title>Mentorship in WWDC Community 2021</title>
+      <link>/talks/wwdc-community/</link>
+      <pubDate>Sat, 12 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/talks/wwdc-community/</guid>
+      <description>WWDC Mentorship Week, organized by WWDC Community 2021. During this WWDC 2021 week, I volunteered to help the community by giving a free mentorship and share my experience about working as an iOS Engineer to those who booked my sessions. I have succesfully mentored 12 student from Indonesia and 1 student from Malaysia.
+ AppCoda - Mastering SwiftUI - One of the best book out there for accelerating your understanding of SwiftUI.</description>
     </item>
     
     <item>
@@ -35,7 +93,8 @@ Swift Heroes Italy    Swift Heroes Italy is one of the most underrated conferenc
       
       <guid>/projects/smarttrip/</guid>
       <description>Explore tourism nearby, buy e-ticket and enjoy your trip. This project as part of DevPost hackathon about APEC 2021 App Challenge
-Tech Stack  Combine Core Data Firebase SwiftUI  Demo   </description>
+Tech Stack  Combine Core Data Firebase SwiftUI  Demo     AppCoda - Mastering SwiftUI - One of the best book out there for accelerating your understanding of SwiftUI. Use discount code &#34;launch2021&#34; while you are purchasing this book throughout this link.
+ Support MY BLOG by checking out this sponsor.</description>
     </item>
     
     <item>
@@ -54,7 +113,7 @@ Tech Stack  Combine Core Data Firebase SwiftUI  Demo   </description>
       
       <guid>/projects/tripzy/</guid>
       <description>Personalised your travel budgets, easily directly from pocket without any hassle.
-Tech Stack  Combine Core Data SwiftUI  Download App Store</description>
+Tech Stack  Combine Core Data SwiftUI  Download App Store    Tripzy - Track Your Trip Expenses - Enjoy one of compact travel&#39;s budget trackers, directly through your pocket. No hassle, to the point, and without no login required along with the intuitive dashboard Tripzy gives you access to create your travel expenses and track them easily from your device without any hassle.</description>
     </item>
     
     <item>
@@ -75,7 +134,8 @@ Let me go through step by step.
       
       <guid>/projects/englizh/</guid>
       <description>Test your IELTS or English skills in general with this application.
-Tech Stack  Combine Core Data SwiftUI  Download Coming Soon</description>
+Tech Stack  Combine Core Data SwiftUI  Download Coming Soon
+    Tripzy - Track Your Trip Expenses - Enjoy one of compact travel&#39;s budget trackers, directly through your pocket. No hassle, to the point, and without no login required along with the intuitive dashboard Tripzy gives you access to create your travel expenses and track them easily from your device without any hassle.</description>
     </item>
     
     <item>
@@ -112,7 +172,8 @@ Tech Stack  Combine Core Data SwiftUI  Download Coming Soon</description>
       
       <guid>/projects/stockpedia/</guid>
       <description>See latest stock news and current company stock detail around the world.
-Tech Stack  Combine Finnhub API SwiftUI  Download App Store</description>
+Tech Stack  Combine Finnhub API SwiftUI  Download App Store
+  AppCoda - Beginner Book iOS15 - Want to start as iOS Programmer but dunno where to start? Beginner book from AppCoda is the one to go. Start your journey with this book without any hesitation. Use discount code &#34;launch2021&#34; while you are purchasing this book throughout this link.</description>
     </item>
     
     <item>
@@ -172,7 +233,7 @@ Let see the picture above. Once you have put a breakpoint on any lines of code i
       
       <guid>/talks/thai-conf-2020/</guid>
       <description>Session 1 : Unboxing the debugger: Broke the myth of debugging in iOS in an easy way by Michael Abadi, Agoda. In this conference, I was presenting a session about debugging in iOS followed by a presentation from Federico Zanetello about Swift Package Manager
- </description>
+  AppCoda - Beginner Book iOS15 - Want to start as iOS Programmer but dunno where to start? Beginner book from AppCoda is the one to go.</description>
     </item>
     
     <item>
@@ -181,7 +242,8 @@ Let see the picture above. Once you have put a breakpoint on any lines of code i
       <pubDate>Thu, 10 Dec 2020 00:00:00 +0000</pubDate>
       
       <guid>/talks/indo-talks/</guid>
-      <description>In this conference, I was presenting a session about debugging in iOS followed by a presentation from Edward Anthony about Network Abstraction Layer and Bondan Eko Prasetyo about Modularization at Scale.</description>
+      <description>In this conference, I was presenting a session about debugging in iOS followed by a presentation from Edward Anthony about Network Abstraction Layer and Bondan Eko Prasetyo about Modularization at Scale.
+ AppCoda - Beginner Book iOS15 - Want to start as iOS Programmer but dunno where to start? Beginner book from AppCoda is the one to go. Start your journey with this book without any hesitation. Use discount code &#34;</description>
     </item>
     
     <item>
@@ -220,7 +282,8 @@ Let see the picture above. Once you have put a breakpoint on any lines of code i
       
       <guid>/projects/agoda/</guid>
       <description>Agoda is one of biggest company in hospitality industry. One of the leading OTA platform in Asia as part of Booking Holding Group. I have been working full time in Agoda since 2020 and take part for enhancing and help to make Agoda iOS App as the best iOS App in the industry.
-Tech Stack  UIKit Core Data DSL Language Swift Objective-C VIPER  Download App Store</description>
+Tech Stack  UIKit Core Data DSL Language Swift Objective-C VIPER  Download App Store
+  AppCoda - Mastering SwiftUI - One of the best book out there for accelerating your understanding of SwiftUI.</description>
     </item>
     
     <item>
@@ -258,7 +321,8 @@ Some quick knowledge about several items below:</description>
       
       <guid>/projects/tripzy-draft/</guid>
       <description>Personalised your travel itinerary, search another inspiration from people around the world, and easily import or bookmark trips.
-Tech Stack  Combine Core Data SwiftUI  Demo Coming Soon</description>
+Tech Stack  Combine Core Data SwiftUI  Demo Coming Soon  AppCoda - Mastering SwiftUI - One of the best book out there for accelerating your understanding of SwiftUI. Use discount code &#34;launch2021&#34; while you are purchasing this book throughout this link.
+ Support MY BLOG by checking out this sponsor. Find more details here.</description>
     </item>
     
     <item>
@@ -373,6 +437,27 @@ Tech Stack  React Native Objective-C Swift Raspberry Pi Pusher Realm Deep Linkin
       <guid>/about/michael-abadi/</guid>
       <description>Hi, I&amp;rsquo;m Michael — a sophisticated Software Engineer.  Michael Abadi Santoso is an iOS Engineer, originally from Indonesia and currently living and working in Thailand at Agoda.
 The purpose of creating this blog is because I want to give back to the community as I have been taught by other great iOS Developer, and I would like to continue the chains. Besides, one of great way to learn something is by teaching it.</description>
+    </item>
+    
+    <item>
+      <title>Sponsor</title>
+      <link>/sponsor/sponsor/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/sponsor/sponsor/</guid>
+      <description>How to Support My Blog! Since mid 2020, I try to publish at least one blog every month throughout my Medium channel. After that, I started to develop this website and start to gradually put my technical content to my own website without any hassle. At the moment, my blog is still growing with over 2000 visitors and I would like to keep this momentum.
+I have decided to open up a sponsorship program in case you want to support my work.</description>
+    </item>
+    
+    <item>
+      <title>Subscribe</title>
+      <link>/subscribe/subscribtion/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/subscribe/subscribtion/</guid>
+      <description>Thank you for reading my blog! Sign up for my email newsletter or use this RSS feed to get notified of new blog posts.
+Checkout these books below (PROMO CODE attached)!  AppCoda - Mastering SwiftUI - One of the best book out there for accelerating your understanding of SwiftUI. Use discount code &#34;launch2021&#34; while you are purchasing this book throughout this link.
+ Support MY BLOG by checking out this sponsor.</description>
     </item>
     
   </channel>

@@ -30,3 +30,7 @@ Test your IELTS or English skills in general with this application.
 ## Download
 
 Coming Soon
+
+---
+
+{{< sponsor2 >}}

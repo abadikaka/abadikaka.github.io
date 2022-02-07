@@ -8,7 +8,7 @@ categories:
 tags:
   - "Debugging"
   - "Swift"
-lead: "Analyze HTTP Traffic with new HTTP Instrument" # Lead text
+lead: "Understanding new HTTP Instrument Xcode" # Lead text
 comments: false # Enable Disqus comments for specific page
 authorbox: true # Enable authorbox for specific page
 pager: true # Enable pager navigation (prev/next) for specific page

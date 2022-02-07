@@ -20,3 +20,5 @@ draft: false
 ---
 
 In this conference, I was presenting a session about debugging in iOS followed by a presentation from [Edward Anthony](https://www.facebook.com/edward.anthony.8) about Network Abstraction Layer and [Bondan Eko Prasetyo](https://www.facebook.com/bondan.e.prasetyo) about Modularization at Scale.
+
+{{< sponsor3 >}}

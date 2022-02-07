@@ -24,3 +24,5 @@ draft: false
 In this conference, I was presenting a session about debugging in iOS followed by a presentation from [Federico Zanetello](https://twitter.com/zntfdr) about Swift Package Manager
 
 {{< iframe "https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fgucodelive%2Fvideos%2F336712584431172%2F&show_text=false&width=560&t=0" >}}
+
+{{< sponsor3 >}}
