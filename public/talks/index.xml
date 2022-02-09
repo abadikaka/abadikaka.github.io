@@ -6,7 +6,18 @@
     <description>Recent content in Talks on Michael Abadi&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 03 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="/talks/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 12 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="/talks/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Gradually Migrate SwiftUI in Production</title>
+      <link>/talks/indo-talks-2/</link>
+      <pubDate>Sun, 12 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/talks/indo-talks-2/</guid>
+      <description>Swift ID Dev is an Indonesian study group community that is being organized by Nico. In this session, I mentored iOS developers about how to gradually migrate production code to SwiftUI.
+  Github: https://github.com/abadikaka/SwiftUIUIKitMigrationExample
+   Tripzy - Track Your Trip Expenses - Enjoy one of compact travel&#39;s budget trackers, directly through your pocket. No hassle, to the point, and without no login required along with the intuitive dashboard Tripzy gives you access to create your travel expenses and track them easily from your device without any hassle.</description>
+    </item>
+    
     <item>
       <title>Discover Swift Package Manager</title>
       <link>/talks/swifty-id/</link>
@@ -15,7 +26,7 @@
       <guid>/talks/swifty-id/</guid>
       <description>Swift ID Dev is an Indonesian study group community that is being organized by Nico. In this session, I mentored iOS developers about how to create a simple package manager for personal project as well basic foundation of a modularization.
   Slides: https://github.com/abadikaka/conference-and-talks/blob/main/SPM.key
- AppCoda - Mastering SwiftUI - One of the best book out there for accelerating your understanding of SwiftUI. Use discount code &#34;launch2021&#34; while you are purchasing this book throughout this link.</description>
+   Tripzy - Track Your Trip Expenses - Enjoy one of compact travel&#39;s budget trackers, directly through your pocket. No hassle, to the point, and without no login required along with the intuitive dashboard Tripzy gives you access to create your travel expenses and track them easily from your device without any hassle.</description>
     </item>
     
     <item>
@@ -25,7 +36,7 @@
       
       <guid>/talks/wwdc-community/</guid>
       <description>WWDC Mentorship Week, organized by WWDC Community 2021. During this WWDC 2021 week, I volunteered to help the community by giving a free mentorship and share my experience about working as an iOS Engineer to those who booked my sessions. I have succesfully mentored 12 student from Indonesia and 1 student from Malaysia.
- AppCoda - Mastering SwiftUI - One of the best book out there for accelerating your understanding of SwiftUI.</description>
+   Tripzy - Track Your Trip Expenses - Enjoy one of compact travel&#39;s budget trackers, directly through your pocket.</description>
     </item>
     
     <item>
@@ -35,7 +46,7 @@
       
       <guid>/talks/thai-conf-2020/</guid>
       <description>Session 1 : Unboxing the debugger: Broke the myth of debugging in iOS in an easy way by Michael Abadi, Agoda. In this conference, I was presenting a session about debugging in iOS followed by a presentation from Federico Zanetello about Swift Package Manager
-  AppCoda - Beginner Book iOS15 - Want to start as iOS Programmer but dunno where to start? Beginner book from AppCoda is the one to go.</description>
+    Tripzy - Track Your Trip Expenses - Enjoy one of compact travel&#39;s budget trackers, directly through your pocket. No hassle, to the point, and without no login required along with the intuitive dashboard Tripzy gives you access to create your travel expenses and track them easily from your device without any hassle.</description>
     </item>
     
     <item>
@@ -45,7 +56,7 @@
       
       <guid>/talks/indo-talks/</guid>
       <description>In this conference, I was presenting a session about debugging in iOS followed by a presentation from Edward Anthony about Network Abstraction Layer and Bondan Eko Prasetyo about Modularization at Scale.
- AppCoda - Beginner Book iOS15 - Want to start as iOS Programmer but dunno where to start? Beginner book from AppCoda is the one to go. Start your journey with this book without any hesitation. Use discount code &#34;</description>
+   Tripzy - Track Your Trip Expenses - Enjoy one of compact travel&#39;s budget trackers, directly through your pocket. No hassle, to the point, and without no login required along with the intuitive dashboard Tripzy gives you access to create your travel expenses and track them easily from your device without any hassle.</description>
     </item>
     
   </channel>

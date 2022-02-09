@@ -6,7 +6,18 @@
     <description>Recent content on Michael Abadi&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 02 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 12 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Gradually Migrate SwiftUI in Production</title>
+      <link>/talks/indo-talks-2/</link>
+      <pubDate>Sun, 12 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/talks/indo-talks-2/</guid>
+      <description>Swift ID Dev is an Indonesian study group community that is being organized by Nico. In this session, I mentored iOS developers about how to gradually migrate production code to SwiftUI.
+  Github: https://github.com/abadikaka/SwiftUIUIKitMigrationExample
+   Tripzy - Track Your Trip Expenses - Enjoy one of compact travel&#39;s budget trackers, directly through your pocket. No hassle, to the point, and without no login required along with the intuitive dashboard Tripzy gives you access to create your travel expenses and track them easily from your device without any hassle.</description>
+    </item>
+    
     <item>
       <title>Leverage Accessibility Identifier For View Debugging</title>
       <link>/articles/debugging-with-accessibility-swiftui/</link>
@@ -52,7 +63,7 @@ Since my company heavily depends on A/B Testing and data-driven culture, at some
       <guid>/talks/swifty-id/</guid>
       <description>Swift ID Dev is an Indonesian study group community that is being organized by Nico. In this session, I mentored iOS developers about how to create a simple package manager for personal project as well basic foundation of a modularization.
   Slides: https://github.com/abadikaka/conference-and-talks/blob/main/SPM.key
- AppCoda - Mastering SwiftUI - One of the best book out there for accelerating your understanding of SwiftUI. Use discount code &#34;launch2021&#34; while you are purchasing this book throughout this link.</description>
+   Tripzy - Track Your Trip Expenses - Enjoy one of compact travel&#39;s budget trackers, directly through your pocket. No hassle, to the point, and without no login required along with the intuitive dashboard Tripzy gives you access to create your travel expenses and track them easily from your device without any hassle.</description>
     </item>
     
     <item>
@@ -72,7 +83,7 @@ Since my company heavily depends on A/B Testing and data-driven culture, at some
       
       <guid>/talks/wwdc-community/</guid>
       <description>WWDC Mentorship Week, organized by WWDC Community 2021. During this WWDC 2021 week, I volunteered to help the community by giving a free mentorship and share my experience about working as an iOS Engineer to those who booked my sessions. I have succesfully mentored 12 student from Indonesia and 1 student from Malaysia.
- AppCoda - Mastering SwiftUI - One of the best book out there for accelerating your understanding of SwiftUI.</description>
+   Tripzy - Track Your Trip Expenses - Enjoy one of compact travel&#39;s budget trackers, directly through your pocket.</description>
     </item>
     
     <item>
@@ -93,8 +104,7 @@ Swift Heroes Italy    Swift Heroes Italy is one of the most underrated conferenc
       
       <guid>/projects/smarttrip/</guid>
       <description>Explore tourism nearby, buy e-ticket and enjoy your trip. This project as part of DevPost hackathon about APEC 2021 App Challenge
-Tech Stack  Combine Core Data Firebase SwiftUI  Demo     AppCoda - Mastering SwiftUI - One of the best book out there for accelerating your understanding of SwiftUI. Use discount code &#34;launch2021&#34; while you are purchasing this book throughout this link.
- Support MY BLOG by checking out this sponsor.</description>
+Tech Stack  Combine Core Data Firebase SwiftUI  Demo       Tripzy - Track Your Trip Expenses - Enjoy one of compact travel&#39;s budget trackers, directly through your pocket. No hassle, to the point, and without no login required along with the intuitive dashboard Tripzy gives you access to create your travel expenses and track them easily from your device without any hassle.</description>
     </item>
     
     <item>
@@ -173,7 +183,7 @@ Tech Stack  Combine Core Data SwiftUI  Download Coming Soon
       <guid>/projects/stockpedia/</guid>
       <description>See latest stock news and current company stock detail around the world.
 Tech Stack  Combine Finnhub API SwiftUI  Download App Store
-  AppCoda - Beginner Book iOS15 - Want to start as iOS Programmer but dunno where to start? Beginner book from AppCoda is the one to go. Start your journey with this book without any hesitation. Use discount code &#34;launch2021&#34; while you are purchasing this book throughout this link.</description>
+    Tripzy - Track Your Trip Expenses - Enjoy one of compact travel&#39;s budget trackers, directly through your pocket. No hassle, to the point, and without no login required along with the intuitive dashboard Tripzy gives you access to create your travel expenses and track them easily from your device without any hassle.</description>
     </item>
     
     <item>
@@ -233,7 +243,7 @@ Let see the picture above. Once you have put a breakpoint on any lines of code i
       
       <guid>/talks/thai-conf-2020/</guid>
       <description>Session 1 : Unboxing the debugger: Broke the myth of debugging in iOS in an easy way by Michael Abadi, Agoda. In this conference, I was presenting a session about debugging in iOS followed by a presentation from Federico Zanetello about Swift Package Manager
-  AppCoda - Beginner Book iOS15 - Want to start as iOS Programmer but dunno where to start? Beginner book from AppCoda is the one to go.</description>
+    Tripzy - Track Your Trip Expenses - Enjoy one of compact travel&#39;s budget trackers, directly through your pocket. No hassle, to the point, and without no login required along with the intuitive dashboard Tripzy gives you access to create your travel expenses and track them easily from your device without any hassle.</description>
     </item>
     
     <item>
@@ -243,7 +253,7 @@ Let see the picture above. Once you have put a breakpoint on any lines of code i
       
       <guid>/talks/indo-talks/</guid>
       <description>In this conference, I was presenting a session about debugging in iOS followed by a presentation from Edward Anthony about Network Abstraction Layer and Bondan Eko Prasetyo about Modularization at Scale.
- AppCoda - Beginner Book iOS15 - Want to start as iOS Programmer but dunno where to start? Beginner book from AppCoda is the one to go. Start your journey with this book without any hesitation. Use discount code &#34;</description>
+   Tripzy - Track Your Trip Expenses - Enjoy one of compact travel&#39;s budget trackers, directly through your pocket. No hassle, to the point, and without no login required along with the intuitive dashboard Tripzy gives you access to create your travel expenses and track them easily from your device without any hassle.</description>
     </item>
     
     <item>
@@ -283,7 +293,7 @@ Let see the picture above. Once you have put a breakpoint on any lines of code i
       <guid>/projects/agoda/</guid>
       <description>Agoda is one of biggest company in hospitality industry. One of the leading OTA platform in Asia as part of Booking Holding Group. I have been working full time in Agoda since 2020 and take part for enhancing and help to make Agoda iOS App as the best iOS App in the industry.
 Tech Stack  UIKit Core Data DSL Language Swift Objective-C VIPER  Download App Store
-  AppCoda - Mastering SwiftUI - One of the best book out there for accelerating your understanding of SwiftUI.</description>
+    Tripzy - Track Your Trip Expenses - Enjoy one of compact travel&#39;s budget trackers, directly through your pocket.</description>
     </item>
     
     <item>
@@ -321,8 +331,7 @@ Some quick knowledge about several items below:</description>
       
       <guid>/projects/tripzy-draft/</guid>
       <description>Personalised your travel itinerary, search another inspiration from people around the world, and easily import or bookmark trips.
-Tech Stack  Combine Core Data SwiftUI  Demo Coming Soon  AppCoda - Mastering SwiftUI - One of the best book out there for accelerating your understanding of SwiftUI. Use discount code &#34;launch2021&#34; while you are purchasing this book throughout this link.
- Support MY BLOG by checking out this sponsor. Find more details here.</description>
+Tech Stack  Combine Core Data SwiftUI  Demo Coming Soon    Tripzy - Track Your Trip Expenses - Enjoy one of compact travel&#39;s budget trackers, directly through your pocket. No hassle, to the point, and without no login required along with the intuitive dashboard Tripzy gives you access to create your travel expenses and track them easily from your device without any hassle.</description>
     </item>
     
     <item>
@@ -456,8 +465,7 @@ I have decided to open up a sponsorship program in case you want to support my w
       
       <guid>/subscribe/subscribtion/</guid>
       <description>Thank you for reading my blog! Sign up for my email newsletter or use this RSS feed to get notified of new blog posts.
-Checkout these books below (PROMO CODE attached)!  AppCoda - Mastering SwiftUI - One of the best book out there for accelerating your understanding of SwiftUI. Use discount code &#34;launch2021&#34; while you are purchasing this book throughout this link.
- Support MY BLOG by checking out this sponsor.</description>
+Checkout these books below (PROMO CODE attached)!    Tripzy - Track Your Trip Expenses - Enjoy one of compact travel&#39;s budget trackers, directly through your pocket. No hassle, to the point, and without no login required along with the intuitive dashboard Tripzy gives you access to create your travel expenses and track them easily from your device without any hassle.</description>
     </item>
     
   </channel>
