@@ -38,27 +38,27 @@ googleAnalytics = "G-3ZSP3V2ZXX" # Enable Google Analytics by entering your trac
 
 [Params.widgets.social]
   # Enable parts of social widget
-  facebook = "michael.abady2"
-  twitter = "michaelabadiii"
-  instagram = "michael.abadii"
-  linkedin = "abadi31"
+  # facebook = "michael.abady2"
+  # twitter = "michaelabadiii"
+  # instagram = "michael.abadii"
+  # linkedin = "abadi31"
   # telegram = "username"
   github = "abadikaka"
   # gitlab = "username"
   # bitbucket = "username"
-  email = "abadi0067@gmail.com"
+  # email = "abadi0067@gmail.com"
 
 [[Params.widgets.social.custom]]
   title = "Medium"
   url = "https://michaelabadi.medium.com/"
 
-[[Params.widgets.social.custom]]
-  title = "Support Me"
-  url = "https://www.patreon.com/michaelabadi"
+# [[Params.widgets.social.custom]]
+#   title = "Support Me"
+#   url = "https://www.patreon.com/michaelabadi"
 
-[[Params.widgets.social.custom]]
-  title = "Download my CV"
-  url = "/CV.pdf"
+# [[Params.widgets.social.custom]]
+#   title = "Download my CV"
+#   url = "/CV.pdf"
 
 [menu]
 
