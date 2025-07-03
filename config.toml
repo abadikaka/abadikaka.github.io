@@ -8,7 +8,7 @@ googleAnalytics = "G-3ZSP3V2ZXX" # Enable Google Analytics by entering your trac
 
 [Author]
   name = "Michael Abadi Santoso"
-  bio = "Michael Abadi is an iOS Engineer at Agoda 🇹🇭 who loves play FIFA badly. He likes to travel and photography. In his free time he likes to share everything about iOS Development"
+  bio = "Michael Abadi is an iOS Engineer based in 🇹🇭 who loves play FIFA badly. He likes to travel and photography. In his free time he likes to share everything about iOS Development"
   avatar = "img/avatar.jpg"
 
 [Params]
